@@ -1917,7 +1917,7 @@ function resetData(){ (DB.recs||[]).forEach(r=>blobDel(r.id)); DB.recs=[]; DB.re
 // ===== Render & Ereignisse =====
 function render(){
   document.body.className=(st.mode==="class"&&st.screen!=="teacher"?"cls ":"")+"lv"+st.lv;
-  const V={home:vHome,kids:vKids,hub:vHub,list:vList,acts:vActs,flowF:vFlowF,flowS:vFlowS,flowR:vFlowR,flowRec:vFlowRec,flowT:vFlowT,flowB:vFlowB,flowL:vFlowL,flowTrail:vFlowTrail,cal:vCal,test:vTest,flight:vFlight,books:vBooks,words:vWords,stumble:vStumble,homeM:vHomeMode,report:vReport,flowMake:vFlowMake,flowSolve:vFlowSolve,flowW:vFlowW,done:vDone,book:vBook,pin:vPin,teacher:vTeacher}[st.screen]||vHome;
+  const V={home:vHome,kids:vKids,hub:vHub,list:vList,acts:vActs,flowF:vFlowF,flowS:vFlowS,flowR:vFlowR,flowRec:vFlowRec,flowT:vFlowT,flowB:vFlowB,flowL:vFlowL,flowTrail:vFlowTrail,cal:vCal,test:vTest,flight:vFlight,books:vBooks,words:vWords,stumble:vStumble,homeM:vHomeMode,report:vReport,flowMake:vFlowMake,flowSolve:vFlowSolve,flowW:vFlowW,pick:()=>vPick(),done:vDone,book:vBook,pin:vPin,teacher:vTeacher}[st.screen]||vHome;
   let html=V();
   html+=pngOverlay()+prefsModal(); if(prefs().ruler==="on"&&READ_SCREENS.includes(st.screen)) html+=`<div id="rulerctl" class="rulerctl" style="display:none"><button onclick="rulerMove(-1)">▲</button><span>Lesezeile</span><button onclick="rulerMove(1)">▼</button></div>`;
   if(st.gloss!=null&&st.unit&&["flowF","flowS","flowTrail"].includes(st.screen)){ const g=glossOf(st.unit)[st.gloss]; if(g){
@@ -2893,14 +2893,15 @@ function vHub(){
   const free=st.mode==="class"||!TP().on||TP().free;
   if(free) h+=planCard();
   const kid=st.mode!=="class";
+  if(free) h+=`<button class="big" style="width:100%;min-height:110px;margin-bottom:16px;background:linear-gradient(135deg,#fff7e6,#e8f4ff)" onclick="startPick()"><span class="ic">📚</span><b>Text und Thema frei wählen</b><small>Geschichten, Tiere, Wald, Wasser, Werbung, Lesespuren … such dir aus, was du lesen möchtest!</small></button>`;
   h+=`<div class="grid">`+(free?`
-   <button class="big" onclick="go('list',{area:'f'})"><span class="ic">🎧</span><b>Flüssig lesen</b><small>Lesetraining, Lese-Challenge, Aufnehmen, Lesetheater, Satz-Blitzlesen</small></button>
-   <button class="big" onclick="go('list',{area:'s'})"><span class="ic">🧭</span><b>Verstehen</b><small>Lesestrategien, Lügentexte, Lesespuren, Rätsel und Schreiben</small></button>`:"")+
+   <button class="big" onclick="st.fromPick=false;go('list',{area:'f'})"><span class="ic">🎧</span><b>Flüssig lesen</b><small>Lesetraining, Lese-Challenge, Aufnehmen, Lesetheater, Satz-Blitzlesen</small></button>
+   <button class="big" onclick="st.fromPick=false;go('list',{area:'s'})"><span class="ic">🧭</span><b>Verstehen</b><small>Lesestrategien, Lügentexte, Lesespuren, Rätsel und Schreiben</small></button>`:"")+
    (kid?`<button class="big" onclick="go('book')"><span class="ic">📒</span><b>Mein Flugbuch</b><small>Stempel, Sterne, Abzeichen, Aufnahmen und Texte</small></button>
    <button class="big" onclick="st.bf=null;go('books')"><span class="ic">📚</span><b>Mein Lesepass</b><small>Trag Bücher ein, die du gelesen hast</small></button>
    <button class="big" onclick="startWords()"><span class="ic">🧺</span><b>Wortschatz-Kiste</b><small>${Object.keys(DB.wb[st.kid]||{}).length} Wörter gesammelt</small></button>`:"")+
    (kid&&TP().on?`<button class="big" onclick="go('cal')"><span class="ic">📆</span><b>Mein Kalender</b><small>Hier siehst du, an welchen Tagen du trainiert hast</small></button>`:"")+`</div>`;
-  if(!free) h+=`<p class="muted mt">Weitere Übungen zum freien Auswählen schaltet deine Lehrkraft frei. Starte oben dein Training für heute!</p>`;
+  if(!free) h+=`<p class="muted mt">Die freie Textwahl schaltet deine Lehrkraft frei. Starte oben dein Training für heute!</p>`;
   return h; }
 function bookExtras(id){ const B=DB.books.filter(b=>b.k===id), W=DB.writings.filter(w=>w.k===id).sort((a,b)=>b.t-a.t), P=DB.puzzles.filter(p=>p.by===id);
   let h=`<h3 class="mt">📚 Lesepass: ${B.length} Buch${B.length===1?"":"er"}</h3>`+(B.length?`<div class="muted">${B.map(b=>esc(b.title)).join(" · ")}</div>`:`<div class="muted">Noch keine Bücher.</div>`);
@@ -2917,6 +2918,42 @@ function teacherKidExtras(k){ const W=DB.writings.filter(w=>w.k===k.id).sort((a,
   return h; }
 function puzzleAdmin(){ const P=DB.puzzles; if(!P.length) return ""; return `<h3 class="mt">🧩 Rätsel der Kinder (${P.length})</h3><p class="muted">Bitte kurz prüfen – unpassende Rätsel können Sie löschen.</p>`+P.map(p=>`<div class="kidrow"><span class="nm" style="font-size:16px;font-weight:400"><b>${esc(p.byName||kidName(p.by))}</b> · ${esc(unit(p.u)?unit(p.u).title:"Text")}: ${p.type==="lie"?p.lies.map(x=>`${esc(clean(x.orig))} → ${esc(clean(x.lie))}`).join(", "):esc(p.q.q)}</span><button class="btn sec small" onclick="DB.puzzles=DB.puzzles.filter(x=>x.id!=='${p.id}');save();render()">🗑️</button></div>`).join(""); }
 document.addEventListener("click",e=>{ const w=e.target.closest("#txt .w.mkw"); if(w&&st.screen==="flowMake"&&st.d.mk){ st.d.mk.sel=+w.dataset.i; render(); setTimeout(()=>{const i=$("#lw"); if(i) i.focus();},50); } });
+
+
+// ---------- 📚 Freie Text- und Themenwahl ----------
+const TOPICS=[["all","🌈","Alle"],["story","📖","Geschichten"],["tiere","🦔","Tiere"],["wald","🌳","Wald & Pflanzen"],["wasser","💧","Wasser"],["essen","🍞","Essen"],["medien","📺","Medien & Werbung"],["spur","🐾","Lesespuren"],["eigen","📝","Eigene Texte"]];
+const TOPIC_OF={s1:"tiere",s2:"tiere",s3:"essen",s4:"wald",s5:"wald",s6:"wasser",s7:"medien"};
+const TRAIL_TOPIC={Wald:"wald",Wasser:"wasser",Werbung:"medien"};
+function unitTopics(u){ if(u.type==="story") return ["story"]; if(u.type==="custom") return ["eigen"]; return [TOPIC_OF[u.id]||"tiere"]; }
+function freeOK(){ return st.mode==="class"||!TP().on||TP().free; }
+(function(){ try{ const T=TP(); if(!T.freeMig){ T.free=true; T.freeMig=true; save(); } }catch(e){} })();
+function startPick(){ st.fromPick=true; st.area=null; go("pick"); }
+function pickTopic(t){ st.ptopic=t; render(); }
+function vPick(){
+  const t=st.ptopic||"all"; let h=topBar("📚 Text und Thema wählen","st.fromPick=false;go('hub')");
+  h+=`<p class="instr">Such dir aus, was du lesen möchtest! Tippe zuerst auf ein Thema, dann auf einen Text.</p>`;
+  h+=`<div class="row" style="margin-bottom:12px"><span class="fred" style="font-size:20px">Textstufe:</span>${lvSeg()}${dazBtn()}</div>`;
+  const C=DB.custom||[];
+  const counts={}; const add=k=>counts[k]=(counts[k]||0)+1;
+  UNITS.forEach(u=>unitTopics(u).forEach(add)); C.forEach(()=>add("eigen")); TRAILS.forEach(T=>{add("spur"); add(TRAIL_TOPIC[T.topic]||"wald");});
+  h+=`<div class="bank" style="margin:0 0 18px">${TOPICS.filter(([k])=>k==="all"||counts[k]).map(([k,i,n])=>`<button class="opt ${t===k?"sel":""}" style="font-size:19px;padding:10px 16px" onclick="pickTopic('${k}')">${i} ${n}</button>`).join("")}</div>`;
+  const F=finsOf(st.kid);
+  const trailCard=T=>`<button class="big" style="min-height:120px" onclick="st.area='s';startTrail('${T.id}')"><span class="ic">${T.icon}</span><b>${esc(T.title)}</b><small>Lesespur · Thema ${T.topic}${F.some(r=>r.u===T.id)?" · ✅":""}</small></button>`;
+  const sec=(title,cards)=>cards.length?`<h2>${title}</h2><div class="grid" style="margin-bottom:16px">${cards.join("")}</div>`:"";
+  if(t==="all"||t==="story") STORIES.forEach(S=>{ h+=sec(`📖 Geschichte: ${esc(S.title)}`,UNITS.filter(u=>u.type==="story"&&(u.story||1)===S.n).map(unitCard)); });
+  const facts=UNITS.filter(u=>u.type==="fact"&&(t==="all"||unitTopics(u).includes(t)));
+  if(t!=="story"&&t!=="spur"&&t!=="eigen") h+=sec("🔎 Sachtexte",facts.map(unitCard));
+  const trails=TRAILS.filter(T=>t==="all"||t==="spur"||TRAIL_TOPIC[T.topic]===t);
+  if(t!=="story"&&t!=="eigen") h+=sec("🐾 Lesespuren",trails.map(trailCard));
+  if(t==="all"||t==="eigen") h+=sec("📝 Texte von deiner Lehrkraft",C.map(unitCard));
+  h+=`<p class="muted mt">Zu jedem Text kannst du danach selbst aussuchen, wie du üben möchtest.</p>`;
+  return h; }
+const _vActsFree=vActs;
+vActs=function(){ let h=_vActsFree(); if(st.fromPick) h=h.replace(/onclick="go\('(list|hub)'\)"/,`onclick="st.area=null;go('pick')"`); return h; };
+const _vDoneFree=vDone;
+vDone=function(){ let h=_vDoneFree(); if(st.fromPick) h=h.split(`onclick="go('list')"`).join(`onclick="st.area=null;go('pick')"`); return h; };
+const _vTrailFree=vFlowTrail;
+vFlowTrail=function(){ let h=_vTrailFree(); if(st.fromPick) h=h.replace(`onclick="go('list')"`,`onclick="st.area=null;go('pick')"`); return h; };
 
 render();
 
