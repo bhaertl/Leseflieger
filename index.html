@@ -1453,9 +1453,17 @@ function pickMode(m){
 function vKids(){
   const tandem=st.mode==="tandem";
   let h=topBar(tandem?"Wer übt zusammen?":"Wer bist du?","go('home')");
+  const real=DB.kids.filter(k=>!/^Gast( |$)/.test(k.name));
+  if(tandem&&real.length<2){
+    h+=`<div class="card"><p class="instr">${real.length?"Für ein Tandem braucht ihr zwei Namen.":"Es sind noch keine Namen angelegt."} Tragt eure Vornamen hier ein – sie werden gespeichert und stehen dann auch im Lehrkraft-Bereich.</p>
+    <label class="lab">🏃 Sportler:in (liest zuerst)</label><input type="text" id="qn1" maxlength="30" placeholder="Vorname" value="${real[0]?esc(real[0].name):""}">
+    <label class="lab">🧑‍🏫 Trainer:in</label><input type="text" id="qn2" maxlength="30" placeholder="Vorname">
+    <div class="row mt"><button class="btn green" onclick="quickTandem()">Los geht's ➜</button><button class="btn sec" onclick="guestTandem()">Als Gast-Tandem üben</button></div></div>`; return h;
+  }
   if(!DB.kids.length){
-    h+=`<div class="card"><p class="instr">Es sind noch keine Namen angelegt. Die Lehrkraft kann im Lehrkraft-Bereich die Namen der Klasse eintragen.</p>
-    <button class="btn" onclick="guest()">Als Gast üben</button></div>`; return h;
+    h+=`<div class="card"><p class="instr">Es sind noch keine Namen angelegt. Trag deinen Vornamen ein oder übe als Gast.</p>
+    <label class="lab">Dein Vorname</label><input type="text" id="qn1" maxlength="30" placeholder="Vorname">
+    <div class="row mt"><button class="btn green" onclick="quickSolo()">Los geht's ➜</button><button class="btn sec" onclick="guest()">Als Gast üben</button></div></div>`; return h;
   }
   if(tandem) h+=`<p class="instr">Tippt zuerst die <b>Sportlerin / den Sportler</b> an, dann die <b>Trainerin / den Trainer</b>. Die Rollen wechselt ihr später.</p>`;
   h+=`<div class="grid">`+DB.kids.slice().sort((a,b)=>a.name.localeCompare(b.name,"de")).map(k=>{const pos=st.sel.indexOf(k.id);
@@ -1463,7 +1471,13 @@ function vKids(){
   if(tandem) h+=`<div class="row mt"><button class="btn green" ${st.sel.length===2?"":"disabled"} onclick="startTandem()">Los geht's ➜</button></div>`;
   return h;
 }
-function guest(){ let g=DB.kids.find(k=>k.name==="Gast"); if(!g){g={id:uid(),name:"Gast",level:2};DB.kids.push(g);save();} if(st.mode==="tandem"){toast("Bitte zuerst Namen anlegen.");return;} pickKid(g.id); }
+function guest(){ let g=DB.kids.find(k=>k.name==="Gast"); if(!g){g={id:uid(),name:"Gast",level:2};DB.kids.push(g);save();} pickKid(g.id); }
+function kidByNameOrNew(n){ n=n.trim().replace(/\s+/g," ").slice(0,30); let k=DB.kids.find(x=>x.name.toLowerCase()===n.toLowerCase()); if(!k){k={id:uid(),name:n,level:2};DB.kids.push(k);} return k; }
+function quickTandem(){ const a=($("#qn1").value||"").trim(), b=($("#qn2").value||"").trim();
+  if(!a||!b){ toast("Bitte beide Vornamen eintragen."); return; } if(a.toLowerCase()===b.toLowerCase()){ toast("Bitte zwei verschiedene Namen eintragen."); return; }
+  const k1=kidByNameOrNew(a), k2=kidByNameOrNew(b); save(); st.sel=[k1.id,k2.id]; startTandem(); }
+function guestTandem(){ const ids=["Gast 1","Gast 2"].map(n=>{ let g=DB.kids.find(k=>k.name===n); if(!g){g={id:uid(),name:n,level:2};DB.kids.push(g);} return g.id; }); save(); st.sel=ids; startTandem(); }
+function quickSolo(){ const a=($("#qn1").value||"").trim(); if(!a){ toast("Bitte deinen Vornamen eintragen."); return; } const k=kidByNameOrNew(a); save(); pickKid(k.id); }
 function pickKid(id){
   if(st.mode==="solo"){ st.kid=id; st.lv=(kidById(id).level||2); st.daz=!!kidById(id).daz; if(st.daz)st.tempo=80; go("hub"); return; }
   const p=st.sel.indexOf(id); if(p>=0) st.sel.splice(p,1); else if(st.sel.length<2) st.sel.push(id); render();
@@ -2586,8 +2600,7 @@ function vList(){
   return h; }
 
 // ---------- Aufräumen: früher automatisch eingetragene Namensliste entfernen ----------
-(function(){ const L=["Leo","Milan","Severin","Quirin","Paul","Johanna","Emma","Magdalena","Mila","Annika","David","Toni","Valentin","Niklas","Henry","Sascha","Silas","Korbi","Nele","Daria","Yevhen","Isabel","Helena"];
-  if(DB.kids.length===L.length&&DB.kids.every(k=>L.includes(k.name))&&!DB.records.length&&!DB.kids.some(k=>DB.stars[k.id])){ DB.kids=[]; save(); } })();
+// (Bereinigung der früheren Namensliste entfernt – eingetragene Namen bleiben immer erhalten)
 
 
 // =====================================================================
