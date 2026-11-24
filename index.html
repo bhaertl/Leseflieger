@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Leseflieger">
@@ -18,199 +18,199 @@
 :root{--sky:#e3f1fb;--ink:#1f2d3d;--muted:#5b6b7b;--blue:#2f7fd1;--blue-d:#1f5fa3;--blue-l:#eaf3fd;--green:#2e9e5b;--green-d:#1f7442;--green-l:#dff3e6;--red:#d64545;--red-l:#fbe3e3;--yellow:#ffe27a;--yellow-l:#fff6d1;--orange:#f39b2f;--line:#d9e4ee;--purple:#7a5cc7}
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%}
-body{font-family:'Andika',system-ui,sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--sky) 0,#f7fbfe 420px);-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+body{font-family:'Andika',system-ui,sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--sky) 0,#f7fbfe 26.25rem);-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
 button,input,textarea,select{font-family:inherit;font-size:inherit}
 button{touch-action:manipulation;cursor:pointer;border:none;color:inherit;background:none}
 h1,h2,h3,.fred{font-family:'Fredoka','Andika',sans-serif;font-weight:600}
-h2{font-size:26px;margin:4px 0 12px}
-h3{font-size:21px;margin:4px 0 10px}
-#app{max-width:1080px;margin:0 auto;padding:14px 18px 60px}
-.top{display:flex;align-items:center;gap:10px;margin-bottom:14px;min-height:54px;flex-wrap:wrap}
-.top h1{font-size:25px;margin:0;flex:1;min-width:160px}
-.back{background:#fff;border:2px solid var(--line);border-radius:14px;padding:10px 16px;font-size:18px;font-weight:700}
-.chip{background:#fff;border-radius:999px;padding:8px 14px;border:2px solid var(--line);font-size:17px;display:inline-flex;gap:6px;align-items:center;white-space:nowrap}
-.card{background:#fff;border-radius:22px;padding:22px;box-shadow:0 2px 0 var(--line),0 6px 18px rgba(30,80,130,.07);margin-bottom:16px}
-.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
-.big{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;background:#fff;border-radius:22px;padding:22px;font-size:19px;border:3px solid transparent;box-shadow:0 3px 0 var(--line),0 8px 20px rgba(30,80,130,.08);min-height:150px}
+h2{font-size:1.625rem;margin:0.25rem 0 0.75rem}
+h3{font-size:1.3125rem;margin:0.25rem 0 0.625rem}
+#app{max-width:67.5rem;margin:0 auto;padding:0.875rem 1.125rem 3.75rem}
+.top{display:flex;align-items:center;gap:0.625rem;margin-bottom:0.875rem;min-height:3.375rem;flex-wrap:wrap}
+.top h1{font-size:1.5625rem;margin:0;flex:1;min-width:10rem}
+.back{background:#fff;border:2px solid var(--line);border-radius:0.875rem;padding:0.625rem 1rem;font-size:1.125rem;font-weight:700}
+.chip{background:#fff;border-radius:62.4375rem;padding:0.5rem 0.875rem;border:2px solid var(--line);font-size:1.0625rem;display:inline-flex;gap:0.375rem;align-items:center;white-space:nowrap}
+.card{background:#fff;border-radius:1.375rem;padding:1.375rem;box-shadow:0 2px 0 var(--line),0 0.375rem 1.125rem rgba(30,80,130,.07);margin-bottom:1rem}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr))}
+.big{display:flex;flex-direction:column;align-items:flex-start;gap:0.375rem;text-align:left;background:#fff;border-radius:1.375rem;padding:1.375rem;font-size:1.1875rem;border:3px solid transparent;box-shadow:0 3px 0 var(--line),0 0.5rem 1.25rem rgba(30,80,130,.08);min-height:9.375rem}
 .big:active,.btn:active,.opt:active,.word:active{transform:translateY(2px)}
-.big .ic{font-size:46px;line-height:1}
-.big b{font-family:Fredoka,Andika,system-ui,sans-serif;font-size:24px;font-weight:600}
-.big small{color:var(--muted);font-size:16px;line-height:1.35}
+.big .ic{font-size:2.875rem;line-height:1}
+.big b{font-family:Fredoka,Andika,system-ui,sans-serif;font-size:1.5rem;font-weight:600}
+.big small{color:var(--muted);font-size:1rem;line-height:1.35}
 .big.sel{border-color:var(--blue);background:var(--blue-l)}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;border-radius:16px;padding:13px 22px;font-size:20px;font-weight:700;box-shadow:0 3px 0 var(--blue-d);min-height:56px}
+.btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--blue);color:#fff;border-radius:1rem;padding:0.8125rem 1.375rem;font-size:1.25rem;font-weight:700;box-shadow:0 3px 0 var(--blue-d);min-height:3.5rem}
 .btn.sec{background:#fff;color:var(--blue-d);border:2px solid var(--blue);box-shadow:none}
 .btn.green{background:var(--green);box-shadow:0 3px 0 var(--green-d)}
 .btn.orange{background:var(--orange);box-shadow:0 3px 0 #b86f17}
 .btn.red{background:var(--red);box-shadow:0 3px 0 #9c2f2f}
-.btn.small{min-height:44px;padding:8px 14px;font-size:17px}
+.btn.small{min-height:2.75rem;padding:0.5rem 0.875rem;font-size:1.0625rem}
 .btn:disabled{opacity:.4}
-.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.row{display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center}
 .sp{flex:1}
-.mt{margin-top:16px}
+.mt{margin-top:1rem}
 .muted{color:var(--muted)}
-.instr{font-size:21px;line-height:1.5;margin:0 0 14px}
-.hero{display:flex;align-items:center;gap:18px;margin:10px 0 22px}
-.hero h1{font-size:44px;margin:0;color:var(--blue-d)}
-.hero p{margin:4px 0 0;font-size:19px;color:var(--muted)}
-.steps{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
-.st{padding:8px 12px;border-radius:12px;background:#fff;border:2px solid var(--line);font-size:15px;color:var(--muted)}
+.instr{font-size:1.3125rem;line-height:1.5;margin:0 0 0.875rem}
+.hero{display:flex;align-items:center;gap:1.125rem;margin:0.625rem 0 1.375rem}
+.hero h1{font-size:2.75rem;margin:0;color:var(--blue-d)}
+.hero p{margin:0.25rem 0 0;font-size:1.1875rem;color:var(--muted)}
+.steps{display:flex;gap:0.375rem;flex-wrap:wrap;margin-bottom:0.875rem}
+.st{padding:0.5rem 0.75rem;border-radius:0.75rem;background:#fff;border:2px solid var(--line);font-size:0.9375rem;color:var(--muted)}
 .st.cur{background:var(--blue);color:#fff;border-color:var(--blue);font-weight:700}
 .st.done{background:var(--green-l);border-color:#a6dcb9;color:var(--green-d)}
-.seg{display:inline-flex;background:#fff;border:2px solid var(--line);border-radius:16px;padding:4px;gap:4px;flex-wrap:wrap}
-.seg button{padding:9px 14px;border-radius:12px;font-size:17px;font-weight:700;color:var(--muted)}
+.seg{display:inline-flex;background:#fff;border:2px solid var(--line);border-radius:1rem;padding:0.25rem;gap:0.25rem;flex-wrap:wrap}
+.seg button{padding:0.5625rem 0.875rem;border-radius:0.75rem;font-size:1.0625rem;font-weight:700;color:var(--muted)}
 .seg button.on{background:var(--blue);color:#fff}
 /* Lesetext */
-.text{font-size:calc(26px * var(--rs,1));line-height:calc(1.95 * var(--lh,1));margin:6px 0}
+.text{font-size:calc(1.625rem * var(--rs,1));line-height:calc(1.95 * var(--lh,1));margin:0.375rem 0}
 .text,.ltext,.blitz,.tsent{font-family:var(--rf,'Andika'),'Andika',sans-serif;letter-spacing:var(--ls,.01em)}
-.lv1 .text{font-size:calc(30px * var(--rs,1));line-height:calc(2.1 * var(--lh,1))}
-.cls .text{font-size:calc(38px * var(--rs,1));line-height:calc(1.8 * var(--lh,1))}
-.cls .instr,.cls .opt{font-size:26px}
-.w{border-radius:8px;padding:1px 2px;transition:background .12s;white-space:nowrap}
+.lv1 .text{font-size:calc(1.875rem * var(--rs,1));line-height:calc(2.1 * var(--lh,1))}
+.cls .text{font-size:calc(2.375rem * var(--rs,1));line-height:calc(1.8 * var(--lh,1))}
+.cls .instr,.cls .opt{font-size:1.625rem}
+.w{border-radius:0.5rem;padding:1px 2px;transition:background .12s;white-space:nowrap}
 .w.on{background:var(--yellow);box-shadow:0 0 0 3px var(--yellow)}
 .w.err{background:var(--red-l);color:var(--red);text-decoration:underline wavy var(--red)}
 .w.tap{cursor:pointer}
 .w.sig{background:#d3e9ff;color:var(--blue-d);font-weight:700}
-.sent{border-radius:8px;padding:3px 2px;cursor:pointer;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.sent{border-radius:0.5rem;padding:3px 2px;cursor:pointer;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .sent.mk{background:var(--yellow)}
 .sent.ok{background:#bfeccf}
 .sent.miss{box-shadow:0 0 0 3px var(--orange);background:#fff1dd}
 .sent.bad{background:var(--red-l);text-decoration:line-through}
-.textbox{background:#fffdf7;border:2px solid #f0e6c8;border-radius:18px;padding:16px 20px}
-.leit{background:var(--blue-l);border-radius:16px;padding:12px 18px;margin-bottom:14px;font-size:20px}
-.leit ol{margin:6px 0 0;padding-left:26px}
+.textbox{background:#fffdf7;border:2px solid #f0e6c8;border-radius:1.125rem;padding:1rem 1.25rem}
+.leit{background:var(--blue-l);border-radius:1rem;padding:0.75rem 1.125rem;margin-bottom:0.875rem;font-size:1.25rem}
+.leit ol{margin:0.375rem 0 0;padding-left:1.625rem}
 /* Antworten */
-.opt{display:block;width:100%;text-align:left;background:#fff;border:3px solid var(--line);border-radius:16px;padding:15px 18px;font-size:21px;margin:10px 0}
+.opt{display:block;width:100%;text-align:left;background:#fff;border:3px solid var(--line);border-radius:1rem;padding:0.9375rem 1.125rem;font-size:1.3125rem;margin:0.625rem 0}
 .opt.sel{border-color:var(--blue);background:var(--blue-l)}
 .opt.ok{border-color:var(--green);background:var(--green-l)}
 .opt.bad{border-color:var(--red);background:var(--red-l)}
-.q{font-size:23px;font-weight:700;margin:0 0 8px;line-height:1.4}
-.cls .q{font-size:30px}
-.fb{border-radius:16px;padding:14px 18px;font-size:20px;margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.q{font-size:1.4375rem;font-weight:700;margin:0 0 0.5rem;line-height:1.4}
+.cls .q{font-size:1.875rem}
+.fb{border-radius:1rem;padding:0.875rem 1.125rem;font-size:1.25rem;margin-top:0.75rem;display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap}
 .fb.ok{background:var(--green-l);color:var(--green-d)}
 .fb.bad{background:var(--red-l);color:#9c2f2f}
 .fb.info{background:var(--yellow-l);color:#7a5a00}
-.tip{background:var(--yellow-l);border:2px dashed #e8c95a;border-radius:16px;padding:12px 16px;margin-bottom:14px;font-size:18px}
+.tip{background:var(--yellow-l);border:2px dashed #e8c95a;border-radius:1rem;padding:0.75rem 1rem;margin-bottom:0.875rem;font-size:1.125rem}
 .tip b{font-family:Fredoka}
 /* Stolperwörter */
-.words{display:flex;flex-wrap:wrap;gap:12px}
-.word{background:#fff;border:3px solid var(--line);border-radius:16px;padding:12px 18px;font-size:30px;font-weight:700}
+.words{display:flex;flex-wrap:wrap;gap:0.75rem}
+.word{background:#fff;border:3px solid var(--line);border-radius:1rem;padding:0.75rem 1.125rem;font-size:1.875rem;font-weight:700}
 .s0{color:#1f5fa3}.s1{color:#c23a3a}
-.blitz{font-size:64px;font-weight:700;text-align:center;padding:30px 10px;min-height:150px;background:var(--yellow-l);border-radius:20px;margin:14px 0}
+.blitz{font-size:4rem;font-weight:700;text-align:center;padding:1.875rem 0.625rem;min-height:9.375rem;background:var(--yellow-l);border-radius:1.25rem;margin:0.875rem 0}
 /* Netz & Kette */
-.netz{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch}
-.netz .center{grid-column:1/-1;justify-self:center;background:var(--blue);color:#fff;border-radius:999px;padding:14px 30px;font-family:Fredoka,Andika,system-ui,sans-serif;font-size:26px}
-.branch{background:#fff;border:3px dashed var(--line);border-radius:18px;padding:12px 14px;text-align:left;min-height:92px}
+.netz{display:grid;grid-template-columns:1fr 1fr;gap:0.875rem;align-items:stretch}
+.netz .center{grid-column:1/-1;justify-self:center;background:var(--blue);color:#fff;border-radius:62.4375rem;padding:0.875rem 1.875rem;font-family:Fredoka,Andika,system-ui,sans-serif;font-size:1.625rem}
+.branch{background:#fff;border:3px dashed var(--line);border-radius:1.125rem;padding:0.75rem 0.875rem;text-align:left;min-height:5.75rem}
 .branch.act{border-color:var(--blue);border-style:solid;background:var(--blue-l)}
 .branch.ok{border-color:var(--green);border-style:solid;background:var(--green-l)}
 .branch.bad{border-color:var(--red);border-style:solid;background:var(--red-l)}
-.branch .bn{font-family:Fredoka,Andika,system-ui,sans-serif;font-size:19px;color:var(--muted)}
-.branch .bv{font-size:21px;font-weight:700;margin-top:4px}
-.kette{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
-.glied{background:#fff;border:3px solid var(--line);border-radius:16px;padding:10px 14px;font-size:19px;min-width:120px;max-width:220px;min-height:70px;display:flex;align-items:center;gap:8px;text-align:left}
-.glied .nr{background:var(--blue);color:#fff;border-radius:999px;min-width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;font-weight:700}
+.branch .bn{font-family:Fredoka,Andika,system-ui,sans-serif;font-size:1.1875rem;color:var(--muted)}
+.branch .bv{font-size:1.3125rem;font-weight:700;margin-top:0.25rem}
+.kette{display:flex;flex-wrap:wrap;align-items:center;gap:0.5rem}
+.glied{background:#fff;border:3px solid var(--line);border-radius:1rem;padding:0.625rem 0.875rem;font-size:1.1875rem;min-width:7.5rem;max-width:13.75rem;min-height:4.375rem;display:flex;align-items:center;gap:0.5rem;text-align:left}
+.glied .nr{background:var(--blue);color:#fff;border-radius:62.4375rem;min-width:1.875rem;height:1.875rem;display:inline-flex;align-items:center;justify-content:center;font-weight:700}
 .glied.empty{border-style:dashed;color:var(--muted)}
 .glied.ok{border-color:var(--green);background:var(--green-l)}
 .glied.bad{border-color:var(--red);background:var(--red-l)}
-.arrow{font-size:26px;color:var(--muted)}
-.bank{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.arrow{font-size:1.625rem;color:var(--muted)}
+.bank{display:flex;flex-wrap:wrap;gap:0.625rem;margin-top:0.875rem}
 .bank .opt{width:auto;margin:0}
 /* Überflug */
 .flyzone{position:relative;overflow:hidden}
-.plane{position:absolute;font-size:38px;left:0;top:0;animation:zig 7s ease-in-out forwards;pointer-events:none;z-index:2}
+.plane{position:absolute;font-size:2.375rem;left:0;top:0;animation:zig 7s ease-in-out forwards;pointer-events:none;z-index:2}
 @keyframes zig{0%{left:0;top:0}16%{left:88%;top:14%}33%{left:2%;top:32%}50%{left:88%;top:50%}66%{left:2%;top:68%}83%{left:88%;top:84%}100%{left:44%;top:92%;opacity:.2}}
 /* Belohnung */
-.stamps{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
-.stamp{border:2px solid var(--line);border-radius:16px;padding:12px;background:#fff}
-.stamp .ic{font-size:30px}
-.dots{display:flex;gap:6px;margin-top:6px;font-size:15px}
-.dot{padding:3px 8px;border-radius:999px;background:#eef2f6;color:var(--muted)}
+.stamps{display:grid;grid-template-columns:repeat(auto-fill,minmax(12.5rem,1fr));gap:0.75rem}
+.stamp{border:2px solid var(--line);border-radius:1rem;padding:0.75rem;background:#fff}
+.stamp .ic{font-size:1.875rem}
+.dots{display:flex;gap:0.375rem;margin-top:0.375rem;font-size:0.9375rem}
+.dot{padding:3px 0.5rem;border-radius:62.4375rem;background:#eef2f6;color:var(--muted)}
 .dot.on{background:var(--green-l);color:var(--green-d);font-weight:700}
-.badge{display:flex;gap:12px;align-items:center;border-radius:16px;padding:12px;background:#fff;border:2px solid var(--line)}
-.badge .ic{font-size:36px}
+.badge{display:flex;gap:0.75rem;align-items:center;border-radius:1rem;padding:0.75rem;background:#fff;border:2px solid var(--line)}
+.badge .ic{font-size:2.25rem}
 .badge.lock{opacity:.45;filter:grayscale(1)}
-.conf{position:fixed;top:-50px;font-size:32px;pointer-events:none;animation:fall 2.6s linear forwards;z-index:50}
+.conf{position:fixed;top:-50px;font-size:2rem;pointer-events:none;animation:fall 2.6s linear forwards;z-index:50}
 @keyframes fall{to{transform:translateY(115vh) rotate(380deg)}}
-.bigstat{font-family:Fredoka,Andika,system-ui,sans-serif;font-size:52px;color:var(--blue-d);line-height:1}
-.timer{font-family:Fredoka,Andika,system-ui,sans-serif;font-size:40px;color:var(--blue-d);min-width:110px}
+.bigstat{font-family:Fredoka,Andika,system-ui,sans-serif;font-size:3.25rem;color:var(--blue-d);line-height:1}
+.timer{font-family:Fredoka,Andika,system-ui,sans-serif;font-size:2.5rem;color:var(--blue-d);min-width:6.875rem}
 /* Modal */
-.modal{position:fixed;inset:0;background:rgba(20,40,60,.45);display:flex;align-items:flex-start;justify-content:center;padding:30px 14px;z-index:40;overflow:auto}
-.modal .card{max-width:900px;width:100%}
+.modal{position:fixed;inset:0;background:rgba(20,40,60,.45);display:flex;align-items:flex-start;justify-content:center;padding:1.875rem 0.875rem;z-index:40;overflow:auto}
+.modal .card{max-width:56.25rem;width:100%}
 /* Lehrkraft */
-table{border-collapse:collapse;width:100%;font-size:17px}
-th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
-th{font-family:Fredoka,Andika,system-ui,sans-serif;font-weight:600;color:var(--muted);font-size:15px}
+table{border-collapse:collapse;width:100%;font-size:1.0625rem}
+th,td{text-align:left;padding:0.625rem 0.5rem;border-bottom:1px solid var(--line);vertical-align:middle}
+th{font-family:Fredoka,Andika,system-ui,sans-serif;font-weight:600;color:var(--muted);font-size:0.9375rem}
 tr.clk{cursor:pointer}
 tr.clk:hover{background:var(--blue-l)}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
-.pin{display:grid;grid-template-columns:repeat(3,84px);gap:12px;justify-content:center;margin:16px 0}
-.pin button{height:76px;border-radius:18px;background:#fff;border:2px solid var(--line);font-size:30px;font-weight:700}
-.pindots{display:flex;gap:14px;justify-content:center;font-size:34px;color:var(--blue)}
+.tabs{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.875rem}
+.pin{display:grid;grid-template-columns:repeat(3,5.25rem);gap:0.75rem;justify-content:center;margin:1rem 0}
+.pin button{height:4.75rem;border-radius:1.125rem;background:#fff;border:2px solid var(--line);font-size:1.875rem;font-weight:700}
+.pindots{display:flex;gap:0.875rem;justify-content:center;font-size:2.125rem;color:var(--blue)}
 .shake{animation:sh .4s}
-@keyframes sh{25%{transform:translateX(-10px)}75%{transform:translateX(10px)}}
-input[type=text],input[type=tel],textarea{border:2px solid var(--line);border-radius:14px;padding:12px 14px;font-size:19px;width:100%;background:#fff}
-textarea{min-height:90px}
-.kidrow{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
-.kidrow .nm{flex:1;font-size:20px;font-weight:700;min-width:120px}
-.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 20px;border-radius:14px;font-size:18px;z-index:60}
-.w.gl{text-decoration:underline dotted #7a5cc7;text-decoration-thickness:3px;text-underline-offset:6px;cursor:pointer}
-.gcard{max-width:520px!important;text-align:center}
-.gic{font-size:80px;line-height:1.1}
-.gw{font-family:Fredoka,Andika,sans-serif;font-size:40px;font-weight:600;color:var(--purple);margin:6px 0}
-.ge{font-size:24px;line-height:1.5;margin:8px 0 18px}
-.lab{display:block;font-family:Fredoka,Andika,sans-serif;font-size:18px;margin:16px 0 6px}
-.qbox{border:2px solid var(--line);border-radius:16px;padding:4px 14px 14px;margin-top:10px}
-.qgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-top:8px}
+@keyframes sh{25%{transform:translateX(-10px)}75%{transform:translateX(0.625rem)}}
+input[type=text],input[type=tel],textarea{border:2px solid var(--line);border-radius:0.875rem;padding:0.75rem 0.875rem;font-size:1.1875rem;width:100%;background:#fff}
+textarea{min-height:5.625rem}
+.kidrow{display:flex;align-items:center;gap:0.625rem;padding:0.625rem 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.kidrow .nm{flex:1;font-size:1.25rem;font-weight:700;min-width:7.5rem}
+.toast{position:fixed;left:50%;bottom:1.5rem;transform:translateX(-50%);background:var(--ink);color:#fff;padding:0.75rem 1.25rem;border-radius:0.875rem;font-size:1.125rem;z-index:60}
+.w.gl{text-decoration:underline dotted #7a5cc7;text-decoration-thickness:3px;text-underline-offset:0.375rem;cursor:pointer}
+.gcard{max-width:32.5rem!important;text-align:center}
+.gic{font-size:5rem;line-height:1.1}
+.gw{font-family:Fredoka,Andika,sans-serif;font-size:2.5rem;font-weight:600;color:var(--purple);margin:0.375rem 0}
+.ge{font-size:1.5rem;line-height:1.5;margin:0.5rem 0 1.125rem}
+.lab{display:block;font-family:Fredoka,Andika,sans-serif;font-size:1.125rem;margin:1rem 0 0.375rem}
+.qbox{border:2px solid var(--line);border-radius:1rem;padding:0.25rem 0.875rem 0.875rem;margin-top:0.625rem}
+.qgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(12.5rem,1fr));gap:0.5rem;margin-top:0.5rem}
 /* Silbenbögen, Lesezeile */
-.sb{display:inline-block;border-bottom:2.5px solid #7aa7d8;border-radius:0 0 50% 50% / 0 0 9px 9px;padding:0 1px 1px;margin:0 1px;line-height:1.25}
+.sb{display:inline-block;border-bottom:2.5px solid #7aa7d8;border-radius:0 0 50% 50% / 0 0 0.5625rem 0.5625rem;padding:0 1px 1px;margin:0 1px;line-height:1.25}
 .w.rdim{opacity:.22}
-.w.rcur{background:#fff6c2;box-shadow:0 0 0 5px #fff6c2}
-.rulerctl{position:fixed;right:16px;bottom:24px;z-index:30;display:flex;flex-direction:column;align-items:center;gap:6px;background:#fff;border:2px solid var(--line);border-radius:18px;padding:8px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
-.rulerctl button{width:64px;height:58px;border-radius:14px;background:var(--blue);color:#fff;font-size:26px}
-.rulerctl span{font-size:13px;color:var(--muted)}
+.w.rcur{background:#fff6c2;box-shadow:0 0 0 0.3125rem #fff6c2}
+.rulerctl{position:fixed;right:1rem;bottom:1.5rem;z-index:30;display:flex;flex-direction:column;align-items:center;gap:0.375rem;background:#fff;border:2px solid var(--line);border-radius:1.125rem;padding:0.5rem;box-shadow:0 0.375rem 1.125rem rgba(0,0,0,.12)}
+.rulerctl button{width:4rem;height:3.625rem;border-radius:0.875rem;background:var(--blue);color:#fff;font-size:1.625rem}
+.rulerctl span{font-size:0.8125rem;color:var(--muted)}
 /* Training */
 .tcard{background:linear-gradient(135deg,#e8f6ee,#fff);border:3px solid #a6dcb9}
-.wstrip{display:flex;gap:8px;margin:6px 0 10px}
-.wday{flex:1;max-width:90px;background:#fff;border:2px solid var(--line);border-radius:14px;padding:6px;text-align:center;display:flex;flex-direction:column;font-size:22px}
-.wday b{font-size:15px;font-family:Fredoka,Andika,sans-serif;color:var(--muted)}
+.wstrip{display:flex;gap:0.5rem;margin:0.375rem 0 0.625rem}
+.wday{flex:1;max-width:5.625rem;background:#fff;border:2px solid var(--line);border-radius:0.875rem;padding:0.375rem;text-align:center;display:flex;flex-direction:column;font-size:1.375rem}
+.wday b{font-size:0.9375rem;font-family:Fredoka,Andika,sans-serif;color:var(--muted)}
 .wday.today{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-l)}
 .wday.full{background:var(--green-l);border-color:#a6dcb9}
-.tsteps{margin:4px 0 12px;padding-left:4px;list-style:none;font-size:19px}
-.tsteps li{padding:6px 0}
+.tsteps{margin:0.25rem 0 0.75rem;padding-left:0.25rem;list-style:none;font-size:1.1875rem}
+.tsteps li{padding:0.375rem 0}
 .tsteps li.done{color:var(--green-d)}
-.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:10px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:0.375rem;margin-top:0.625rem}
 .cal .ch{text-align:center;font-family:Fredoka,Andika,sans-serif;color:var(--muted)}
-.cd{aspect-ratio:1;border-radius:12px;background:#fff;border:2px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:15px}
-.cd b{font-size:22px;min-height:26px}
+.cd{aspect-ratio:1;border-radius:0.75rem;background:#fff;border:2px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:0.9375rem}
+.cd b{font-size:1.375rem;min-height:1.625rem}
 .cd.we{background:#f3f5f8}
 .cd.today{border-color:var(--blue)}
 .cd.full{background:var(--green-l);border-color:#a6dcb9}
 .cd.part{background:var(--yellow-l)}
-.sugg{display:inline-block;border-radius:999px;padding:2px 10px;font-size:14px;font-weight:700}
+.sugg{display:inline-block;border-radius:62.4375rem;padding:2px 0.625rem;font-size:0.875rem;font-weight:700}
 .sugg.up{background:var(--green-l);color:var(--green-d)}
 .sugg.down{background:#fff1dd;color:#9a5a00}
 /* Lese-Check */
-.tsent{font-size:calc(32px * var(--rs,1));line-height:1.5;text-align:center;background:var(--yellow-l);border-radius:20px;padding:34px 20px;margin:12px 0 22px;min-height:150px;display:flex;align-items:center;justify-content:center}
-.tbtn{min-width:220px;min-height:84px;border-radius:20px;font-size:26px;font-weight:700;color:#fff;display:inline-flex;align-items:center;justify-content:center}
-.tbtn.yes{background:var(--green);box-shadow:0 4px 0 var(--green-d)}
-.tbtn.no{background:var(--red);box-shadow:0 4px 0 #9c2f2f}
+.tsent{font-size:calc(2rem * var(--rs,1));line-height:1.5;text-align:center;background:var(--yellow-l);border-radius:1.25rem;padding:2.125rem 1.25rem;margin:0.75rem 0 1.375rem;min-height:9.375rem;display:flex;align-items:center;justify-content:center}
+.tbtn{min-width:13.75rem;min-height:5.25rem;border-radius:1.25rem;font-size:1.625rem;font-weight:700;color:#fff;display:inline-flex;align-items:center;justify-content:center}
+.tbtn.yes{background:var(--green);box-shadow:0 0.25rem 0 var(--green-d)}
+.tbtn.no{background:var(--red);box-shadow:0 0.25rem 0 #9c2f2f}
 .tbtn:active{transform:translateY(3px)}
-.tbar{height:14px;background:#eef2f6;border-radius:999px;overflow:hidden}
+.tbar{height:0.875rem;background:#eef2f6;border-radius:62.4375rem;overflow:hidden}
 .tbar div{height:100%;background:var(--blue);transition:width .25s linear}
 .w.lhintS{background:#fff2b3}
 /* Erweiterung 4 */
-.illu{margin:0 0 14px;border-radius:22px;overflow:hidden;box-shadow:0 2px 0 var(--line)}
-.illu svg{display:block;width:100%;height:auto;max-height:240px}
+.illu{margin:0 0 0.875rem;border-radius:1.375rem;overflow:hidden;box-shadow:0 2px 0 var(--line)}
+.illu svg{display:block;width:100%;height:auto;max-height:15rem}
 .fcard{background:linear-gradient(135deg,#e3f1fb,#fff);border:3px solid #a9cdef}
 .wcard{background:linear-gradient(135deg,#fff6d1,#fff);border:3px solid #f0d77a}
 .scard{background:linear-gradient(135deg,#fde9da,#fff);border:3px solid #f3b98a}
-.pbar{height:12px;background:#eef2f6;border-radius:999px;overflow:hidden;margin-top:6px}
+.pbar{height:0.75rem;background:#eef2f6;border-radius:62.4375rem;overflow:hidden;margin-top:0.375rem}
 .pbar div{height:100%;background:var(--green)}
-.fmap{width:100%;max-width:640px;display:block;margin:0 auto}
+.fmap{width:100%;max-width:40rem;display:block;margin:0 auto}
 .big.lockc{opacity:.5}
-.postcard{max-width:700px;background:#fffdf5;border:3px dashed #e8c95a}
-.stars button{font-size:40px;padding:2px 6px}
-.wtxt{min-height:230px;font-size:calc(22px * var(--rs,1));line-height:1.7;font-family:var(--rf,'Andika'),'Andika',sans-serif;margin-top:12px;background:repeating-linear-gradient(#fff 0 36px,#e9eef4 36px 37px)}
-.wbox{border:2px solid var(--line);border-radius:14px;padding:8px 12px;margin:6px 0;background:#fff}
+.postcard{max-width:43.75rem;background:#fffdf5;border:3px dashed #e8c95a}
+.stars button{font-size:2.5rem;padding:2px 0.375rem}
+.wtxt{min-height:14.375rem;font-size:calc(1.375rem * var(--rs,1));line-height:1.7;font-family:var(--rf,'Andika'),'Andika',sans-serif;margin-top:0.75rem;background:repeating-linear-gradient(#fff 0 2.25rem,#e9eef4 2.25rem 2.3125rem)}
+.wbox{border:2px solid var(--line);border-radius:0.875rem;padding:0.5rem 0.75rem;margin:0.375rem 0;background:#fff}
 .wbox summary{cursor:pointer;font-weight:700}
 .w.mkw{cursor:pointer}
 .w.mksel{background:var(--yellow);box-shadow:0 0 0 3px var(--yellow)}
@@ -219,33 +219,33 @@ textarea{min-height:90px}
 .report h1,.report h2{font-family:Fredoka,Andika,sans-serif}
 @media print{ body{background:#fff} .noprint,.top,.toast,.conf,.rulerctl{display:none!important} #app{max-width:none;padding:0} .card{box-shadow:none;border:none} }
 /* Challenge */
-.track{display:flex;flex-direction:column;gap:10px;margin:10px 0 16px}
-.lane{display:flex;align-items:center;gap:10px;opacity:.75}
+.track{display:flex;flex-direction:column;gap:0.625rem;margin:0.625rem 0 1rem}
+.lane{display:flex;align-items:center;gap:0.625rem;opacity:.75}
 .lane.cur{opacity:1}
-.ln{min-width:80px;font-family:Fredoka,Andika,sans-serif;font-size:17px}
-.road{position:relative;flex:1;height:52px;border-radius:14px;background:repeating-linear-gradient(90deg,#59646f 0 30px,#4b555f 30px 60px);box-shadow:inset 0 -4px 0 #3b434b;overflow:hidden}
-.road::after{content:"";position:absolute;left:0;right:0;top:24px;border-top:3px dashed #ffffffaa}
-.lane.cur .road{outline:4px solid var(--yellow)}
-.car{position:absolute;top:6px;font-size:34px;transform:scaleX(-1);z-index:2}
-.car.ghost{opacity:.7;top:4px;transform:none;z-index:1}
-.flag{position:absolute;right:6px;top:8px;font-size:30px;z-index:0}
-.lt2{min-width:90px;font-weight:700;font-size:18px}
+.ln{min-width:5rem;font-family:Fredoka,Andika,sans-serif;font-size:1.0625rem}
+.road{position:relative;flex:1;height:3.25rem;border-radius:0.875rem;background:repeating-linear-gradient(90deg,#59646f 0 1.875rem,#4b555f 1.875rem 3.75rem);box-shadow:inset 0 -4px 0 #3b434b;overflow:hidden}
+.road::after{content:"";position:absolute;left:0;right:0;top:1.5rem;border-top:3px dashed #ffffffaa}
+.lane.cur .road{outline:0.25rem solid var(--yellow)}
+.car{position:absolute;top:0.375rem;font-size:2.125rem;transform:scaleX(-1);z-index:2}
+.car.ghost{opacity:.7;top:0.25rem;transform:none;z-index:1}
+.flag{position:absolute;right:0.375rem;top:0.5rem;font-size:1.875rem;z-index:0}
+.lt2{min-width:5.625rem;font-weight:700;font-size:1.125rem}
 /* Aufnahme */
-.recdot{width:20px;height:20px;border-radius:50%;background:var(--red);animation:pulse 1s infinite}
+.recdot{width:1.25rem;height:1.25rem;border-radius:50%;background:var(--red);animation:pulse 1s infinite}
 @keyframes pulse{50%{opacity:.3}}
-.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0}
-.cbox{background:var(--blue-l);border-radius:16px;padding:12px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin:0.5rem 0}
+.cbox{background:var(--blue-l);border-radius:1rem;padding:0.75rem}
 /* Theater */
-.rdot{display:inline-block;width:14px;height:14px;border-radius:50%;margin-right:6px;vertical-align:middle}
-.line{border-left:8px solid #ccc;border-radius:12px;padding:10px 14px;margin:10px 0;background:#fff;opacity:.55;transition:all .2s}
-.line.cur{opacity:1;background:var(--yellow-l);box-shadow:0 4px 14px rgba(0,0,0,.08);transform:scale(1.01)}
+.rdot{display:inline-block;width:0.875rem;height:0.875rem;border-radius:50%;margin-right:0.375rem;vertical-align:middle}
+.line{border-left:0.5rem solid #ccc;border-radius:0.75rem;padding:0.625rem 0.875rem;margin:0.625rem 0;background:#fff;opacity:.55;transition:all .2s}
+.line.cur{opacity:1;background:var(--yellow-l);box-shadow:0 0.25rem 0.875rem rgba(0,0,0,.08);transform:scale(1.01)}
 .line.past{opacity:.4}
-.lrole{font-family:Fredoka,Andika,sans-serif;font-size:19px;font-weight:600}
+.lrole{font-family:Fredoka,Andika,sans-serif;font-size:1.1875rem;font-weight:600}
 .lhint{font-family:Andika,sans-serif;font-style:italic;font-weight:400;color:var(--muted)}
-.ltext{font-size:calc(24px * var(--rs,1));line-height:calc(1.6 * var(--lh,1));margin-top:4px}
-.cls .ltext{font-size:32px}
+.ltext{font-size:calc(1.5rem * var(--rs,1));line-height:calc(1.6 * var(--lh,1));margin-top:0.25rem}
+.cls .ltext{font-size:2rem}
 /* Satz-Blitz */
-.blitz.sblitz{font-size:38px;line-height:1.5;padding:40px 24px}
+.blitz.sblitz{font-size:2.375rem;line-height:1.5;padding:2.5rem 1.5rem}
 /* Lügentext */
 .w.lt{cursor:pointer}
 .w.lfound{background:var(--green-l);color:var(--green-d);font-weight:700}
@@ -253,31 +253,44 @@ textarea{min-height:90px}
 .w.lrev{background:#fff1dd;color:#9a5a00;font-weight:700}
 .w.lwrong{background:var(--red-l);animation:sh .4s}
 /* Lesespur */
-.trailmap{display:grid;grid-template-columns:repeat(9,1fr);gap:8px;margin-bottom:12px}
-.stone{aspect-ratio:1;border-radius:50%;background:#e9e2d2;border:3px solid #cdbf9f;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;font-size:22px}
-.stone .sn{font-family:Fredoka,Andika,sans-serif;font-size:15px;color:#7a6a58}
-.stone .sl{font-family:Fredoka,Andika,sans-serif;font-size:24px;color:var(--green-d)}
+.trailmap{display:grid;grid-template-columns:repeat(9,1fr);gap:0.5rem;margin-bottom:0.75rem}
+.stone{aspect-ratio:1;border-radius:50%;background:#e9e2d2;border:3px solid #cdbf9f;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;font-size:1.375rem}
+.stone .sn{font-family:Fredoka,Andika,sans-serif;font-size:0.9375rem;color:#7a6a58}
+.stone .sl{font-family:Fredoka,Andika,sans-serif;font-size:1.5rem;color:var(--green-d)}
 .stone.v{background:var(--green-l);border-color:var(--green)}
 .stone.cur{background:var(--yellow);border-color:var(--orange)}
 .stone.dead{background:var(--red-l);border-color:var(--red)}
-.word{display:flex;gap:8px;justify-content:center;margin:6px 0 14px}
-.wl{width:44px;height:52px;border-bottom:4px solid var(--line);font-family:Fredoka,Andika,sans-serif;font-size:32px;text-align:center;color:var(--muted)}
+.word{display:flex;gap:0.5rem;justify-content:center;margin:0.375rem 0 0.875rem}
+.wl{width:2.75rem;height:3.25rem;border-bottom:0.25rem solid var(--line);font-family:Fredoka,Andika,sans-serif;font-size:2rem;text-align:center;color:var(--muted)}
 .wl.on{color:var(--green-d);border-color:var(--green)}
 /* DaZ */
 .art-der{box-shadow:inset 0 -5px 0 #8fc0f0}
 .art-die{box-shadow:inset 0 -5px 0 #f2a3a3}
 .art-das{box-shadow:inset 0 -5px 0 #9fdcb4}
-.artl{border-radius:8px;padding:0 6px;font-size:.75em;font-weight:700}
+.artl{border-radius:0.5rem;padding:0 0.375rem;font-size:.75em;font-weight:700}
 .artl.art-der{background:#d6e9fb;color:#1f5fa3;box-shadow:none}
 .artl.art-die{background:#fbe0e0;color:#b02e2e;box-shadow:none}
 .artl.art-das{background:#dbf3e3;color:#1f7442;box-shadow:none}
-.dazleg{display:flex;gap:10px;align-items:center;margin-top:10px;font-size:18px;flex-wrap:wrap}
-.dazleg span[class^=art]{padding:2px 12px;border-radius:8px;font-weight:700}
+.dazleg{display:flex;gap:0.625rem;align-items:center;margin-top:0.625rem;font-size:1.125rem;flex-wrap:wrap}
+.dazleg span[class^=art]{padding:2px 0.75rem;border-radius:0.5rem;font-weight:700}
 .dazleg .art-der{background:#d6e9fb}.dazleg .art-die{background:#fbe0e0}.dazleg .art-das{background:#dbf3e3}
-.wemo{font-size:30px;margin-right:6px}
+.wemo{font-size:1.875rem;margin-right:0.375rem}
 .plan{background:linear-gradient(135deg,#fff6d1,#fff);border:3px solid #f0d77a}
-@media (max-width:640px){.trailmap{grid-template-columns:repeat(5,1fr)}.compare{grid-template-columns:1fr}.netz{grid-template-columns:1fr}.hero h1{font-size:34px}.text{font-size:calc(23px * var(--rs,1))}.lv1 .text{font-size:calc(26px * var(--rs,1))}}
+@media (max-width:640px){.trailmap{grid-template-columns:repeat(5,1fr)}.compare{grid-template-columns:1fr}.netz{grid-template-columns:1fr}.hero h1{font-size:2.125rem}.text{font-size:calc(1.4375rem * var(--rs,1))}.lv1 .text{font-size:calc(1.625rem * var(--rs,1))}}
+
+/* ===== iPad first ===== */
+html{font-size:16px;touch-action:manipulation;-webkit-text-size-adjust:100%}
+button,.big,.opt,.w,.chip{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+#app{padding-left:max(1.125rem,env(safe-area-inset-left));padding-right:max(1.125rem,env(safe-area-inset-right));padding-top:max(.875rem,env(safe-area-inset-top));padding-bottom:max(3.75rem,env(safe-area-inset-bottom))}
+textarea,input{-webkit-user-select:text;user-select:text}
 </style>
+<script>
+(function(){ function fit(){ var w=window.innerWidth||1024, h=window.innerHeight||1366;
+  var s=Math.max(0.8,Math.min(1.3,Math.min(w/900,h/760)));
+  if(w<640) s=Math.max(0.8,Math.min(1,w/430));
+  document.documentElement.style.fontSize=(16*s).toFixed(2)+"px"; }
+  fit(); window.addEventListener("resize",fit); window.addEventListener("orientationchange",function(){setTimeout(fit,250);}); })();
+</script>
 </head>
 <body>
 <div id="app"></div>
@@ -1235,7 +1248,7 @@ Was üben wir?
 • Verstehen: Die Kinder lernen Strategien, mit denen sie Geschichten und Sachtexte besser verstehen – zum Beispiel vor dem Lesen Fragen stellen, wichtige Stellen markieren und das Gelesene mit eigenen Worten wiedergeben.
 
 Das Lesetandem
-Oft lesen zwei Kinder zusammen: Ein Kind liest laut („Sportler“), das andere zeigt im Text mit und hilft freundlich, wenn es stockt („Trainer“). Danach wird getauscht. Das können Sie auch zu Hause machen: Lassen Sie Ihr Kind vorlesen, zeigen Sie mit dem Finger mit und loben Sie, was schon gut klappt.
+Oft lesen zwei Kinder zusammen: Ein Kind liest laut („Pilot“), das andere zeigt im Text mit und hilft freundlich, wenn es stockt („Co-Pilot“). Danach wird getauscht. Das können Sie auch zu Hause machen: Lassen Sie Ihr Kind vorlesen, zeigen Sie mit dem Finger mit und loben Sie, was schon gut klappt.
 
 Lesen zu Hause
 Wenn Sie den Link zur App von uns bekommen, kann Ihr Kind zu Hause einen Text der Woche vorlesen. Bitte bestätigen Sie danach in der App, dass Ihr Kind Ihnen vorgelesen hat. Am Ende der Woche kann die App einen kurzen Code erzeugen, den Sie mir schicken.
@@ -1439,7 +1452,7 @@ function vHome(){
   return `<div class="hero">${PLANE}<div><h1>Leseflieger</h1><p>Lesetraining · Leseflüssigkeit und Lesestrategien</p></div></div>
   <div class="grid">
     <button class="big" onclick="pickMode('solo')"><span class="ic">🧒</span><b>Ich übe allein</b><small>Mit Vorlesestimme, Stoppuhr und Lesestrategien</small></button>
-    <button class="big" onclick="pickMode('tandem')"><span class="ic">👫</span><b>Wir üben im Tandem</b><small>Sportler:in liest, Trainer:in zeigt mit und gibt Rückmeldung</small></button>
+    <button class="big" onclick="pickMode('tandem')"><span class="ic">👫</span><b>Wir üben im Tandem</b><small>Pilot:in liest, Co-Pilot:in liest mit und hilft</small></button>
     <button class="big" onclick="pickMode('class')"><span class="ic">🧑‍🏫</span><b>Klasse / Tafel</b><small>Große Schrift zum gemeinsamen Üben und Modellieren</small></button>
     ${DB.home?`<button class="big" onclick="go('homeM',{d:{}})"><span class="ic">🏠</span><b>Lesen zu Hause</b><small>Den Text des Tages den Eltern vorlesen</small></button>`:""}
   </div>
@@ -1456,8 +1469,8 @@ function vKids(){
   const real=DB.kids.filter(k=>!/^Gast( |$)/.test(k.name));
   if(tandem&&real.length<2){
     h+=`<div class="card"><p class="instr">${real.length?"Für ein Tandem braucht ihr zwei Namen.":"Es sind noch keine Namen angelegt."} Tragt eure Vornamen hier ein – sie werden gespeichert und stehen dann auch im Lehrkraft-Bereich.</p>
-    <label class="lab">🏃 Sportler:in (liest zuerst)</label><input type="text" id="qn1" maxlength="30" placeholder="Vorname" value="${real[0]?esc(real[0].name):""}">
-    <label class="lab">🧑‍🏫 Trainer:in</label><input type="text" id="qn2" maxlength="30" placeholder="Vorname">
+    <label class="lab">👩‍✈️ Pilot:in (liest zuerst)</label><input type="text" id="qn1" maxlength="30" placeholder="Vorname" value="${real[0]?esc(real[0].name):""}">
+    <label class="lab">🧭 Co-Pilot:in</label><input type="text" id="qn2" maxlength="30" placeholder="Vorname">
     <div class="row mt"><button class="btn green" onclick="quickTandem()">Los geht's ➜</button><button class="btn sec" onclick="guestTandem()">Als Gast-Tandem üben</button></div></div>`; return h;
   }
   if(!DB.kids.length){
@@ -1465,9 +1478,9 @@ function vKids(){
     <label class="lab">Dein Vorname</label><input type="text" id="qn1" maxlength="30" placeholder="Vorname">
     <div class="row mt"><button class="btn green" onclick="quickSolo()">Los geht's ➜</button><button class="btn sec" onclick="guest()">Als Gast üben</button></div></div>`; return h;
   }
-  if(tandem) h+=`<p class="instr">Tippt zuerst die <b>Sportlerin / den Sportler</b> an, dann die <b>Trainerin / den Trainer</b>. Die Rollen wechselt ihr später.</p>`;
+  if(tandem) h+=`<p class="instr">Tippt zuerst die <b>Pilotin / den Piloten</b> an, dann die <b>Co-Pilotin / den Co-Piloten</b>. Die Rollen wechselt ihr später.</p>`;
   h+=`<div class="grid">`+DB.kids.slice().sort((a,b)=>a.name.localeCompare(b.name,"de")).map(k=>{const pos=st.sel.indexOf(k.id);
-    return `<button class="big ${pos>=0?"sel":""}" style="min-height:96px" onclick="pickKid('${k.id}')"><b>${esc(k.name)}</b><small>${LV[k.level||2].i} ${LV[k.level||2].n} · ⭐ ${DB.stars[k.id]||0}${pos===0?" · Sportler:in":pos===1?" · Trainer:in":""}</small></button>`;}).join("")+`</div>`;
+    return `<button class="big ${pos>=0?"sel":""}" style="min-height:6rem" onclick="pickKid('${k.id}')"><b>${esc(k.name)}</b><small>${LV[k.level||2].i} ${LV[k.level||2].n} · ⭐ ${DB.stars[k.id]||0}${pos===0?" · 👩‍✈️ Pilot:in":pos===1?" · 🧭 Co-Pilot:in":""}</small></button>`;}).join("")+`</div>`;
   if(tandem) h+=`<div class="row mt"><button class="btn green" ${st.sel.length===2?"":"disabled"} onclick="startTandem()">Los geht's ➜</button></div>`;
   return h;
 }
@@ -1487,7 +1500,7 @@ function startTandem(){ st.kid=st.sel[0]; st.kid2=st.sel[1]; st.lv=(kidById(st.k
 function lvSeg(){ return `<div class="seg">${[1,2,3].map(l=>`<button class="${st.lv===l?"on":""}" onclick="st.lv=${l};render()">${LV[l].i} ${LV[l].n}</button>`).join("")}</div>`; }
 function vHub(){
   let h=topBar(st.mode==="class"?"Lesetraining mit der Klasse":"Was möchtest du üben?", st.mode==="class"?"go('home')":"go('kids')");
-  h+=`<div class="row" style="margin-bottom:16px"><span class="fred" style="font-size:20px">Textstufe:</span>${lvSeg()}${dazBtn()}</div>`;
+  h+=`<div class="row" style="margin-bottom:1rem"><span class="fred" style="font-size:1.25rem">Textstufe:</span>${lvSeg()}${dazBtn()}</div>`;
   h+=planCard();
   h+=`<div class="grid">
    <button class="big" onclick="go('list',{area:'f'})"><span class="ic">🎧</span><b>Flüssig lesen</b><small>Lesetraining, Lese-Challenge, Aufnehmen, Lesetheater, Satz-Blitzlesen</small></button>
@@ -1499,12 +1512,12 @@ function vHub(){
 function unitCard(u){
   const id=st.kid; const sp=(id&&DB.stamps[id])||{}; const done=sp[st.area+":"+u.id]; const inPlan=DB.plan&&DB.plan.ids&&DB.plan.ids.includes(u.id);
   const sub=u.type==="custom"?"Eigener Text":u.type==="story"?`Kapitel ${u.nr}`:(u.vis==="netz"?"Sachtext · Merkmale":"Sachtext · Ablauf");
-  return `<button class="big" style="min-height:120px" onclick="openUnit('${u.id}')"><span class="ic">${esc(u.icon||"📄")}</span><b>${esc(u.title)}</b><small>${sub}${inPlan?" · 📅 diese Woche":""}${done?` · ✅ geübt (${LV[done].n})`:""}</small></button>`;
+  return `<button class="big" style="min-height:7.5rem" onclick="openUnit('${u.id}')"><span class="ic">${esc(u.icon||"📄")}</span><b>${esc(u.title)}</b><small>${sub}${inPlan?" · 📅 diese Woche":""}${done?` · ✅ geübt (${LV[done].n})`:""}</small></button>`;
 }
 function vList(){
   let h=topBar(st.area==="f"?"🎧 Flüssig lesen":"🧭 Verstehen","go('hub')");
-  h+=`<div class="row" style="margin-bottom:12px"><span class="fred" style="font-size:20px">Textstufe:</span>${lvSeg()}${dazBtn()}</div>`;
-  if(st.area==="s") h+=`<h2>🐾 Lesespur</h2><div class="grid" style="margin-bottom:16px"><button class="big" style="min-height:110px" onclick="startTrail()"><span class="ic">🐾</span><b>${esc(TRAIL.title)}</b><small>Folge der Spur durch den Wald und finde das Lösungswort${finsOf(st.kid).some(r=>r.u==="trail")?" · ✅":""}</small></button></div>`;
+  h+=`<div class="row" style="margin-bottom:0.75rem"><span class="fred" style="font-size:1.25rem">Textstufe:</span>${lvSeg()}${dazBtn()}</div>`;
+  if(st.area==="s") h+=`<h2>🐾 Lesespur</h2><div class="grid" style="margin-bottom:1rem"><button class="big" style="min-height:6.875rem" onclick="startTrail()"><span class="ic">🐾</span><b>${esc(TRAIL.title)}</b><small>Folge der Spur durch den Wald und finde das Lösungswort${finsOf(st.kid).some(r=>r.u==="trail")?" · ✅":""}</small></button></div>`;
   h+=`<h2>📚 Geschichte: ${STORY_TITLE}</h2><div class="grid">${UNITS.filter(u=>u.type==="story").map(unitCard).join("")}</div>`;
   h+=`<h2 class="mt">🔎 Sachtexte</h2><div class="grid">${UNITS.filter(u=>u.type==="fact").map(unitCard).join("")}</div>`;
   const C=(DB.custom||[]).filter(u=>st.area==="f"||(u.qs&&u.qs.length)||liesOf(u).length>=3);
@@ -1541,7 +1554,7 @@ function vFlowF(){
       h+=`<div class="blitz">${st.d.bs?syl(w):"❓"}</div><p class="instr" style="text-align:center">${st.d.bs?"Lies das Wort schnell!":"Welches Wort war das? Sag es laut!"}</p>
       <div class="row"><button class="btn sec" onclick="st.d.bs=true;render()">👀 Aufdecken</button><button class="btn" onclick="blitz()">⚡ Nächstes Wort</button></div>`;
     } else h+=`<div class="row mt"><button class="btn orange" onclick="st.d.bi=-1;blitz()">⚡ Blitzlesen starten</button></div>`;
-    const G=glossOf(u); if(G.length) h+=`<h3 class="mt">🔍 Wörter klären</h3><p class="muted">Kennst du alle diese Wörter? Tippe ein Wort an, dann bekommst du eine Erklärung. Im Text sind diese Wörter lila unterstrichen.</p><div class="bank">${G.map((g,i)=>`<button class="opt" style="font-size:19px" onclick="openGloss(${i})">${esc(g[3]||"")} ${esc(g[0])}</button>`).join("")}</div>`;
+    const G=glossOf(u); if(G.length) h+=`<h3 class="mt">🔍 Wörter klären</h3><p class="muted">Kennst du alle diese Wörter? Tippe ein Wort an, dann bekommst du eine Erklärung. Im Text sind diese Wörter lila unterstrichen.</p><div class="bank">${G.map((g,i)=>`<button class="opt" style="font-size:1.1875rem" onclick="openGloss(${i})">${esc(g[3]||"")} ${esc(g[0])}</button>`).join("")}</div>`;
     h+=`<div class="row mt"><span class="sp"></span><button class="btn green" onclick="fNext()">Weiter: Hören ➜</button></div>`;
   } else if(s===1||s===2){
     h+=`<p class="instr">${s===1?"👂 <b>1. Durchgang:</b> Hör gut zu. Fahre mit dem Finger oder einem Stift unter den Wörtern mit.":"🗣️ <b>2. Durchgang:</b> Lies jetzt halblaut mit der Stimme mit."}</p>${playerHTML()}
@@ -1557,10 +1570,10 @@ function fBack(){ stopAll(); st.step--; render(); }
 
 function selfRead(str){
   const tandem=st.mode==="tandem", cls=st.mode==="class"; const r=st.d.r||"ready";
-  const reader=tandem?(st.d.round===0?st.kid:st.kid2):st.kid, trainer=tandem?(st.d.round===0?st.kid2:st.kid):null;
+  const reader=tandem?(st.d.round===1?st.kid2:st.kid):st.kid, trainer=tandem?(st.d.round===1?st.kid:st.kid2):null;
   let h="";
   if(cls) h+=`<p class="instr">🎤 <b>3. Durchgang – Chorlesen:</b> Lest gemeinsam laut. Der Lesepfeil gibt das Tempo vor.</p>`;
-  else if(tandem) h+=`<p class="instr">🏃 <b>Sportler:in: ${esc(kidName(reader))}</b> liest laut vor.<br>🧑‍🏫 <b>Trainer:in: ${esc(kidName(trainer))}</b> zeigt mit dem Finger mit und tippt auf Wörter, bei denen ${esc(kidName(reader))} stolpert.</p>`;
+  else if(tandem) h+=`<p class="instr">👩‍✈️ <b>Pilot:in: ${esc(kidName(reader))}</b> liest laut vor.<br>🧭 <b>Co-Pilot:in: ${esc(kidName(trainer))}</b> zeigt mit dem Finger mit und tippt auf Wörter, bei denen ${esc(kidName(reader))} stolpert.</p>`;
   else h+=`<p class="instr">🎤 <b>3. Durchgang:</b> Lies den Text jetzt allein laut vor. Tippe auf Start, wenn du anfängst, und auf Fertig, wenn du am Ende bist.</p>`;
   const tap=tandem&&(r==="run"||r==="done");
   h+=`<div class="row">`;
@@ -1571,7 +1584,7 @@ function selfRead(str){
   if(r==="done"){
     const res=st.d.res;
     if(cls){ h+=`<div class="fb ok">👏 Toll gelesen, Klasse! Zeit: ${res.sec} Sekunden.</div><div class="row mt"><button class="btn sec" onclick="srAgain()">🔁 Nochmal lesen</button><span class="sp"></span><button class="btn green" onclick="finishF()">Fertig ➜</button></div>`; return h; }
-    h+=`<div class="row mt" style="gap:26px"><div><div class="bigstat">${res.wpm}</div><div class="muted">Wörter pro Minute</div></div><div><div class="bigstat">${res.sec}</div><div class="muted">Sekunden</div></div>${tandem?`<div><div class="bigstat">${(st.d.err||[]).length}</div><div class="muted">Stolperwörter</div></div>`:""}${res.best?`<div><div class="bigstat">${res.best}</div><div class="muted">deine Bestleistung bei diesem Text</div></div>`:""}</div>`;
+    h+=`<div class="row mt" style="gap:1.625rem"><div><div class="bigstat">${res.wpm}</div><div class="muted">Wörter pro Minute</div></div><div><div class="bigstat">${res.sec}</div><div class="muted">Sekunden</div></div>${tandem?`<div><div class="bigstat">${(st.d.err||[]).length}</div><div class="muted">Stolperwörter</div></div>`:""}${res.best?`<div><div class="bigstat">${res.best}</div><div class="muted">deine Bestleistung bei diesem Text</div></div>`:""}</div>`;
     if(res.better) h+=`<div class="fb ok">🚀 Neue Bestleistung bei diesem Text!</div>`;
     h+=srSummary();
     if(tandem){
@@ -1587,7 +1600,7 @@ function selfRead(str){
 const FB_CRIT=[["g","Genau gelesen"],["f","Flüssig gelesen"],["b","Betont gelesen"]];
 const FB_VAL=[["🌟","super"],["👍","gut"],["💪","üben wir noch"]];
 function fbRows(){ const fb=(st.d.lastRec&&st.d.lastRec.fb)||{};
-  return FB_CRIT.map(([k,n])=>`<div class="row" style="margin:8px 0"><span style="min-width:170px;font-size:19px">${n}</span>${FB_VAL.map(([e,v])=>`<button class="btn small ${fb[k]===v?"green":"sec"}" onclick="setFb('${k}','${v}')">${e} ${v}</button>`).join("")}</div>`).join(""); }
+  return FB_CRIT.map(([k,n])=>`<div class="row" style="margin:0.5rem 0"><span style="min-width:10.625rem;font-size:1.1875rem">${n}</span>${FB_VAL.map(([e,v])=>`<button class="btn small ${fb[k]===v?"green":"sec"}" onclick="setFb('${k}','${v}')">${e} ${v}</button>`).join("")}</div>`).join(""); }
 function setFb(k,v){ if(!st.d.lastRec)return; st.d.lastRec.fb=st.d.lastRec.fb||{}; st.d.lastRec.fb[k]=v; save(); render(); }
 function selfRate(n){ st.d.self=n; if(st.d.lastRec){st.d.lastRec.fb={self:n}; save();} render(); }
 function pace(){ if(st.d.pacing){stopAll(); render(); return;} st.d.pacing=true; render(); HI_ID="txt"; startPacer(toks(fullText(st.unit,st.lv)).length,st.tempo,()=>{st.d.pacing=false;}); }
@@ -1601,7 +1614,7 @@ function srStop(){
   if(st.d.srOn) stopSR(); stopAll(); const sec=Math.max(1,Math.round((Date.now()-st.d.t0)/1000)); const words=wordCount(fullText(st.unit,st.lv));
   const wpm=Math.round(words/(sec/60)); const res={sec,wpm};
   if(st.mode!=="class"){
-    const reader=st.mode==="tandem"?(st.d.round===0?st.kid:st.kid2):st.kid;
+    const reader=st.mode==="tandem"?(st.d.round===1?st.kid2:st.kid):st.kid;
     const prev=recsOf(reader).filter(r=>r.kind==="f"&&r.u===st.unit.id&&r.lv===st.lv).map(r=>r.wpm);
     const best=prev.length?Math.max(...prev):0; res.better=prev.length>0&&wpm>best; res.best=Math.max(best,wpm);
     const rec={k:reader,t:Date.now(),kind:"f",u:st.unit.id,lv:st.lv,wpm,sec,err:st.mode==="tandem"?(st.d.err||[]).length:null,mode:st.mode};
@@ -1668,7 +1681,7 @@ function taskView(k,u){
   if(k.t==="multi"){
     const o=ord(k.o.length), sel=t.sel||[];
     h+=`<div class="row"><p class="q sp">${esc(k.q)}</p>${lookBtn()}</div>`;
-    h+=`<div class="bank" style="margin-top:4px">`+o.map(i=>{let c=sel.includes(i)?"sel":""; if(t.checked){ if(k.a.includes(i)&&(sel.includes(i)||t.done))c="ok"; else if(sel.includes(i))c="bad"; } return `<button class="opt ${c}" onclick="toggleMulti(${i})">${sel.includes(i)?"☑️":"⬜"} ${esc(k.o[i])}</button>`;}).join("")+`</div>`;
+    h+=`<div class="bank" style="margin-top:0.25rem">`+o.map(i=>{let c=sel.includes(i)?"sel":""; if(t.checked){ if(k.a.includes(i)&&(sel.includes(i)||t.done))c="ok"; else if(sel.includes(i))c="bad"; } return `<button class="opt ${c}" onclick="toggleMulti(${i})">${sel.includes(i)?"☑️":"⬜"} ${esc(k.o[i])}</button>`;}).join("")+`</div>`;
     if(!t.done) h+=`<div class="row mt"><button class="btn" ${sel.length?"":"disabled"} onclick="checkMulti()">✔️ Prüfen</button></div>`;
     h+=fbHTML(t); if(t.done) h+=nextBtn(); return h;
   }
@@ -1678,7 +1691,7 @@ function taskView(k,u){
     return h;
   }
   if(k.t==="start"){
-    h+=`<h2>🛫 Startkontrolle</h2><p class="instr">Lies die Überschrift: <b class="fred" style="font-size:28px">„${esc(u.title)}“</b></p>
+    h+=`<h2>🛫 Startkontrolle</h2><p class="instr">Lies die Überschrift: <b class="fred" style="font-size:1.75rem">„${esc(u.title)}“</b></p>
     <div class="leit"><b>Was will ich herausfinden?</b><ol>${u.leit.map(q=>`<li>${esc(q)}</li>`).join("")}</ol></div>
     <p class="instr">Was weißt du schon über das Thema? ${st.mode==="class"?"Sammelt an der Tafel.":"Schreib ein paar Stichpunkte auf (freiwillig)."}</p>
     ${st.mode==="class"?"":`<textarea id="pre" placeholder="Ich weiß schon …" oninput="st.d.pre=this.value">${esc(st.d.pre||"")}</textarea>`}
@@ -1697,13 +1710,13 @@ function taskView(k,u){
     }
     h+=`<p class="q">Welches Textbild passt zu diesem Text?</p><p class="muted">Schau auf die Signalwörter: Steht da, was <i>nacheinander</i> passiert? Oder werden <i>Merkmale</i> beschrieben?</p>`;
     const opts=[["kette","🔗 Kette","Der Text beschreibt einen Ablauf: zuerst – dann – danach – zum Schluss."],["netz","🕸️ Netz","Der Text beschreibt Merkmale: Aussehen, Nahrung, Wohnort …"]];
-    h+=`<div class="grid">`+opts.map(([v,n,d])=>{let c=""; if(t.done&&v===u.vis)c="ok"; else if((t.bad||[]).includes(v))c="bad"; return `<button class="opt ${c}" onclick="answerFly('${v}')"><b class="fred" style="font-size:26px">${n}</b><br><span style="font-size:18px">${d}</span></button>`;}).join("")+`</div>`;
+    h+=`<div class="grid">`+opts.map(([v,n,d])=>{let c=""; if(t.done&&v===u.vis)c="ok"; else if((t.bad||[]).includes(v))c="bad"; return `<button class="opt ${c}" onclick="answerFly('${v}')"><b class="fred" style="font-size:1.625rem">${n}</b><br><span style="font-size:1.125rem">${d}</span></button>`;}).join("")+`</div>`;
     h+=fbHTML(t); if(t.done) h+=nextBtn("Sinkflug einleiten ➜");
     return h;
   }
   if(k.t==="mark"){
     const S=sentences(u,st.lv), mk=t.mk||[];
-    h+=`<h2>🔍 Tiefflug für Details</h2><div class="leit"><b>Meine Leitfragen:</b><ol>${u.leit.map(q=>`<li>${esc(q)}</li>`).join("")}</ol>${ownQ().length?`<b>Meine eigenen Fragen:</b><ul style="margin:4px 0 0">${ownQ().map(q=>`<li>${esc(q)}</li>`).join("")}</ul><span class="muted" style="font-size:16px">Für die Prüfung zählen die Leitfragen. Achte beim Lesen trotzdem auf deine eigenen Fragen!</span>`:""}</div>
+    h+=`<h2>🔍 Tiefflug für Details</h2><div class="leit"><b>Meine Leitfragen:</b><ol>${u.leit.map(q=>`<li>${esc(q)}</li>`).join("")}</ol>${ownQ().length?`<b>Meine eigenen Fragen:</b><ul style="margin:0.25rem 0 0">${ownQ().map(q=>`<li>${esc(q)}</li>`).join("")}</ul><span class="muted" style="font-size:1rem">Für die Prüfung zählen die Leitfragen. Achte beim Lesen trotzdem auf deine eigenen Fragen!</span>`:""}</div>
     <p class="instr">Lies jetzt genau. Tippe die Sätze an, die eine Leitfrage beantworten. Sie werden gelb markiert.</p>`;
     h+=`<div class="textbox"><div class="text" id="txt">`+S.map((x,i)=>{let c="sent"+(t.done?"":" tap"); if(t.checked){ if(mk.includes(i)&&x.k)c+=" ok"; else if(mk.includes(i)&&!x.k)c+=" bad"; else if(x.k==="!"&&(t.done||true))c+=" miss"; } else if(mk.includes(i))c+=" mk"; return `<span class="${c}" data-s="${i}">${esc(x.s)}</span>`;}).join(" ")+`</div></div>`;
     if(!t.done) h+=`<div class="row mt"><span class="muted">${mk.length} Sätze markiert</span><span class="sp"></span><button class="btn" ${mk.length?"":"disabled"} onclick="checkMark()">✔️ Prüfen</button></div>`;
@@ -1799,10 +1812,10 @@ function finishFlow(area,stars,lines,extra,flags){
 }
 function vDone(){
   const s=st.sum, u=st.unit; let h=topBar("Geschafft!",st.session?"st.session=null;go('hub')":"go('list')"); if(!s) return h; h+=sessionBox();
-  h+=`<div class="card" style="text-align:center"><div style="font-size:70px">🎉</div><h2>${esc(u.icon||"📄")} ${esc(u.title)} – geschafft!</h2>`;
+  h+=`<div class="card" style="text-align:center"><div style="font-size:4.375rem">🎉</div><h2>${esc(u.icon||"📄")} ${esc(u.title)} – geschafft!</h2>`;
   s.lines.forEach(l=>h+=`<p class="instr">${esc(l)}</p>`);
   if(st.mode!=="class") h+=`<p class="bigstat">+${s.stars} ⭐</p><p class="muted">Stempel im Flugbuch: ${s.area==="f"?"🎧 Flüssig lesen":"🧭 Strategien"} (${LV[st.lv].n})</p>`;
-  readers().forEach(id=>{ (s.fresh[id]||[]).forEach(b=>{const B=BADGES.find(x=>x.id===b); h+=`<div class="badge" style="justify-content:center;margin:10px auto;max-width:520px"><span class="ic">${B.i}</span><div style="text-align:left"><b>Neues Abzeichen${st.mode==="tandem"?" für "+esc(kidName(id)):""}: ${B.n}</b><div class="muted">${B.d}</div></div></div>`;}); });
+  readers().forEach(id=>{ (s.fresh[id]||[]).forEach(b=>{const B=BADGES.find(x=>x.id===b); h+=`<div class="badge" style="justify-content:center;margin:0.625rem auto;max-width:32.5rem"><span class="ic">${B.i}</span><div style="text-align:left"><b>Neues Abzeichen${st.mode==="tandem"?" für "+esc(kidName(id)):""}: ${B.n}</b><div class="muted">${B.d}</div></div></div>`;}); });
   h+=`<div class="row mt" style="justify-content:center"><button class="btn sec" onclick="go('list')">📚 Anderen Text wählen</button>
    ${u.type==="trail"?"":`<button class="btn" onclick="st.area=null;go('acts')">🎯 Andere Übung zu diesem Text</button>`}</div></div>`;
   return h;
@@ -1812,10 +1825,10 @@ function vBook(){
   const ids=readers();
   ids.forEach(id=>{
     const sp=DB.stamps[id]||{}, has=earned(id);
-    h+=`<div class="card"><div class="row"><h2 class="sp">${esc(kidName(id))}</h2><span class="bigstat" style="font-size:38px">⭐ ${DB.stars[id]||0}</span></div>
+    h+=`<div class="card"><div class="row"><h2 class="sp">${esc(kidName(id))}</h2><span class="bigstat" style="font-size:2.375rem">⭐ ${DB.stars[id]||0}</span></div>
     <h3>Stempel</h3><div class="stamps">${allUnits().filter(u=>u.type!=="custom"||sp["f:"+u.id]||sp["s:"+u.id]).map(u=>`<div class="stamp"><span class="ic">${u.icon}</span> <b>${esc(u.title)}</b><div class="dots"><span class="dot ${sp["f:"+u.id]?"on":""}">🎧 ${sp["f:"+u.id]?LV[sp["f:"+u.id]].i:"–"}</span><span class="dot ${sp["s:"+u.id]?"on":""}">🧭 ${sp["s:"+u.id]?LV[sp["s:"+u.id]].i:"–"}</span></div></div>`).join("")}</div>
     <h3 class="mt">Abzeichen</h3><div class="grid">${BADGES.map(b=>`<div class="badge ${has.has(b.id)?"":"lock"}"><span class="ic">${b.i}</span><div class="sp"><b>${b.n}</b><div class="muted">${b.d}</div></div>${has.has(b.id)?`<button class="btn small" title="Urkunde" onclick="savePrint('cert','${id}|${b.id}')">🏅</button>`:""}</div>`).join("")}</div>
-    ${bookExtras(id)}${(DB.recs||[]).some(r=>r.k===id)?`<h3 class="mt">🎙️ Meine Aufnahmen</h3>`+recsFor(id).slice().reverse().map(r=>`<div class="kidrow"><span class="nm" style="font-size:17px">${esc(unit(r.u)?unit(r.u).title:"Text")} · ${fmt(r.t)}</span>${playBtn(r)}</div>`).join("")+`<div id="player"></div>`:""}</div>`;
+    ${bookExtras(id)}${(DB.recs||[]).some(r=>r.k===id)?`<h3 class="mt">🎙️ Meine Aufnahmen</h3>`+recsFor(id).slice().reverse().map(r=>`<div class="kidrow"><span class="nm" style="font-size:1.0625rem">${esc(unit(r.u)?unit(r.u).title:"Text")} · ${fmt(r.t)}</span>${playBtn(r)}</div>`).join("")+`<div id="player"></div>`:""}</div>`;
   });
   return h;
 }
@@ -1823,7 +1836,7 @@ function vBook(){
 // ===== Lehrkraft =====
 function vPin(){
   const p=st.d.pin||"";
-  return topBar("⚙️ Lehrkraft-Bereich","go('home')")+`<div class="card" style="max-width:420px;margin:0 auto;text-align:center">
+  return topBar("⚙️ Lehrkraft-Bereich","go('home')")+`<div class="card" style="max-width:26.25rem;margin:0 auto;text-align:center">
    <p class="instr">Bitte PIN eingeben</p><div class="pindots" id="pd">${[0,1,2,3].map(i=>i<p.length?"●":"○").join("")}</div>
    <div class="pin">${[1,2,3,4,5,6,7,8,9].map(n=>`<button onclick="pinKey('${n}')">${n}</button>`).join("")}<button onclick="st.d.pin='';render()">⌫</button><button onclick="pinKey('0')">0</button><span></span></div>
    ${DB.pin==="1234"?`<p class="muted">Start-PIN: 1234 – bitte in den Einstellungen ändern.</p>`:""}</div>`;
@@ -1848,7 +1861,7 @@ function vTeacher(){
     if(st.detail){ const k=kidById(st.detail); const R=recsOf(k.id).filter(r=>r.kind!=="fin").sort((a,b)=>b.t-a.t); const AR=recsFor(k.id);
       h+=`<div class="row"><h2 class="sp">${esc(k.name)}</h2><button class="btn sec small" onclick="st.detail=null;render()">◀ Alle Kinder</button></div>`;
       h+=R.length?`<table><tr><th>Datum</th><th>Text</th><th>Stufe</th><th>Art</th><th>Ergebnis</th><th>Modus</th></tr>${R.map(r=>`<tr><td>${fmt(r.t)}</td><td>${esc(unit(r.u)?unit(r.u).title:(r.kind==="test"?"Lese-Check Form "+r.form:"(gelöschter Text)"))}</td><td>${LV[r.lv].i} ${LV[r.lv].n}</td><td>${kindLabel(r)}</td><td>${kindResult(r)}</td><td>${r.mode==="tandem"?"Tandem":"allein"}</td></tr>`).join("")}</table>`:`<p class="muted">Noch keine Ergebnisse.</p>`;
-      if(AR.length) h+=`<h3 class="mt">🎙️ Aufnahmen (${AR.length})</h3>`+AR.slice().reverse().map(r=>`<div class="kidrow"><span class="nm" style="font-size:17px">${esc(unit(r.u)?unit(r.u).title:"Text")} · ${LV[r.lv].i} · ${fmt(r.t)}</span>${playBtn(r)}</div>`).join("")+`<div id="player"></div>`;
+      if(AR.length) h+=`<h3 class="mt">🎙️ Aufnahmen (${AR.length})</h3>`+AR.slice().reverse().map(r=>`<div class="kidrow"><span class="nm" style="font-size:1.0625rem">${esc(unit(r.u)?unit(r.u).title:"Text")} · ${LV[r.lv].i} · ${fmt(r.t)}</span>${playBtn(r)}</div>`).join("")+`<div id="player"></div>`;
       h+=teacherKidExtras(k);
     } else if(!DB.kids.length){ h+=`<p class="instr">Noch keine Kinder angelegt. Wechseln Sie zum Reiter „Kinder“.</p>`; }
     else {
@@ -1875,12 +1888,12 @@ function vTeacher(){
   if(st.tab==="test") h+=vTestT();
   if(st.tab==="print") h+=vPrint();
   if(st.tab==="set"){
-    h+=`<h3>PIN ändern</h3><div class="row"><input type="tel" id="newpin" maxlength="4" inputmode="numeric" placeholder="4 Ziffern" style="max-width:200px"><button class="btn" onclick="setPin()">Speichern</button></div>
+    h+=`<h3>PIN ändern</h3><div class="row"><input type="tel" id="newpin" maxlength="4" inputmode="numeric" placeholder="4 Ziffern" style="max-width:12.5rem"><button class="btn" onclick="setPin()">Speichern</button></div>
     <h3 class="mt">Ergebnisse exportieren</h3><p class="muted">Kopiert alle Ergebnisse als Tabelle (CSV, Semikolon). In Excel oder Numbers einfügen.</p>
-    <div class="row"><button class="btn" onclick="copyCSV()">📋 Ergebnisse kopieren</button></div>${st.csv?`<textarea class="mt" style="min-height:160px" onclick="this.select()">${esc(st.csv)}</textarea>`:""}
+    <div class="row"><button class="btn" onclick="copyCSV()">📋 Ergebnisse kopieren</button></div>${st.csv?`<textarea class="mt" style="min-height:10rem" onclick="this.select()">${esc(st.csv)}</textarea>`:""}
     <h3 class="mt">📲 Ergebnisse mehrerer iPads zusammenführen</h3><p class="muted">Auf jedem Schüler-iPad: „Code erzeugen“ und den Code (oder die gespeicherte Datei) auf Ihr Gerät bringen, z. B. per AirDrop. Dann hier einfügen. Kinder werden über den Namen zugeordnet, doppelte Ergebnisse werden erkannt. Aufnahmen werden nicht übertragen.</p>
-    <div class="row"><button class="btn" onclick="exportResults()">📤 Code erzeugen</button></div>${st.rexp?`<textarea class="mt" style="min-height:100px;font-size:13px" onclick="this.select()">${esc(st.rexp)}</textarea>`:""}
-    <label class="lab">Code eines anderen iPads einfügen</label><textarea id="rimp" style="min-height:80px;font-size:13px" placeholder="Hier den Code einfügen …"></textarea><div class="row mt"><button class="btn sec" onclick="importResults()">📥 Ergebnisse übernehmen</button></div>
+    <div class="row"><button class="btn" onclick="exportResults()">📤 Code erzeugen</button></div>${st.rexp?`<textarea class="mt" style="min-height:6.25rem;font-size:0.8125rem" onclick="this.select()">${esc(st.rexp)}</textarea>`:""}
+    <label class="lab">Code eines anderen iPads einfügen</label><textarea id="rimp" style="min-height:5rem;font-size:0.8125rem" placeholder="Hier den Code einfügen …"></textarea><div class="row mt"><button class="btn sec" onclick="importResults()">📥 Ergebnisse übernehmen</button></div>
     <h3 class="mt">Daten zurücksetzen</h3><p class="muted">Löscht alle Ergebnisse, Sterne und Stempel auf diesem Gerät. Die Namen bleiben erhalten.</p>
     ${st.reset?`<button class="btn red" onclick="resetData()">Ja, alles löschen</button> <button class="btn sec" onclick="st.reset=false;render()">Abbrechen</button>`:`<button class="btn sec" onclick="st.reset=true;render()">🧹 Ergebnisse zurücksetzen</button>`}
     <p class="muted mt">Speicherort: nur der Browser dieses Geräts. Auf einem anderen iPad sind die Daten nicht sichtbar.</p>`;
@@ -1888,7 +1901,7 @@ function vTeacher(){
   if(st.tab==="info"){
     h+=`<h3>So hängt die App mit FiLBY zusammen</h3>
     <p><b>FiLBY</b> (Fachintegrierte Leseförderung Bayern) ist ein dreijähriges Lesetraining der Universität Regensburg mit ISB und Kultusministerium: Jgst. 2 Leseflüssigkeit, Jgst. 3 Lesestrategien, Jgst. 4 selbstreguliertes Lesen – jeweils erst an einer Klassenlektüre, dann an Sachtexten.</p>
-    <p><b>🎧 Flüssig lesen</b> folgt den drei Durchgängen des Leseflüssigkeitstrainings: (1) zuhören und mit dem Stift mitzeigen, (2) halblaut mitlesen, (3) selbst laut lesen – allein mit Stoppuhr oder im Lautlesetandem (Sportler:in / Trainer:in mit Rückmeldung). Die Vorlesestimme hat drei Tempostufen (ca. 80/100/120 Wörter pro Minute). Vorab: Stolperwörter in Silben und Blitzlesen.</p>
+    <p><b>🎧 Flüssig lesen</b> folgt den drei Durchgängen des Leseflüssigkeitstrainings: (1) zuhören und mit dem Stift mitzeigen, (2) halblaut mitlesen, (3) selbst laut lesen – allein mit Stoppuhr oder im Lautlesetandem (Pilot:in liest, Co-Pilot:in liest mit und gibt Rückmeldung). Die Vorlesestimme hat drei Tempostufen (ca. 80/100/120 Wörter pro Minute). Vorab: Stolperwörter in Silben und Blitzlesen.</p>
     <p><b>🧭 Lesestrategien</b>: Für die Geschichte die Schritte <i>Vor dem Lesen → Situation → Figuren → wichtigstes Ereignis</i>. Für Sachtexte die Flug-Strategie: <i>Startkontrolle</i> (Überschrift, Leitfragen, Vorwissen) → <i>Überflug</i> (Überfliegen, Signalwörter, Textbild Kette oder Netz wählen) → <i>Tiefflug</i> (Schlüsselstellen markieren, Stichpunkte ins Textbild) → <i>Landung</i> (berichten, Verständnisfragen).</p>
     <p><b>Texte:</b> Alle Texte sind eigens für diese App geschrieben (Geschichte „${STORY_TITLE}“ in 4 Kapiteln, 4 Sachtexte zu HSU-Themen), jeweils in drei Stufen. Sie ersetzen nicht das offizielle FiLBY-Material, das manualgetreu eingesetzt werden soll.</p>
     <p><b>🔍 Wörter klären:</b> Schwierige Wörter sind im Text lila unterstrichen. Beim Antippen erscheint eine kindgerechte Erklärung mit Bild, die man sich auch vorlesen lassen kann. Beim selbstständigen Lautlesen und beim Markieren ist die Funktion ausgeschaltet, damit sie nicht stört.</p>
@@ -1945,14 +1958,14 @@ function vTexts(){
   if(st.edit){ const e=st.edit;
     h+=`<div class="row"><h3 class="sp">${e.id?"✏️ Text bearbeiten":"➕ Neuer Text"}</h3><button class="btn sec small" onclick="st.edit=null;render()">Abbrechen</button></div>
     ${genBox()}<label class="lab">Titel</label><input type="text" id="e_title" maxlength="60" value="${esc(e.title)}" placeholder="z. B. Die Honigbiene">
-    <label class="lab">Symbol</label><div class="bank" style="margin-top:0">${ICONS.map(i=>`<button class="opt ${e.icon===i?"sel":""}" style="font-size:26px;padding:8px 12px" onclick="pickIcon('${i}')">${i}</button>`).join("")}</div>
+    <label class="lab">Symbol</label><div class="bank" style="margin-top:0">${ICONS.map(i=>`<button class="opt ${e.icon===i?"sel":""}" style="font-size:1.625rem;padding:0.5rem 0.75rem" onclick="pickIcon('${i}')">${i}</button>`).join("")}</div>
     <p class="muted mt">Mindestens eine Stufe ausfüllen. Fehlt eine Stufe, zeigt die App den Text der nächsten Stufe an.</p>
     ${[0,1,2].map(i=>`<label class="lab">${LV[i+1].i} Text ${LV[i+1].n}${i===1?" (Hauptstufe)":""}</label><textarea id="e_t${i}" style="min-height:${i===1?150:110}px" placeholder="Text hier einfügen …">${esc(e.text[i])}</textarea>`).join("")}
     <label class="lab">⚡ Stolperwörter (für Blitzlesen)</label><input type="text" id="e_words" value="${esc(e.words)}" placeholder="Ho-nig-bie-ne, Bie-nen-stock, Nek-tar">
     <p class="muted">Mit Komma trennen. Silben mit Bindestrich markieren – dann erscheinen sie in Blau und Rot. Leer lassen: Die App nimmt automatisch die 5 längsten Wörter.</p>
-    <label class="lab">🔍 Wörter klären</label><textarea id="e_gloss" style="min-height:120px" placeholder="Nektar = süßer Saft in Blüten 🌸&#10;Bienenstock = das Haus der Bienen 🐝">${esc(e.gloss)}</textarea>
+    <label class="lab">🔍 Wörter klären</label><textarea id="e_gloss" style="min-height:7.5rem" placeholder="Nektar = süßer Saft in Blüten 🌸&#10;Bienenstock = das Haus der Bienen 🐝">${esc(e.gloss)}</textarea>
     <p class="muted">Ein Wort pro Zeile: <b>Wort = Erklärung</b>. Ein Emoji am Ende wird als Bild angezeigt. Die App findet auch Formen wie „Bienen“ zu „Biene“.</p>
-    <label class="lab">🤥 Lügenwörter (freiwillig)</label><textarea id="e_lies" style="min-height:90px" placeholder="Honig = Ketchup&#10;Königin = Feuerwehr">${esc(e.lies||"")}</textarea>
+    <label class="lab">🤥 Lügenwörter (freiwillig)</label><textarea id="e_lies" style="min-height:5.625rem" placeholder="Honig = Ketchup&#10;Königin = Feuerwehr">${esc(e.lies||"")}</textarea>
     <p class="muted">Ein Paar pro Zeile: <b>richtiges Wort = Lügenwort</b>. Das richtige Wort muss genau so im Text stehen. Ab 3 Paaren gibt es einen Lügentext.</p>
     <h3 class="mt">❓ Verständnisfragen (freiwillig)</h3><p class="muted">Mit mindestens einer Frage erscheint der Text auch bei „Lesestrategien“ (Lesen → Fragen → Nacherzählen). Die Antworten werden gemischt.</p>
     ${e.qs.map((q,i)=>`<div class="qbox"><label class="lab">Frage ${i+1}</label><input type="text" id="e_q${i}" value="${esc(q.q)}" placeholder="Frage">
@@ -1966,12 +1979,12 @@ function vTexts(){
   <p class="muted">Aus jedem Text macht die App automatisch ein Leseflüssigkeitstraining mit Stolperwörtern, Vorlesestimme, Lesepfeil und Stoppuhr. Mit Fragen gibt es zusätzlich ein Strategie-Training.</p>`;
   if(!C.length) h+=`<p class="instr mt">Noch keine eigenen Texte. Tippen Sie auf „Neuer Text“.</p>`;
   h+=C.map(u=>{const lv=[0,1,2].filter(i=>u.text[i]).map(i=>LV[i+1].i).join(" ");
-    return `<div class="kidrow"><span style="font-size:30px">${esc(u.icon)}</span><span class="nm">${esc(u.title)}<br><span class="muted" style="font-size:15px;font-weight:400">${lv} · ${wordCount(fullText(u,2))} Wörter · ${(u.gloss||[]).length} Erklärungen · ${(u.qs||[]).length} Fragen</span></span>
+    return `<div class="kidrow"><span style="font-size:1.875rem">${esc(u.icon)}</span><span class="nm">${esc(u.title)}<br><span class="muted" style="font-size:0.9375rem;font-weight:400">${lv} · ${wordCount(fullText(u,2))} Wörter · ${(u.gloss||[]).length} Erklärungen · ${(u.qs||[]).length} Fragen</span></span>
     <button class="btn sec small" onclick="editCustom('${u.id}')">✏️ Bearbeiten</button>
     ${st.delC===u.id?`<button class="btn red small" onclick="delCustom('${u.id}')">Wirklich löschen</button><button class="btn sec small" onclick="st.delC=null;render()">Abbrechen</button>`:`<button class="btn sec small" onclick="st.delC='${u.id}';render()">🗑️</button>`}</div>`;}).join("");
   h+=`<h3 class="mt">📤 Texte auf ein anderes iPad übertragen</h3><p class="muted">Eigene Texte werden nur auf diesem Gerät gespeichert. Kopieren Sie den Code und fügen Sie ihn auf dem anderen iPad hier unten ein (z. B. per AirDrop, Mail oder Notiz).</p>
-  <div class="row"><button class="btn" ${C.length?"":"disabled"} onclick="exportTexts()">📋 Code kopieren</button></div>${st.exp?`<textarea class="mt" style="min-height:110px;font-size:14px" onclick="this.select()">${esc(st.exp)}</textarea>`:""}
-  <label class="lab">Code einfügen</label><textarea id="imp" style="min-height:90px;font-size:14px" placeholder="Hier den Code einfügen …"></textarea>
+  <div class="row"><button class="btn" ${C.length?"":"disabled"} onclick="exportTexts()">📋 Code kopieren</button></div>${st.exp?`<textarea class="mt" style="min-height:6.875rem;font-size:0.875rem" onclick="this.select()">${esc(st.exp)}</textarea>`:""}
+  <label class="lab">Code einfügen</label><textarea id="imp" style="min-height:5.625rem;font-size:0.875rem" placeholder="Hier den Code einfügen …"></textarea>
   <div class="row mt"><button class="btn sec" onclick="importTexts()">📥 Texte übernehmen</button></div>`;
   return h;
 }
@@ -2028,12 +2041,12 @@ function openUnit(id){ st.unit=unit(id); if(!st.unit)return; go("acts"); }
 function finsOf(id){ return id?recsOf(id).filter(r=>r.kind==="fin"):[]; }
 function vActs(){
   const u=st.unit; let h=topBar(`${esc(u.icon||"📄")} ${esc(u.title)}`, st.area?"go('list')":"go('hub')"); h+=illuHTML(u);
-  h+=`<div class="row" style="margin-bottom:14px"><span class="fred" style="font-size:20px">Textstufe:</span>${lvSeg()}${dazBtn()}</div>`;
+  h+=`<div class="row" style="margin-bottom:0.875rem"><span class="fred" style="font-size:1.25rem">Textstufe:</span>${lvSeg()}${dazBtn()}</div>`;
   const groups=[["f","🎧 Flüssig lesen"],["s","🧭 Verstehen"]].filter(([g])=>!st.area||st.area===g);
   const F=finsOf(st.kid);
   groups.forEach(([g,n])=>{ const A=ACTS.filter(a=>a.g===g&&a.ok(u)); if(!A.length)return;
-    h+=`<h2>${n}</h2><div class="grid" style="margin-bottom:18px">`+A.map(a=>{const done=F.some(r=>r.u===u.id&&(r.act||(r.area==="f"?"train":"strat"))===a.id);
-      return `<button class="big" style="min-height:130px" onclick="startAct('${a.id}')"><span class="ic">${a.i}</span><b>${a.n}</b><small>${typeof a.d==="function"?a.d(u):a.d}${done?" · ✅":""}</small></button>`;}).join("")+`</div>`; });
+    h+=`<h2>${n}</h2><div class="grid" style="margin-bottom:1.125rem">`+A.map(a=>{const done=F.some(r=>r.u===u.id&&(r.act||(r.area==="f"?"train":"strat"))===a.id);
+      return `<button class="big" style="min-height:8.125rem" onclick="startAct('${a.id}')"><span class="ic">${a.i}</span><b>${a.n}</b><small>${typeof a.d==="function"?a.d(u):a.d}${done?" · ✅":""}</small></button>`;}).join("")+`</div>`; });
   return h;
 }
 function startAct(id){ st.act=id; st.area=st.area||ACTS.find(a=>a.id===id).g; st.step=0; st.d={sc:0,mx:0,t:{}}; if(id==="sblitz") initBlitz(); if(id==="lie") initLie(); if(id==="theater") initTheater(); go(SCREEN_OF[id],{d:st.d}); }
@@ -2049,7 +2062,7 @@ function vFlowR(){
   h+=`<div class="card"><p class="instr">Lies den Text <b>dreimal</b> laut. Versuche, jedes Mal ein bisschen schneller zu sein – <b>aber lies genau!</b> ${st.mode==="tandem"?`Es liest <b>${esc(kidName(st.kid))}</b>, ${esc(kidName(st.kid2))} passt auf, dass kein Wort fehlt.`:""}</p>`;
   const prevBest=bestTime(u.id,st.lv);
   h+=`<div class="track">`+[0,1,2].map(i=>{ const t=d.times[i]; let car="", lab="";
-     if(t!=null){ car=`<span class="car" style="left:calc(100% - 46px)">🏎️</span>`; lab=`${t} s ${i>0&&t<d.times[i-1]?"🚀":""}${d.acc[i]===false?" 🤔":""}`; }
+     if(t!=null){ car=`<span class="car" style="left:calc(100% - 2.875rem)">🏎️</span>`; lab=`${t} s ${i>0&&t<d.times[i-1]?"🚀":""}${d.acc[i]===false?" 🤔":""}`; }
      else if(i===d.round&&r==="run"){ car=`<span class="car" id="me" style="left:0">🏎️</span>`; const g=i>0?d.times[i-1]:prevBest; if(g) car+=`<span class="car ghost" id="ghost" data-s="${g}" style="left:0">👻</span>`; lab=`<span id="timer">0 s</span>`; }
      else if(i===d.round){ car=`<span class="car" style="left:0">🏎️</span>`; lab="bereit"; }
      return `<div class="lane ${i===d.round&&r!=="end"?"cur":""}"><span class="ln">Runde ${i+1}</span><div class="road"><span class="flag">🏁</span>${car}</div><span class="lt2">${lab}</span></div>`; }).join("")+`</div>`;
@@ -2068,7 +2081,7 @@ function vFlowR(){
 }
 function bestTime(uid,lv){ const R=recsOf(st.kid).filter(r=>r.kind==="f"&&r.u===uid&&r.lv===lv&&r.sec); return R.length?Math.min(...R.map(r=>r.sec)):null; }
 function raceStart(){ stopAll(); st.d.r="run"; st.d.t0=Date.now(); render();
-  const g=document.getElementById("ghost"); if(g){ const s=+g.dataset.s; requestAnimationFrame(()=>requestAnimationFrame(()=>{ g.style.transition=`left ${s}s linear`; g.style.left="calc(100% - 46px)"; })); }
+  const g=document.getElementById("ghost"); if(g){ const s=+g.dataset.s; requestAnimationFrame(()=>requestAnimationFrame(()=>{ g.style.transition=`left ${s}s linear`; g.style.left="calc(100% - 2.875rem)"; })); }
   TIMERS.push(setInterval(()=>{const el=$("#timer"); if(el) el.textContent=Math.floor((Date.now()-st.d.t0)/1000)+" s";},400)); }
 function raceStop(){ stopAll(); const d=st.d, sec=Math.max(1,Math.round((Date.now()-d.t0)/1000)); d.times[d.round]=sec; d.r="done";
   const words=wordCount(fullText(st.unit,st.lv)); const rec={k:st.kid,t:Date.now(),kind:"f",ch:1,u:st.unit.id,lv:st.lv,wpm:Math.round(words/(sec/60)),sec,err:null,mode:st.mode};
@@ -2099,7 +2112,7 @@ function vFlowRec(){
   if(!R.length) h+=`<p class="muted">Noch keine Aufnahme. Starte deine erste!</p>`;
   if(R.length>=2){ const a=R[0], b=R[R.length-1];
     h+=`<div class="compare"><div class="cbox"><b>🌱 Erste Aufnahme</b><div class="muted">${fmt(a.t)} · ${LV[a.lv].i}</div>${playBtn(a)}</div><div class="cbox"><b>🌳 Neueste Aufnahme</b><div class="muted">${fmt(b.t)} · ${LV[b.lv].i}</div>${playBtn(b)}</div></div><p class="muted">Hör beide an: Was ist besser geworden?</p>`; }
-  h+=R.slice().reverse().map(r=>`<div class="kidrow"><span class="nm" style="font-size:17px">${fmt(r.t)} · ${LV[r.lv].i} ${LV[r.lv].n}${r.sec?` · ${r.sec} s`:""}</span>${playBtn(r)}${st.delR===r.id?`<button class="btn red small" onclick="recDel('${r.id}')">Löschen</button>`:`<button class="btn sec small" onclick="st.delR='${r.id}';render()">🗑️</button>`}</div>`).join("");
+  h+=R.slice().reverse().map(r=>`<div class="kidrow"><span class="nm" style="font-size:1.0625rem">${fmt(r.t)} · ${LV[r.lv].i} ${LV[r.lv].n}${r.sec?` · ${r.sec} s`:""}</span>${playBtn(r)}${st.delR===r.id?`<button class="btn red small" onclick="recDel('${r.id}')">Löschen</button>`:`<button class="btn sec small" onclick="st.delR='${r.id}';render()">🗑️</button>`}</div>`).join("");
   h+=`<div id="player" class="mt"></div><div class="row mt"><span class="sp"></span><button class="btn green" ${R.length?"":"disabled"} onclick="finishFlow('f',2,['Super! Hör dir deine Aufnahmen immer wieder an.'])">Fertig ➜</button></div>`;
   h+=`<p class="muted mt">Die Aufnahmen bleiben nur auf diesem iPad.</p></div>`;
   return h;
@@ -2122,7 +2135,7 @@ async function saveRec(b,sec){ st.d.saving=true; render(); const id="r"+uid(); c
 async function playRec(id){ stopAll(); const r=(DB.recs||[]).find(x=>x.id===id); const b=await blobGet(id); const box=$("#player")||$("#tplayer"); if(!box)return;
   if(!b){ box.innerHTML=`<p class="fb bad">Diese Aufnahme ist auf diesem Gerät nicht mehr vorhanden.</p>`; return; }
   const url=URL.createObjectURL(b); const vid=/video/.test(r&&r.mime||"");
-  box.innerHTML=`<div class="card" style="background:var(--blue-l)"><b>▶ ${r?fmt(r.t):""}</b><div class="mt">${vid?`<video src="${url}" controls playsinline style="width:100%;max-height:260px;border-radius:12px"></video>`:`<audio src="${url}" controls style="width:100%"></audio>`}</div></div>`;
+  box.innerHTML=`<div class="card" style="background:var(--blue-l)"><b>▶ ${r?fmt(r.t):""}</b><div class="mt">${vid?`<video src="${url}" controls playsinline style="width:100%;max-height:16.25rem;border-radius:0.75rem"></video>`:`<audio src="${url}" controls style="width:100%"></audio>`}</div></div>`;
   const m=box.querySelector("audio,video"); try{ await m.play(); }catch(e){} box.scrollIntoView({block:"nearest",behavior:"smooth"}); }
 async function recDel(id){ await blobDel(id); DB.recs=(DB.recs||[]).filter(r=>r.id!==id); st.delR=null; save(); render(); }
 
@@ -2132,20 +2145,20 @@ function initTheater(){ const d=st.d; d.cast={}; const k1=st.kid, k2=st.kid2;
   else if(st.mode==="tandem") d.cast={E:"k1",L:"k1",M:"k2",O:"k2"};
   else d.cast={E:"kids",L:"kids",M:"kids",O:"kids"};
   d.ph="cast"; d.li=0; }
-function castOpts(){ if(st.mode==="solo") return [["k1","🙋 Ich"],["tts","🔊 Stimme"]]; if(st.mode==="tandem") return [["k1","🏃 "+esc(kidName(st.kid))],["k2","🏃 "+esc(kidName(st.kid2))],["tts","🔊 Stimme"]]; return [["kids","🧒 Kinder"],["tts","🔊 Stimme"]]; }
+function castOpts(){ if(st.mode==="solo") return [["k1","🙋 Ich"],["tts","🔊 Stimme"]]; if(st.mode==="tandem") return [["k1","👩‍✈️ "+esc(kidName(st.kid))],["k2","🧭 "+esc(kidName(st.kid2))],["tts","🔊 Stimme"]]; return [["kids","🧒 Kinder"],["tts","🔊 Stimme"]]; }
 function vFlowT(){
   const u=st.unit, d=st.d, L=THEATER[u.id]; let h=topBar(`🎭 Lesetheater: ${esc(u.title)}`,"go('acts')");
   h+=`<div class="card">`;
   if(d.ph==="cast"){
     h+=`<p class="instr">Verteilt die Rollen. Wer liest welche Figur? Die Vorlesestimme kann Rollen übernehmen.</p>`;
-    h+=Object.entries(ROLES).map(([k,r])=>{const n=L.filter(x=>x[0]===k).length; return `<div class="kidrow"><span class="nm"><span class="rdot" style="background:${r.c}"></span>${r.n} <span class="muted" style="font-weight:400;font-size:15px">(${n} ${n===1?"Satz":"Teile"})</span></span><div class="seg">${castOpts().map(([v,lab])=>`<button class="${d.cast[k]===v?"on":""}" onclick="st.d.cast['${k}']='${v}';render()">${lab}</button>`).join("")}</div></div>`;}).join("");
+    h+=Object.entries(ROLES).map(([k,r])=>{const n=L.filter(x=>x[0]===k).length; return `<div class="kidrow"><span class="nm"><span class="rdot" style="background:${r.c}"></span>${r.n} <span class="muted" style="font-weight:400;font-size:0.9375rem">(${n} ${n===1?"Satz":"Teile"})</span></span><div class="seg">${castOpts().map(([v,lab])=>`<button class="${d.cast[k]===v?"on":""}" onclick="st.d.cast['${k}']='${v}';render()">${lab}</button>`).join("")}</div></div>`;}).join("");
     h+=`<div class="tip mt"><b>So lest ihr betont:</b> Lies so, wie sich die Figur gerade fühlt. Der Hinweis in Klammern hilft dir – zum Beispiel <i>(flüsternd)</i> oder <i>(aufgeregt)</i>.</div>`;
     h+=`<div class="row mt"><span class="sp"></span><button class="btn green" onclick="theaterGo()">🎬 Vorhang auf!</button></div></div>`; return h;
   }
   if(d.ph==="end"){ h+=`<div class="fb ok">👏 Applaus! Ihr habt das Kapitel als Theater gelesen.</div><p class="instr mt">Wie hat es geklungen? Habt ihr die Gefühle der Figuren hörbar gemacht?</p><div class="row"><button class="btn sec" onclick="st.d.ph='cast';st.d.li=0;render()">🔁 Nochmal mit anderen Rollen</button><span class="sp"></span><button class="btn green" onclick="finishFlow('f',3,['Du hast mit verteilten Rollen und betont gelesen.'])">Fertig ➜</button></div></div>`; return h; }
-  h+=`<div class="row" style="margin-bottom:10px">${Object.entries(ROLES).map(([k,r])=>`<span class="chip" style="border-color:${r.c};color:${r.c}"><span class="rdot" style="background:${r.c}"></span>${r.n}: ${castLabel(d.cast[k])}</span>`).join("")}</div><div id="script">`;
+  h+=`<div class="row" style="margin-bottom:0.625rem">${Object.entries(ROLES).map(([k,r])=>`<span class="chip" style="border-color:${r.c};color:${r.c}"><span class="rdot" style="background:${r.c}"></span>${r.n}: ${castLabel(d.cast[k])}</span>`).join("")}</div><div id="script">`;
   h+=L.map((x,i)=>{const r=ROLES[x[0]], who=d.cast[x[0]]; const cur=i===d.li;
-    return `<div class="line ${cur?"cur":""} ${i<d.li?"past":""}" id="ln${i}" style="border-left-color:${r.c}"><div class="lrole" style="color:${r.c}">${r.n}${x[2]?` <span class="lhint">(${esc(x[2])})</span>`:""} <span class="muted" style="font-size:14px">· ${castLabel(who)}</span></div><div class="ltext">${esc(x[1])}</div>
+    return `<div class="line ${cur?"cur":""} ${i<d.li?"past":""}" id="ln${i}" style="border-left-color:${r.c}"><div class="lrole" style="color:${r.c}">${r.n}${x[2]?` <span class="lhint">(${esc(x[2])})</span>`:""} <span class="muted" style="font-size:0.875rem">· ${castLabel(who)}</span></div><div class="ltext">${esc(x[1])}</div>
      ${cur?(who==="tts"?`<div class="muted">🔊 Die Stimme liest …</div>`:`<div class="row mt"><button class="btn green small" onclick="theaterNext()">✓ Fertig gelesen</button></div>`):""}</div>`;}).join("");
   h+=`</div><div class="row mt"><button class="btn sec small" onclick="theaterBack()">⏮ Zurück</button><span class="sp"></span><button class="btn sec small" onclick="stopAll();st.d.ph='cast';render()">⏹ Abbrechen</button></div></div>`;
   return h;
@@ -2175,7 +2188,7 @@ function initBlitz(){
 function vFlowB(){
   const d=st.d, u=st.unit; let h=topBar(`⚡ Satz-Blitzlesen: ${esc(u.title)}`,"go('acts')"); const it=d.items[d.i];
   h+=`<div class="steps">${d.items.map((x,i)=>`<span class="st ${i===d.i?"cur":i<d.i?"done":""}">${i+1}</span>`).join("")}</div><div class="card">`;
-  if(d.ph==="ready") h+=`<p class="instr">Gleich blitzt ein Satz auf – nur ganz kurz! Lies ihn schnell und genau. Danach kommt eine Frage.</p><div class="blitz" style="font-size:40px">👀</div><div class="row" style="justify-content:center"><button class="btn orange" onclick="blitzShowS()">⚡ Satz zeigen</button></div>`;
+  if(d.ph==="ready") h+=`<p class="instr">Gleich blitzt ein Satz auf – nur ganz kurz! Lies ihn schnell und genau. Danach kommt eine Frage.</p><div class="blitz" style="font-size:2.5rem">👀</div><div class="row" style="justify-content:center"><button class="btn orange" onclick="blitzShowS()">⚡ Satz zeigen</button></div>`;
   if(d.ph==="flash") h+=`<div class="blitz sblitz">${esc(it.s)}</div>`;
   if(d.ph==="ask"){ const t=d.t;
     h+=`<p class="q">Welches Wort stand im Satz?</p>`+it.o.map(o=>{let c=""; if(t.done&&o===it.target)c="ok"; else if((t.bad||[]).includes(o))c="bad"; return `<button class="opt ${c}" onclick="blitzAns(this.dataset.o)" data-o="${esc(o)}">${esc(o)}</button>`;}).join("");
@@ -2224,7 +2237,7 @@ function vFlowTrail(){
   h+=`<div class="card"><div class="trailmap">${[1,2,3,4,5,6,7,8,9].map(k=>{ const v=visited.includes(k), cur=k===d.cur&&!d.dead&&!d.end; const l=v?CT().st[k].l:"";
      return `<div class="stone ${v?"v":""} ${cur?"cur":""} ${d.dead===k?"dead":""}"><span class="sn">${k}</span>${l?`<span class="sl">${l}</span>`:cur?"🐾":""}</div>`;}).join("")}</div>
    <div class="word">${CT().word.split("").map((c,i)=>`<span class="wl ${i<d.letters.length?"on":""}">${i<d.letters.length?c:"_"}</span>`).join("")}</div>`;
-  if(d.end){ h+=`<div class="fb ok">🎉 Lösungswort: <b style="font-size:28px;letter-spacing:4px">${CT().word}</b></div><p class="instr mt">${esc(CT().end)}</p><div class="row mt"><span class="sp"></span><button class="btn green" onclick="trailFinish()">Fertig ➜</button></div></div>`; return h; }
+  if(d.end){ h+=`<div class="fb ok">🎉 Lösungswort: <b style="font-size:1.75rem;letter-spacing:0.25rem">${CT().word}</b></div><p class="instr mt">${esc(CT().end)}</p><div class="row mt"><span class="sp"></span><button class="btn green" onclick="trailFinish()">Fertig ➜</button></div></div>`; return h; }
   if(d.dead){ h+=`<div class="fb bad">🚫 Nummer ${d.dead}: ${esc(CT().dead[d.dead]||"Hier ist keine Spur.")}</div><p class="instr mt">Geh zurück zu Nummer ${d.cur} und lies noch einmal genau.</p><div class="row"><button class="btn" onclick="st.d.dead=null;render()">↩ Zurück zu Nummer ${d.cur}</button></div></div>`; return h; }
   const s=CT().st[d.cur];
   h+=`<h2>📍 Nummer ${d.cur}</h2>${playerHTML()}<div class="textbox mt"><div class="text" id="txt">${textHTML(s.t,{gl:st.unit})}</div></div>
@@ -2255,7 +2268,7 @@ function cardStory(){ const S=[["🔮","Vor dem Lesen",["Was ist bisher passiert
   return svgWrap(794,1123,`<rect width="794" height="1123" fill="#fff8ec"/><text x="397" y="110" font-size="56" text-anchor="middle" font-weight="700" fill="#c0601a">🕵️ Lese-Detektiv</text><text x="397" y="160" font-size="28" text-anchor="middle" fill="#5b6b7b">Meine Strategien für Geschichten</text>`+S.map((s,i)=>stepBox(60,210+i*215,674,190,["#8a4fc7","#2e9e5b","#2f7fd1","#e07b1f"][i],s[0],s[1],s[2])).join("")+`<text x="397" y="1090" font-size="20" text-anchor="middle" fill="#8b98a5">Leseflieger</text>`); }
 function cardFact(){ const S=[["🛫","Startkontrolle",["Überschrift lesen: Was will ich wissen?","Was weiß ich schon?"]],["🛩️","Überflug",["Text in Schlangenlinien überfliegen.","Signalwörter: Kette oder Netz?"]],["🔍","Tiefflug",["Genau lesen, Schlüsselstellen markieren.","Stichpunkte ins Textbild schreiben."]],["🛬","Landung",["Mit dem Textbild berichten.","Konnte ich meine Fragen beantworten?"]]];
   return svgWrap(794,1123,`<rect width="794" height="1123" fill="#eef6fd"/><text x="397" y="110" font-size="56" text-anchor="middle" font-weight="700" fill="#1f5fa3">✈️ Leseflieger</text><text x="397" y="160" font-size="28" text-anchor="middle" fill="#5b6b7b">Meine Flug-Strategie für Sachtexte</text>`+S.map((s,i)=>stepBox(60,210+i*215,674,190,["#2f7fd1","#2e9e5b","#e07b1f","#8a4fc7"][i],s[0],s[1],s[2])).join("")+`<text x="397" y="1090" font-size="20" text-anchor="middle" fill="#8b98a5">Leseflieger</text>`); }
-function bookmarks(){ const B=[["#e07b1f","🕵️","Geschichten",["🔮 Vorher: Was","   weiß ich schon?","🏡 Wo? Wann?","🧑‍🤝‍🧑 Wer? Wie?","⭐ Was ist das","   Wichtigste?"]],["#2f7fd1","✈️","Sachtexte",["🛫 Start: Was will","   ich wissen?","🛩️ Überfliegen","🔍 Genau lesen,","   markieren","🛬 Berichten"]],["#2e9e5b","👫","Lesetandem",["🏃 Sportler:in","   liest laut.","🧑‍🏫 Trainer:in","   zeigt mit.","👍 Freundlich","   helfen!","🔄 Tauschen"]]];
+function bookmarks(){ const B=[["#e07b1f","🕵️","Geschichten",["🔮 Vorher: Was","   weiß ich schon?","🏡 Wo? Wann?","🧑‍🤝‍🧑 Wer? Wie?","⭐ Was ist das","   Wichtigste?"]],["#2f7fd1","✈️","Sachtexte",["🛫 Start: Was will","   ich wissen?","🛩️ Überfliegen","🔍 Genau lesen,","   markieren","🛬 Berichten"]],["#2e9e5b","👫","Lesetandem",["👩‍✈️ Pilot:in","   liest laut.","🧭 Co-Pilot:in","   zeigt mit.","👍 Freundlich","   helfen!","🔄 Tauschen"]]];
   return svgWrap(794,1123,`<rect width="794" height="1123" fill="#fff"/>`+B.map((b,i)=>{const x=40+i*250; return `<rect x="${x}" y="40" width="220" height="1040" rx="26" fill="#fff" stroke="${b[0]}" stroke-width="6" stroke-dasharray="2 0"/><rect x="${x}" y="40" width="220" height="170" rx="26" fill="${b[0]}"/><text x="${x+110}" y="125" font-size="70" text-anchor="middle">${b[1]}</text><text x="${x+110}" y="185" font-size="30" font-weight="700" text-anchor="middle" fill="#fff">${b[2]}</text>`+b[3].map((l,j)=>`<text xml:space="preserve" x="${x+18}" y="${290+j*92}" font-size="25" fill="#1f2d3d">${xe(l)}</text>`).join("")+`<text x="${x+110}" y="1050" font-size="18" text-anchor="middle" fill="#8b98a5">Leseflieger</text>`;}).join("")); }
 function certificate(name,b){ const date=new Date().toLocaleDateString("de-DE");
   return svgWrap(1123,794,`<rect width="1123" height="794" fill="#fffaf0"/><rect x="30" y="30" width="1063" height="734" rx="34" fill="none" stroke="#e8b84a" stroke-width="10"/><rect x="52" y="52" width="1019" height="690" rx="26" fill="none" stroke="#2f7fd1" stroke-width="3" stroke-dasharray="10 8"/>
@@ -2272,10 +2285,10 @@ async function savePrint(kind,arg){ const svg=printSVG(kind,arg); const name={st
   if(DL){ try{ await DL.save({filename:name+".png",data:p.blob}); toast("Gespeichert"); return; }catch(e){ if(e&&e.code==="declined")return; } }
   st.png=p.url; render(); }
 function printSVG(kind,arg){ if(kind==="story")return cardStory(); if(kind==="fact")return cardFact(); if(kind==="book")return bookmarks(); const [kid,bid]=arg.split("|"); return certificate(kidName(kid)||"Lesekind",BADGES.find(b=>b.id===bid)); }
-function pngOverlay(){ if(!st.png)return ""; return `<div class="modal" style="z-index:46" onclick="if(event.target===this){st.png=null;render()}"><div class="card" style="text-align:center"><p class="instr">📲 Lange auf das Bild drücken → <b>„In Fotos sichern“</b> oder <b>„Teilen → Drucken“</b>.</p><img src="${st.png}" style="max-width:100%;max-height:70vh;border:1px solid var(--line);border-radius:10px"><div class="row mt" style="justify-content:center"><button class="btn sec" onclick="st.png=null;render()">✕ Schließen</button></div></div></div>`; }
+function pngOverlay(){ if(!st.png)return ""; return `<div class="modal" style="z-index:46" onclick="if(event.target===this){st.png=null;render()}"><div class="card" style="text-align:center"><p class="instr">📲 Lange auf das Bild drücken → <b>„In Fotos sichern“</b> oder <b>„Teilen → Drucken“</b>.</p><img src="${st.png}" style="max-width:100%;max-height:70vh;border:1px solid var(--line);border-radius:0.625rem"><div class="row mt" style="justify-content:center"><button class="btn sec" onclick="st.png=null;render()">✕ Schließen</button></div></div></div>`; }
 function vPrint(){
   let h=`<h3>🖨️ Druckvorlagen</h3><p class="muted">Tippen Sie auf „Als Bild speichern“. Das Bild können Sie dann auf dem iPad über „Teilen → Drucken“ ausdrucken.</p><div class="grid">`;
-  [["story","🕵️ Strategiekarte Geschichten","A4"],["fact","✈️ Strategiekarte Sachtexte","A4"],["book","🔖 3 Lesezeichen","A4, ausschneiden"]].forEach(([k,n,s])=>{ h+=`<div class="stamp"><img src="${svgURL(printSVG(k))}" style="width:100%;border:1px solid var(--line);border-radius:8px"><b>${n}</b><div class="muted">${s}</div><button class="btn small mt" onclick="savePrint('${k}')">💾 Als Bild speichern</button></div>`; });
+  [["story","🕵️ Strategiekarte Geschichten","A4"],["fact","✈️ Strategiekarte Sachtexte","A4"],["book","🔖 3 Lesezeichen","A4, ausschneiden"]].forEach(([k,n,s])=>{ h+=`<div class="stamp"><img src="${svgURL(printSVG(k))}" style="width:100%;border:1px solid var(--line);border-radius:0.5rem"><b>${n}</b><div class="muted">${s}</div><button class="btn small mt" onclick="savePrint('${k}')">💾 Als Bild speichern</button></div>`; });
   h+=`</div><h3 class="mt">🏅 Urkunden</h3>`;
   if(!DB.kids.length) h+=`<p class="muted">Legen Sie zuerst Kinder an.</p>`;
   else { const sel=st.certKid||DB.kids[0].id; const has=earned(sel);
@@ -2312,7 +2325,7 @@ function togglePlan(id){ const n=$("#plannote"); DB.plan=DB.plan||{ids:[],note:"
 function savePlanNote(){ DB.plan=DB.plan||{ids:[],note:""}; DB.plan.note=($("#plannote").value||"").slice(0,140); save(); toast("Wochenplan gespeichert"); }
 function planCard(){ const P=DB.plan; if(!P||!P.ids||!P.ids.length) return ""; const U=P.ids.map(id=>unit(id)).filter(Boolean); if(!U.length)return "";
   const F=finsOf(st.kid);
-  return `<div class="card plan"><h2>📅 Diese Woche</h2>${P.note?`<p class="instr">${esc(P.note)}</p>`:""}<div class="grid">${U.map(u=>`<button class="big" style="min-height:96px" onclick="${u.type==="trail"?`startTrail('${u.id}')`:`st.area=null;openUnit('${u.id}')`}"><span class="ic">${esc(u.icon||"📄")}</span><b>${esc(u.title)}</b><small>${F.filter(r=>r.u===u.id).length?"✅ schon geübt":"noch nicht geübt"}</small></button>`).join("")}</div></div>`; }
+  return `<div class="card plan"><h2>📅 Diese Woche</h2>${P.note?`<p class="instr">${esc(P.note)}</p>`:""}<div class="grid">${U.map(u=>`<button class="big" style="min-height:6rem" onclick="${u.type==="trail"?`startTrail('${u.id}')`:`st.area=null;openUnit('${u.id}')`}"><span class="ic">${esc(u.icon||"📄")}</span><b>${esc(u.title)}</b><small>${F.filter(r=>r.u===u.id).length?"✅ schon geübt":"noch nicht geübt"}</small></button>`).join("")}</div></div>`; }
 
 
 // =====================================================================
@@ -2337,14 +2350,14 @@ function vFlowT(){
   h+=`<div class="steps"><span class="st">${LV[st.lv].i} ${LV[st.lv].n} · ${L.length} Rollentexte</span></div><div class="card">`;
   if(d.ph==="cast"){
     h+=`<p class="instr">Verteilt die Rollen. Wer liest welche Figur? Die Vorlesestimme kann Rollen übernehmen.</p>`;
-    h+=R.map(k=>{const r=ROLES[k], n=L.filter(x=>x[0]===k).length; return `<div class="kidrow"><span class="nm"><span class="rdot" style="background:${r.c}"></span>${r.n} <span class="muted" style="font-weight:400;font-size:15px">(${n} ${n===1?"Teil":"Teile"})</span></span><div class="seg">${castOpts().map(([v,lab])=>`<button class="${d.cast[k]===v?"on":""}" onclick="st.d.cast['${k}']='${v}';render()">${lab}</button>`).join("")}</div></div>`;}).join("");
+    h+=R.map(k=>{const r=ROLES[k], n=L.filter(x=>x[0]===k).length; return `<div class="kidrow"><span class="nm"><span class="rdot" style="background:${r.c}"></span>${r.n} <span class="muted" style="font-weight:400;font-size:0.9375rem">(${n} ${n===1?"Teil":"Teile"})</span></span><div class="seg">${castOpts().map(([v,lab])=>`<button class="${d.cast[k]===v?"on":""}" onclick="st.d.cast['${k}']='${v}';render()">${lab}</button>`).join("")}</div></div>`;}).join("");
     h+=`<div class="tip mt"><b>So lest ihr betont:</b> Lies so, wie sich die Figur gerade fühlt. Der Hinweis in Klammern hilft dir – zum Beispiel <i>(flüsternd)</i> oder <i>(aufgeregt)</i>.</div>`;
     h+=`<div class="row mt"><span class="sp"></span><button class="btn green" onclick="theaterGo()">🎬 Vorhang auf!</button></div></div>`; return h;
   }
   if(d.ph==="end"){ h+=`<div class="fb ok">👏 Applaus! Ihr habt das Kapitel als Theater gelesen.</div><p class="instr mt">Wie hat es geklungen? Habt ihr die Gefühle der Figuren hörbar gemacht?</p><div class="row"><button class="btn sec" onclick="st.d.ph='cast';st.d.li=0;render()">🔁 Nochmal mit anderen Rollen</button><span class="sp"></span><button class="btn green" onclick="finishFlow('f',3,['Du hast mit verteilten Rollen und betont gelesen.'])">Fertig ➜</button></div></div>`; return h; }
-  h+=`<div class="row" style="margin-bottom:10px">${R.map(k=>{const r=ROLES[k]; return `<span class="chip" style="border-color:${r.c};color:${r.c}"><span class="rdot" style="background:${r.c}"></span>${r.n}: ${castLabel(d.cast[k])}</span>`;}).join("")}</div><div id="script">`;
+  h+=`<div class="row" style="margin-bottom:0.625rem">${R.map(k=>{const r=ROLES[k]; return `<span class="chip" style="border-color:${r.c};color:${r.c}"><span class="rdot" style="background:${r.c}"></span>${r.n}: ${castLabel(d.cast[k])}</span>`;}).join("")}</div><div id="script">`;
   h+=L.map((x,i)=>{const r=ROLES[x[0]], who=d.cast[x[0]]; const cur=i===d.li;
-    return `<div class="line ${cur?"cur":""} ${i<d.li?"past":""}" id="ln${i}" style="border-left-color:${r.c}"><div class="lrole" style="color:${r.c}">${r.n}${x[2]?` <span class="lhint">(${esc(x[2])})</span>`:""} <span class="muted" style="font-size:14px">· ${castLabel(who)}</span></div><div class="ltext">${esc(x[1])}</div>
+    return `<div class="line ${cur?"cur":""} ${i<d.li?"past":""}" id="ln${i}" style="border-left-color:${r.c}"><div class="lrole" style="color:${r.c}">${r.n}${x[2]?` <span class="lhint">(${esc(x[2])})</span>`:""} <span class="muted" style="font-size:0.875rem">· ${castLabel(who)}</span></div><div class="ltext">${esc(x[1])}</div>
      ${cur?(who==="tts"?`<div class="muted">🔊 Die Stimme liest …</div>`:`<div class="row mt"><button class="btn green small" onclick="theaterNext()">✓ Fertig gelesen</button></div>`):""}</div>`;}).join("");
   h+=`</div><div class="row mt"><button class="btn sec small" onclick="theaterBack()">⏮ Zurück</button><span class="sp"></span><button class="btn sec small" onclick="stopAll();st.d.ph='cast';render()">⏹ Abbrechen</button></div></div>`;
   return h;
@@ -2394,13 +2407,13 @@ function applyPrefs(){ const p=prefs(); const b=document.body.style; const f=(FO
   b.setProperty("--rf",`'${f}'`); b.setProperty("--rs",(SIZES.find(x=>x[0]===p.size)||SIZES[1])[1]); b.setProperty("--lh",p.wide?"1.18":"1"); b.setProperty("--ls",p.wide?"0.04em":"0.01em"); }
 function prefsModal(){ if(!st.prefOpen)return ""; const p=prefs();
   const seg=(key,opts,cur)=>`<div class="seg">${opts.map(([v,lab])=>`<button class="${cur===v?"on":""}" onclick="setPref('${key}',${typeof v==="string"?`'${v}'`:v})">${lab}</button>`).join("")}</div>`;
-  return `<div class="modal" style="z-index:47" onclick="if(event.target===this){st.prefOpen=false;render()}"><div class="card" style="max-width:620px">
+  return `<div class="modal" style="z-index:47" onclick="if(event.target===this){st.prefOpen=false;render()}"><div class="card" style="max-width:38.75rem">
    <div class="row"><h2 class="sp">🔤 So lese ich am besten</h2><button class="btn sec small" onclick="st.prefOpen=false;render()">✕</button></div>
    <h3>Schrift</h3><div class="seg">${FONTS.map(([f,n])=>`<button class="${(p.font||"Andika")===f?"on":""}" style="font-family:'${f}'" onclick="setPref('font','${f}')">${n}</button>`).join("")}</div>
    <h3 class="mt">Schriftgröße</h3><div class="seg">${SIZES.map(([k,s])=>`<button class="${(p.size||"m")===k?"on":""}" style="font-size:${Math.round(16*s)}px" onclick="setPref('size','${k}')">A</button>`).join("")}</div>
    <h3 class="mt">Abstand</h3>${seg("wide",[[false,"normal"],[true,"mehr Platz"]],!!p.wide)}
    <h3 class="mt">Silbenbögen</h3>${seg("syl",[["auto","bei 🌱 leicht"],["on","immer"],["off","aus"]],p.syl||"auto")}
-   <h3 class="mt">Lesezeile</h3><p class="muted" style="margin:0 0 6px">Nur die Zeile, die du gerade liest, ist hell. Mit ▲ ▼ gehst du weiter.</p>${seg("ruler",[["off","aus"],["on","an"]],p.ruler||"off")}
+   <h3 class="mt">Lesezeile</h3><p class="muted" style="margin:0 0 0.375rem">Nur die Zeile, die du gerade liest, ist hell. Mit ▲ ▼ gehst du weiter.</p>${seg("ruler",[["off","aus"],["on","an"]],p.ruler||"off")}
    <div class="textbox mt"><div class="text">${textHTML("Johanna und Milan suchen den Futterdieb im Garten.",{nogl:true})}</div></div></div></div>`; }
 // Silbentrennung: vorberechnet für eingebaute Texte, sonst nach Regeln
 const SYL_V="aeiouäöüy", SYL_D=["ai","ay","au","äu","ei","eu","ey","ie","aa","ee","oo"], SYL_G=["sch","ch","ck","ph","qu","th"];
@@ -2483,14 +2496,14 @@ function vCal(){ const id=st.kid; let h=topBar("📆 Mein Trainingskalender","go
   h+=`<div class="card"><div class="row"><button class="btn sec small" onclick="st.calOff=(st.calOff||0)-1;render()">◀</button><h2 class="sp" style="text-align:center">${base.toLocaleDateString("de-DE",{month:"long",year:"numeric"})}</h2><button class="btn sec small" onclick="st.calOff=(st.calOff||0)+1;render()">▶</button></div>
    <div class="cal">${["Mo","Di","Mi","Do","Fr","Sa","So"].map(x=>`<div class="ch">${x}</div>`).join("")}${Array(first).fill('<div></div>').join("")}${[...Array(days).keys()].map(i=>{ const k=`${y}-${String(m+1).padStart(2,"0")}-${String(i+1).padStart(2,"0")}`; const s=dayStatus(id,k); const wd=new Date(y,m,i+1).getDay();
      return `<div class="cd ${wd===0||wd===6?"we":""} ${k===today?"today":""} ${s===2?"full":s===1?"part":""}"><span>${i+1}</span><b>${s===2?"✅":s===1?"🟡":""}</b></div>`; }).join("")}</div>
-   <div class="row mt" style="gap:26px"><div><div class="bigstat">${full}</div><div class="muted">Trainingstage</div></div><div><div class="bigstat">${mins}</div><div class="muted">Minuten gelesen</div></div><div><div class="bigstat">🔥 ${streak(id)}</div><div class="muted">Tage in Folge</div></div></div>
+   <div class="row mt" style="gap:1.625rem"><div><div class="bigstat">${full}</div><div class="muted">Trainingstage</div></div><div><div class="bigstat">${mins}</div><div class="muted">Minuten gelesen</div></div><div><div class="bigstat">🔥 ${streak(id)}</div><div class="muted">Tage in Folge</div></div></div>
    <p class="muted mt">✅ alles geschafft · 🟡 angefangen. Samstag und Sonntag sind frei – zählen aber auch, wenn du freiwillig trainierst.</p></div>`;
   return h; }
 function vTPlan(){ const T=TP(); const P=dayPlan();
   let h=`<h3>🗓️ Trainingsplan</h3><p class="muted">Die Kinder werden jeden Tag in fester Reihenfolge durch ihre Übungen geführt (Ziel: etwa 30 Minuten). Der Text der Woche kommt aus dem Wochenplan – ohne Wochenplan wählt die App automatisch (diese Woche: <b>${esc(P.u?P.u.title:"–")}</b>). Bei zwei Texten im Wochenplan gilt der zweite ab Donnerstag.</p>
   <div class="row"><button class="btn small ${T.on?"green":"sec"}" onclick="TP().on=!TP().on;save();render()">Trainingsplan ${T.on?"an":"aus"}</button><button class="btn small ${T.free?"green":"sec"}" onclick="TP().free=!TP().free;save();render()">Freie Auswahl für Kinder ${T.free?"erlaubt":"gesperrt"}</button></div>`;
   [1,2,3,4,5].forEach(wd=>{ const A=T.days[wd]||[]; const min=A.reduce((s,a)=>s+(ACT_MIN[a]||8),0);
-    h+=`<div class="kidrow"><span class="nm" style="min-width:110px">${WDL[wd]}<br><span class="muted" style="font-weight:400;font-size:15px">ca. ${min} Min.</span></span><div class="bank" style="margin:0">${Object.keys(ACT_INFO).map(a=>{const i=A.indexOf(a); return `<button class="opt ${i>=0?"sel":""}" style="font-size:16px;padding:8px 10px" onclick="tpToggle(${wd},'${a}')">${i>=0?`<b>${i+1}.</b> `:""}${ACT_INFO[a][0]} ${ACT_INFO[a][1]}</button>`;}).join("")}</div></div>`; });
+    h+=`<div class="kidrow"><span class="nm" style="min-width:6.875rem">${WDL[wd]}<br><span class="muted" style="font-weight:400;font-size:0.9375rem">ca. ${min} Min.</span></span><div class="bank" style="margin:0">${Object.keys(ACT_INFO).map(a=>{const i=A.indexOf(a); return `<button class="opt ${i>=0?"sel":""}" style="font-size:1rem;padding:0.5rem 0.625rem" onclick="tpToggle(${wd},'${a}')">${i>=0?`<b>${i+1}.</b> `:""}${ACT_INFO[a][0]} ${ACT_INFO[a][1]}</button>`;}).join("")}</div></div>`; });
   h+=`<p class="muted">Tippen Sie Übungen in der gewünschten Reihenfolge an (bis zu 4 pro Tag). Passt eine Übung nicht zum Text (z. B. Lesetheater bei einem Sachtext), nimmt die App automatisch eine passende andere.</p><div class="row"><button class="btn sec small" onclick="DB.tplan=JSON.parse(JSON.stringify(TP_DEFAULT));save();render()">↺ Standardplan</button></div>
   <h3 class="mt">Diese Woche</h3><div style="overflow-x:auto"><table><tr><th>Name</th>${[1,2,3,4,5].map(i=>`<th>${WD[i]}</th>`).join("")}<th>🔥 Serie</th><th>Trainingstage</th></tr>${DB.kids.map(k=>{ const d=new Date(); const wd=d.getDay()||7; const mon=new Date(d); mon.setDate(d.getDate()-(wd-1));
     return `<tr><td><b>${esc(k.name)}</b></td>${[0,1,2,3,4].map(i=>{const x=new Date(mon); x.setDate(mon.getDate()+i); const s=dayStatus(k.id,dkey(x)); return `<td>${s===2?"✅":s===1?"🟡":"–"}</td>`;}).join("")}<td>${streak(k.id)}</td><td>${trainDays(k.id)}</td></tr>`; }).join("")}</table></div>`;
@@ -2510,7 +2523,7 @@ function suggestLevel(k){ const lv=k.level||2, since=Date.now()-28*864e5; const 
   return null; }
 function suggChip(k){ const s=suggestLevel(k); if(!s) return ""; return `<span class="sugg ${s.dir}" title="${esc(s.why)}">${s.dir==="up"?"⬆️":"⬇️"} ${LV[s.to].i} ${LV[s.to].n}?</span>`; }
 function suggRows(){ const S=DB.kids.map(k=>[k,suggestLevel(k)]).filter(x=>x[1]); if(!S.length) return "";
-  return `<div class="tip"><b>📊 Empfehlungen für die Textstufe</b> <span class="muted">(Richtwerte aus den letzten 4 Wochen – die Entscheidung liegt bei Ihnen)</span>${S.map(([k,s])=>`<div class="kidrow"><span class="nm">${esc(k.name)}: ${LV[k.level||2].i} → ${s.dir==="up"?"⬆️":"⬇️"} ${LV[s.to].i} ${LV[s.to].n}<br><span class="muted" style="font-weight:400;font-size:15px">${esc(s.why)}</span></span><button class="btn small green" onclick="setLevel('${k.id}',${s.to})">Übernehmen</button></div>`).join("")}</div>`; }
+  return `<div class="tip"><b>📊 Empfehlungen für die Textstufe</b> <span class="muted">(Richtwerte aus den letzten 4 Wochen – die Entscheidung liegt bei Ihnen)</span>${S.map(([k,s])=>`<div class="kidrow"><span class="nm">${esc(k.name)}: ${LV[k.level||2].i} → ${s.dir==="up"?"⬆️":"⬇️"} ${LV[s.to].i} ${LV[s.to].n}<br><span class="muted" style="font-weight:400;font-size:0.9375rem">${esc(s.why)}</span></span><button class="btn small green" onclick="setLevel('${k.id}',${s.to})">Übernehmen</button></div>`).join("")}</div>`; }
 
 // ---------- 📈 Lese-Check ----------
 function testOpen(){ return DB.test&&DB.test.open; }
@@ -2519,16 +2532,16 @@ function testCard(){ const f=testOpen(); if(!f||st.mode!=="solo"||!st.kid||testD
   return `<div class="card plan"><h2>📈 Lese-Check</h2><p class="instr">Deine Lehrkraft möchte wissen, wie gut du schon liest. Das dauert nur 2 Minuten.</p><button class="btn green" onclick="startTest()">▶ Lese-Check starten</button></div>`; }
 function startTest(){ st.d={form:testOpen(),ph:"intro",pi:0,i:0,ok:0,wrong:0,ans:[]}; st.act="test"; go("test",{d:st.d}); }
 function vTest(){ const d=st.d; let h=topBar("📈 Lese-Check","go('hub')"); h+=`<div class="card">`;
-  if(d.ph==="intro"){ h+=`<p class="instr">Du liest gleich viele Sätze. Bei jedem Satz entscheidest du: <b>Stimmt das?</b></p><div class="row" style="justify-content:center;gap:20px"><span class="tbtn yes" style="pointer-events:none">✅ stimmt</span><span class="tbtn no" style="pointer-events:none">❌ stimmt nicht</span></div>
+  if(d.ph==="intro"){ h+=`<p class="instr">Du liest gleich viele Sätze. Bei jedem Satz entscheidest du: <b>Stimmt das?</b></p><div class="row" style="justify-content:center;gap:1.25rem"><span class="tbtn yes" style="pointer-events:none">✅ stimmt</span><span class="tbtn no" style="pointer-events:none">❌ stimmt nicht</span></div>
      <p class="instr mt">Du hast <b>2 Minuten</b>. Lies so schnell du kannst – aber genau! Niemand schafft alle Sätze. Erst üben wir drei Sätze.</p><div class="row"><span class="sp"></span><button class="btn green" onclick="st.d.ph='practice';render()">Üben ➜</button></div></div>`; return h; }
   if(d.ph==="practice"){ const it=TEST_PRACTICE[d.pi];
     h+=`<p class="muted">Übung ${d.pi+1} von 3</p><div class="tsent">${esc(it[0])}</div>${d.pfb?`<div class="fb ${d.pfb==="ok"?"ok":"bad"}">${d.pfb==="ok"?"👍 Richtig!":`Nicht ganz: Dieser Satz ${it[1]?"stimmt":"stimmt nicht"}.`}</div><div class="row mt"><span class="sp"></span><button class="btn green" onclick="testPNext()">${d.pi<2?"Nächster Übungssatz ➜":"Jetzt geht's los ➜"}</button></div>`:
-      `<div class="row" style="justify-content:center;gap:20px"><button class="tbtn yes" onclick="testPAns(1)">✅ stimmt</button><button class="tbtn no" onclick="testPAns(0)">❌ stimmt nicht</button></div>`}</div>`; return h; }
+      `<div class="row" style="justify-content:center;gap:1.25rem"><button class="tbtn yes" onclick="testPAns(1)">✅ stimmt</button><button class="tbtn no" onclick="testPAns(0)">❌ stimmt nicht</button></div>`}</div>`; return h; }
   if(d.ph==="ready"){ h+=`<p class="instr">Super! Jetzt kommt der richtige Lese-Check. Die Uhr läuft 2 Minuten. Bist du bereit?</p><div class="row"><span class="sp"></span><button class="btn green" onclick="testStart()">▶ Start</button></div></div>`; return h; }
   if(d.ph==="run"){ const it=TEST_FORMS[d.form][d.i];
     h+=`<div class="tbar"><div id="tbarf" style="width:${Math.max(0,100-(Date.now()-d.t0)/1200)}%"></div></div><p class="muted">Satz ${d.i+1}</p><div class="tsent">${esc(it[0])}</div>
-      <div class="row" style="justify-content:center;gap:20px"><button class="tbtn yes" onclick="testAns(1)">✅ stimmt</button><button class="tbtn no" onclick="testAns(0)">❌ stimmt nicht</button></div></div>`; return h; }
-  h+=`<div style="text-align:center"><div style="font-size:64px">🎉</div><h2>Danke, du bist fertig!</h2><p class="instr">Du hast <b>${d.ans.length} Sätze</b> gelesen. Deine Lehrkraft schaut sich das Ergebnis an.</p><button class="btn green" onclick="go('hub')">Zurück ➜</button></div></div>`; return h; }
+      <div class="row" style="justify-content:center;gap:1.25rem"><button class="tbtn yes" onclick="testAns(1)">✅ stimmt</button><button class="tbtn no" onclick="testAns(0)">❌ stimmt nicht</button></div></div>`; return h; }
+  h+=`<div style="text-align:center"><div style="font-size:4rem">🎉</div><h2>Danke, du bist fertig!</h2><p class="instr">Du hast <b>${d.ans.length} Sätze</b> gelesen. Deine Lehrkraft schaut sich das Ergebnis an.</p><button class="btn green" onclick="go('hub')">Zurück ➜</button></div></div>`; return h; }
 function testPAns(v){ const d=st.d; d.pfb=TEST_PRACTICE[d.pi][1]===v?"ok":"bad"; render(); }
 function testPNext(){ const d=st.d; d.pfb=null; if(d.pi<2){ d.pi++; } else d.ph="ready"; render(); }
 function testStart(){ const d=st.d; d.ph="run"; d.t0=Date.now(); render(); TIMERS.push(setInterval(()=>{ const f=$("#tbarf"); const left=120000-(Date.now()-d.t0); if(f) f.style.width=Math.max(0,left/1200)+"%"; if(left<=0) testEnd(); },250)); }
@@ -2576,7 +2589,7 @@ function kindResult(r){ if(r.kind==="f") return `<b>${r.wpm} WpM</b> · ${r.sec}
   return `<b>${r.sc}/${r.mx}</b> beim 1. Versuch${r.own?` · eigene Fragen: ${r.own.length} (${r.ans||0} beantwortet)`:""}`; }
 function vHub(){
   let h=topBar(st.mode==="class"?"Lesetraining mit der Klasse":"Was möchtest du üben?", st.mode==="class"?"go('home')":"go('kids')");
-  h+=`<div class="row" style="margin-bottom:16px"><span class="fred" style="font-size:20px">Textstufe:</span>${lvSeg()}${dazBtn()}</div>`;
+  h+=`<div class="row" style="margin-bottom:1rem"><span class="fred" style="font-size:1.25rem">Textstufe:</span>${lvSeg()}${dazBtn()}</div>`;
   h+=testCard()+trainingCard();
   const free=st.mode==="class"||!TP().on||TP().free;
   if(free) h+=planCard();
@@ -2589,9 +2602,9 @@ function vHub(){
   return h; }
 function vList(){
   let h=topBar(st.area==="f"?"🎧 Flüssig lesen":"🧭 Verstehen","go('hub')");
-  h+=`<div class="row" style="margin-bottom:12px"><span class="fred" style="font-size:20px">Textstufe:</span>${lvSeg()}${dazBtn()}</div>`;
-  if(st.area==="s") h+=`<h2>🐾 Lesespuren</h2><div class="grid" style="margin-bottom:16px">${TRAILS.map(T=>`<button class="big" style="min-height:110px" onclick="startTrail('${T.id}')"><span class="ic">${T.icon}</span><b>${esc(T.title)}</b><small>Thema: ${T.topic}${finsOf(st.kid).some(r=>r.u===T.id)?" · ✅":""}</small></button>`).join("")}</div>`;
-  STORIES.forEach(S=>{ h+=`<h2>📚 Geschichte: ${esc(S.title)}</h2><div class="grid" style="margin-bottom:16px">${UNITS.filter(u=>u.type==="story"&&(u.story||1)===S.n).map(unitCard).join("")}</div>`; });
+  h+=`<div class="row" style="margin-bottom:0.75rem"><span class="fred" style="font-size:1.25rem">Textstufe:</span>${lvSeg()}${dazBtn()}</div>`;
+  if(st.area==="s") h+=`<h2>🐾 Lesespuren</h2><div class="grid" style="margin-bottom:1rem">${TRAILS.map(T=>`<button class="big" style="min-height:6.875rem" onclick="startTrail('${T.id}')"><span class="ic">${T.icon}</span><b>${esc(T.title)}</b><small>Thema: ${T.topic}${finsOf(st.kid).some(r=>r.u===T.id)?" · ✅":""}</small></button>`).join("")}</div>`;
+  STORIES.forEach(S=>{ h+=`<h2>📚 Geschichte: ${esc(S.title)}</h2><div class="grid" style="margin-bottom:1rem">${UNITS.filter(u=>u.type==="story"&&(u.story||1)===S.n).map(unitCard).join("")}</div>`; });
   h+=`<h2 class="mt">🔎 Sachtexte</h2><div class="grid">${UNITS.filter(u=>u.type==="fact").map(unitCard).join("")}</div>`;
   const C=(DB.custom||[]).filter(u=>st.area==="f"||(u.qs&&u.qs.length)||liesOf(u).length>=3);
   if(C.length) h+=`<h2 class="mt">📝 Eigene Texte</h2><div class="grid">${C.map(unitCard).join("")}</div>`;
@@ -2620,7 +2633,7 @@ function classMinutes(){ const g=goal(); return DB.records.filter(r=>r.t>=g.star
 function stageMin(){ return Math.max(1,DB.kids.length)*30*goal().days; }
 function flightPos(){ const m=classMinutes(), sm=stageMin(); const idx=Math.min(ROUTE.length-1,Math.floor(m/sm)); const frac=idx>=ROUTE.length-1?0:(m%sm)/sm; return {m,sm,idx,frac,left:idx>=ROUTE.length-1?0:Math.ceil(sm-(m%sm))}; }
 function flightCard(){ const p=flightPos(), next=ROUTE[p.idx+1];
-  return `<button class="card fcard" onclick="go('flight')" style="width:100%;text-align:left"><div class="row"><span style="font-size:40px">✈️</span><div class="sp"><b class="fred" style="font-size:21px">Klassenflug der 3a</b><div class="muted">${next?`${p.idx>=7?"Heimflug! ":""}Wir fliegen nach <b>${next.n}</b> – noch ${p.left} Leseminuten`:"🎉 Wieder zu Hause in Hirschau – Europa-Rundflug geschafft!"}</div><div class="pbar"><div style="width:${next?Math.round(p.frac*100):100}%"></div></div></div><span class="chip">📮 ${p.idx} Postkarte${p.idx===1?"":"n"}</span></div></button>`; }
+  return `<button class="card fcard" onclick="go('flight')" style="width:100%;text-align:left"><div class="row"><span style="font-size:2.5rem">✈️</span><div class="sp"><b class="fred" style="font-size:1.3125rem">Klassenflug der 3a</b><div class="muted">${next?`${p.idx>=7?"Heimflug! ":""}Wir fliegen nach <b>${next.n}</b> – noch ${p.left} Leseminuten`:"🎉 Wieder zu Hause in Hirschau – Europa-Rundflug geschafft!"}</div><div class="pbar"><div style="width:${next?Math.round(p.frac*100):100}%"></div></div></div><span class="chip">📮 ${p.idx} Postkarte${p.idx===1?"":"n"}</span></div></button>`; }
 function vFlight(){ const p=flightPos(); let h=topBar("✈️ Klassenflug der 3a","go('hub')");
   const pt=i=>ROUTE[Math.min(i,ROUTE.length-1)]; const a=pt(p.idx), b=pt(p.idx+1); const px=a.x+(b.x-a.x)*p.frac, py=a.y+(b.y-a.y)*p.frac;
   h+=`<div class="card"><p class="instr">Jede Minute, die ihr lest, bringt unser Klassenflugzeug weiter. An jedem Ziel wartet eine Postkarte!</p>
@@ -2628,8 +2641,8 @@ function vFlight(){ const p=flightPos(); let h=topBar("✈️ Klassenflug der 3a
    <polyline points="${ROUTE.map(r=>r.x+","+r.y).join(" ")}" fill="none" stroke="#2f7fd1" stroke-width="4" stroke-dasharray="10 8"/>
    ${ROUTE.map((r,i)=>r.id==="home"?`<circle cx="${r.x}" cy="${r.y}" r="19" fill="none" stroke="${i<=p.idx?"#2e9e5b":"#2f7fd1"}" stroke-width="3" stroke-dasharray="${i<=p.idx?"0":"4 4"}"/>`:`<circle cx="${r.x}" cy="${r.y}" r="${i<=p.idx?12:9}" fill="${i<=p.idx?"#2e9e5b":"#fff"}" stroke="#2f7fd1" stroke-width="3"/><text x="${r.x+15}" y="${r.y-11}" font-size="16" font-weight="700" fill="#1f2d3d" font-family="sans-serif">${r.n}</text>`).join("")}
    <text x="${px}" y="${py+12}" font-size="38" text-anchor="middle">✈️</text></svg>
-  <div class="row mt" style="gap:26px"><div><div class="bigstat">${p.m}</div><div class="muted">Leseminuten gesammelt</div></div><div><div class="bigstat">${p.idx}/${ROUTE.length-1}</div><div class="muted">Ziele erreicht</div></div>${p.idx<ROUTE.length-1?`<div><div class="bigstat">${p.left}</div><div class="muted">Minuten bis ${ROUTE[p.idx+1].n}</div></div>`:""}</div></div>`;
-  h+=`<h2>📮 Postkarten</h2><div class="grid">${ROUTE.slice(1).map((r,j)=>{ const i=j+1, open=i<=p.idx; return `<button class="big ${open?"":"lockc"}" style="min-height:110px" ${open?`onclick="st.pc=${i};st.pcA=null;render()"`:""}><span class="ic">${open?r.i:"🔒"}</span><b>${r.n}</b><small>${open?(goal().read[(st.kid||"cls")+":"+r.id]?"✅ gelesen":"Neue Postkarte!"):"noch nicht erreicht"}</small></button>`; }).join("")}</div>`;
+  <div class="row mt" style="gap:1.625rem"><div><div class="bigstat">${p.m}</div><div class="muted">Leseminuten gesammelt</div></div><div><div class="bigstat">${p.idx}/${ROUTE.length-1}</div><div class="muted">Ziele erreicht</div></div>${p.idx<ROUTE.length-1?`<div><div class="bigstat">${p.left}</div><div class="muted">Minuten bis ${ROUTE[p.idx+1].n}</div></div>`:""}</div></div>`;
+  h+=`<h2>📮 Postkarten</h2><div class="grid">${ROUTE.slice(1).map((r,j)=>{ const i=j+1, open=i<=p.idx; return `<button class="big ${open?"":"lockc"}" style="min-height:6.875rem" ${open?`onclick="st.pc=${i};st.pcA=null;render()"`:""}><span class="ic">${open?r.i:"🔒"}</span><b>${r.n}</b><small>${open?(goal().read[(st.kid||"cls")+":"+r.id]?"✅ gelesen":"Neue Postkarte!"):"noch nicht erreicht"}</small></button>`; }).join("")}</div>`;
   if(st.pc){ const r=ROUTE[st.pc]; h+=`<div class="modal" onclick="if(event.target===this){st.pc=null;render()}"><div class="card postcard"><div class="row"><h2 class="sp">${r.i} Postkarte aus ${r.n}</h2><button class="btn sec small" onclick="st.pc=null;render()">✕</button></div>
     <div class="row">${tempoSeg()}<button class="btn small" onclick="stopAll();sayText(ROUTE[${st.pc}].t)">🔊 Vorlesen</button></div><div class="textbox mt"><div class="text">${textHTML(r.t,{nogl:true})}</div></div>
     <p class="q mt">❓ ${esc(r.q)}</p>${shuffleFixed(r.o,r.id).map(o=>`<button class="opt ${st.pcA===o?(o===r.o[0]?"ok":"bad"):""}" onclick="pcAns(this.dataset.o)" data-o="${esc(o)}">${esc(o)}</button>`).join("")}
@@ -2651,7 +2664,7 @@ function vBooks(){ const id=st.kid; let h=topBar("📚 Mein Lesepass","go('hub')
    <label class="lab">Wie hat es dir gefallen?</label><div class="stars">${[1,2,3,4,5].map(i=>`<button onclick="st.bf.stars=${i};render()">${i<=f.stars?"⭐":"☆"}</button>`).join("")}</div>
    <label class="lab">Am besten hat mir gefallen …</label><textarea id="bn" maxlength="300" oninput="st.bf.note=this.value" placeholder="… dass …">${esc(f.note)}</textarea>
    <div class="row mt"><span class="sp"></span><button class="btn green" onclick="addBook()">📚 Eintragen</button></div></div>`;
-  h+=`<h2>Meine Bücher (${B.length})</h2>`+(B.length?`<div class="grid">${B.map(b=>`<div class="stamp"><div style="font-size:34px">📖</div><b>${esc(b.title)}</b>${b.author?`<div class="muted">${esc(b.author)}</div>`:""}<div>${"⭐".repeat(b.stars||0)}</div>${b.note?`<p style="margin:6px 0 0">„${esc(b.note)}“</p>`:""}<div class="muted" style="font-size:14px">${fmt(b.t).split(",")[0]}</div></div>`).join("")}</div>`:`<p class="muted">Noch keine Bücher eingetragen.</p>`);
+  h+=`<h2>Meine Bücher (${B.length})</h2>`+(B.length?`<div class="grid">${B.map(b=>`<div class="stamp"><div style="font-size:2.125rem">📖</div><b>${esc(b.title)}</b>${b.author?`<div class="muted">${esc(b.author)}</div>`:""}<div>${"⭐".repeat(b.stars||0)}</div>${b.note?`<p style="margin:0.375rem 0 0">„${esc(b.note)}“</p>`:""}<div class="muted" style="font-size:0.875rem">${fmt(b.t).split(",")[0]}</div></div>`).join("")}</div>`:`<p class="muted">Noch keine Bücher eingetragen.</p>`);
   return h; }
 function addBook(){ const f=st.bf; if(!f.title.trim()){ toast("Bitte den Titel eintragen"); return; } const ids=readers(); ids.forEach(id=>{ const before=earned(id); DB.books.push({id:"b"+uid(),k:id,title:f.title.trim().slice(0,80),author:f.author.trim().slice(0,60),stars:f.stars,note:f.note.trim().slice(0,300),t:Date.now()}); addStars(id,2); save(); badgeToast(id,before); });
   st.bf=null; toast("📚 Buch eingetragen! +2 ⭐"); confetti(); render(); }
@@ -2670,7 +2683,7 @@ function vFlowMake(){ const u=st.unit, d=st.d; d.mk=d.mk||{type:null,lies:[],q:{
   if(m.type==="lie"){ const T=toks(fullText(u,st.lv)); const map={}; m.lies.forEach(x=>map[x.i]=x);
     h+=`<p class="instr">Tippe ein Wort an, das du austauschen willst. Das Lügenwort soll <b>falsch</b> sein, aber gut in den Satz passen – so wird es schwierig!</p>`;
     h+=`<div class="textbox"><div class="text" id="txt">${T.map((t,i)=>map[i]?`<span class="w mkw lfound" data-i="${i}"><s>${esc(t)}</s> ${esc(map[i].lie)}</span>`:`<span class="w mkw ${m.sel===i?"mksel":""}" data-i="${i}">${esc(t)}</span>`).join(" ")}</div></div>`;
-    if(m.sel!=null&&!map[m.sel]){ h+=`<div class="tip mt"><b>Lügenwort für „${esc(clean(T[m.sel]))}“:</b><div class="row mt"><input type="text" id="lw" maxlength="30" style="max-width:300px" placeholder="falsches Wort"><button class="btn" onclick="addMkLie()">Übernehmen</button><button class="btn sec small" onclick="st.d.mk.sel=null;render()">Abbrechen</button></div></div>`; }
+    if(m.sel!=null&&!map[m.sel]){ h+=`<div class="tip mt"><b>Lügenwort für „${esc(clean(T[m.sel]))}“:</b><div class="row mt"><input type="text" id="lw" maxlength="30" style="max-width:18.75rem" placeholder="falsches Wort"><button class="btn" onclick="addMkLie()">Übernehmen</button><button class="btn sec small" onclick="st.d.mk.sel=null;render()">Abbrechen</button></div></div>`; }
     h+=`<div class="row mt"><span class="chip">🤥 ${m.lies.length} von 2–4 Lügen</span>${m.lies.length?`<button class="btn sec small" onclick="st.d.mk.lies.pop();render()">↩ Letzte Lüge zurücknehmen</button>`:""}<span class="sp"></span><button class="btn green" ${m.lies.length>=2?"":"disabled"} onclick="saveMk()">💾 Rätsel speichern</button></div></div>`; return h; }
   h+=`<p class="instr">Stelle eine Frage zum Text. Die Antwort muss im Text stehen!</p><label class="lab">Frage</label><input type="text" id="mq" maxlength="140" value="${esc(m.q.q)}" oninput="st.d.mk.q.q=this.value" placeholder="Was … / Warum … / Wer …?">
    <label class="lab">✅ Richtige Antwort</label><input type="text" maxlength="80" value="${esc(m.q.r)}" oninput="st.d.mk.q.r=this.value">
@@ -2686,7 +2699,7 @@ function saveMk(){ const m=st.d.mk; if(m.type==="quiz"){ const q=m.q; if(!q.q.tr
   const by=readers()[0]; DB.puzzles.push({id:"p"+uid(),by,byName:kidName(by),u:st.unit.id,lv:st.lv,type:m.type,lies:m.type==="lie"?m.lies:null,q:m.type==="quiz"?{q:m.q.q.trim(),o:[m.q.r.trim(),m.q.a.trim(),m.q.b.trim()].filter(Boolean)}:null,t:Date.now(),solved:0});
   save(); finishFlow("s",2,["Dein Rätsel ist gespeichert. Andere Kinder können es jetzt lösen!"]); }
 function vFlowSolve(){ const u=st.unit, d=st.d; let h=topBar(`🕵️ Rätsel von anderen: ${esc(u.title)}`,"go('acts')"); h+=`<div class="card">`;
-  if(!d.p){ const P=puzzlesFor(u); h+=`<p class="instr">Diese Rätsel haben Kinder aus deiner Klasse erfunden. Welches willst du lösen?</p><div class="grid">${P.map(p=>`<button class="big" style="min-height:100px" onclick="startPz('${p.id}')"><span class="ic">${p.type==="lie"?"🤥":"❓"}</span><b>von ${esc(p.byName||kidName(p.by)||"?")}</b><small>${p.type==="lie"?p.lies.length+" Lügen finden":"Quizfrage"} · ${LV[p.lv].i}${p.solved?` · ${p.solved}× gelöst`:""}</small></button>`).join("")}</div></div>`; return h; }
+  if(!d.p){ const P=puzzlesFor(u); h+=`<p class="instr">Diese Rätsel haben Kinder aus deiner Klasse erfunden. Welches willst du lösen?</p><div class="grid">${P.map(p=>`<button class="big" style="min-height:6.25rem" onclick="startPz('${p.id}')"><span class="ic">${p.type==="lie"?"🤥":"❓"}</span><b>von ${esc(p.byName||kidName(p.by)||"?")}</b><small>${p.type==="lie"?p.lies.length+" Lügen finden":"Quizfrage"} · ${LV[p.lv].i}${p.solved?` · ${p.solved}× gelöst`:""}</small></button>`).join("")}</div></div>`; return h; }
   const p=d.p;
   if(p.type==="quiz"){ const t=d.t; d.order=d.order||shuffle(p.q.o.map((_,i)=>i));
     h+=`<p class="muted">Ein Rätsel von ${esc(p.byName||"")}</p><div class="row"><p class="q sp">❓ ${esc(p.q.q)}</p><button class="btn sec small" onclick="stopAll();st.modal=true;render()">📖 Text ansehen</button></div>`+d.order.map(i=>{let c=""; if(t.done&&i===0)c="ok"; else if((t.bad||[]).includes(i))c="bad"; return `<button class="opt ${c}" onclick="pzAns(${i})">${esc(p.q.o[i])}</button>`;}).join("");
@@ -2709,10 +2722,10 @@ function vFlowW(){ const u=st.unit, d=st.d; const set=u.type==="story"?WRITE_PRO
   const P=set.find(p=>p.id===d.wp); const wsp=[...new Set(u.words.map(w=>w.replace(/-/g,"")).concat(glossOf(u).map(g=>g[0])).concat(u.type==="story"?rolesUsed(theaterLines(u,2)||[]).filter(r=>r!=="E").map(r=>ROLES[r].n):[]))].slice(0,18);
   const n=wordCount(d.wt||"");
   h+=`<div class="row"><h2 class="sp">${P.i} ${P.n}</h2><button class="btn sec small" onclick="st.d.wp=null;render()">anderes Thema</button></div><p class="instr">${P.d}</p>
-   <div class="muted">Satzanfänge:</div><div class="bank" style="margin-top:6px">${P.st.map((s,i)=>`<button class="opt" style="font-size:17px;padding:8px 12px" onclick="insW(WRITE_START[${i}])">${esc(s)}</button>`).join("")}</div>
+   <div class="muted">Satzanfänge:</div><div class="bank" style="margin-top:0.375rem">${P.st.map((s,i)=>`<button class="opt" style="font-size:1.0625rem;padding:0.5rem 0.75rem" onclick="insW(WRITE_START[${i}])">${esc(s)}</button>`).join("")}</div>
    <textarea id="wtxt" class="wtxt" oninput="st.d.wt=this.value;document.getElementById('wc').textContent=wordCount(this.value)" placeholder="Hier schreibst du …">${esc(d.wt||"")}</textarea>
    <div class="row"><span class="muted"><span id="wc">${n}</span> Wörter</span><span class="sp"></span><button class="btn sec small" onclick="sayText(st.d.wt||'')">🔊 Vorlesen lassen</button>${lookBtn()}</div>
-   <div class="muted mt">🧰 Wortspeicher – tippe ein Wort an, dann kommt es in deinen Text:</div><div class="bank" style="margin-top:6px">${wsp.map((w,i)=>`<button class="opt" style="font-size:17px;padding:8px 12px" onclick="insW(WRITE_WSP[${i}])">${esc(w)}</button>`).join("")}</div>
+   <div class="muted mt">🧰 Wortspeicher – tippe ein Wort an, dann kommt es in deinen Text:</div><div class="bank" style="margin-top:0.375rem">${wsp.map((w,i)=>`<button class="opt" style="font-size:1.0625rem;padding:0.5rem 0.75rem" onclick="insW(WRITE_WSP[${i}])">${esc(w)}</button>`).join("")}</div>
    <div class="tip mt"><b>Checkliste:</b> ✅ Großschreibung am Satzanfang · ✅ Punkt am Satzende · ✅ Lies deinen Text noch einmal durch!</div>
    <div class="row mt"><span class="sp"></span><button class="btn green" onclick="saveW()">💾 Fertig</button></div></div>`;
   window.WRITE_START=P.st; window.WRITE_WSP=wsp;
@@ -2730,16 +2743,16 @@ function logWord(i){ const g=glossOf(st.unit)[i]; if(!g)return; readers().forEac
 const WB_GAP=[0,0,1,3,7];
 function wbDue(id){ const W=(DB.wb[id])||{}, d=nowDay(); return Object.entries(W).filter(([w,x])=>x.box<4&&x.next<=d); }
 function wbLearned(id){ return Object.values(DB.wb[id]||{}).filter(x=>x.box>=4).length; }
-function wordsCard(){ if(!st.kid||st.mode==="class") return ""; const n=wbDue(st.kid).length; if(!n) return ""; return `<button class="card wcard" onclick="startWords()" style="width:100%;text-align:left"><div class="row"><span style="font-size:40px">🧺</span><div class="sp"><b class="fred" style="font-size:21px">Wortschatz-Kiste</b><div class="muted">${n} Wort${n>1?"e":""} warte${n>1?"n":"t"} auf dich. Weißt du noch, was sie bedeuten?</div></div><span class="btn small">▶ Üben</span></div></button>`; }
+function wordsCard(){ if(!st.kid||st.mode==="class") return ""; const n=wbDue(st.kid).length; if(!n) return ""; return `<button class="card wcard" onclick="startWords()" style="width:100%;text-align:left"><div class="row"><span style="font-size:2.5rem">🧺</span><div class="sp"><b class="fred" style="font-size:1.3125rem">Wortschatz-Kiste</b><div class="muted">${n} Wort${n>1?"e":""} warte${n>1?"n":"t"} auf dich. Weißt du noch, was sie bedeuten?</div></div><span class="btn small">▶ Üben</span></div></button>`; }
 function startWords(){ const D=shuffle(wbDue(st.kid)).slice(0,6); st.d={items:D.map(([w,x])=>({w,x})),i:0,t:{},ok:0}; go("words",{d:st.d}); }
 function vWords(){ const d=st.d, id=st.kid; let h=topBar("🧺 Wortschatz-Kiste","go('hub')"); const W=DB.wb[id]||{};
   if(d.items&&d.i<d.items.length){ const it=d.items[d.i]; if(!d.t.opts){ const pool=Object.keys(W).filter(w=>w!==it.w); const g2=allUnits().flatMap(u=>glossOf(u).map(g=>g[0])).filter(w=>w!==it.w&&!pool.includes(w)); d.t.opts=shuffle([it.w,...shuffle(pool).slice(0,2),...shuffle(g2)].slice(0,3)); if(d.t.opts.length<3) d.t.opts=shuffle([it.w].concat(shuffle(g2).slice(0,2))); }
-    h+=`<div class="steps">${d.items.map((x,i)=>`<span class="st ${i===d.i?"cur":i<d.i?"done":""}">${i+1}</span>`).join("")}</div><div class="card" style="text-align:center"><div style="font-size:72px">${esc(it.x.i||"💬")}</div><p class="ge">${esc(it.x.e)}</p><p class="q">Welches Wort ist gemeint?</p>
+    h+=`<div class="steps">${d.items.map((x,i)=>`<span class="st ${i===d.i?"cur":i<d.i?"done":""}">${i+1}</span>`).join("")}</div><div class="card" style="text-align:center"><div style="font-size:4.5rem">${esc(it.x.i||"💬")}</div><p class="ge">${esc(it.x.e)}</p><p class="q">Welches Wort ist gemeint?</p>
      ${d.t.opts.map(o=>{let c=""; if(d.t.done&&o===it.w)c="ok"; else if((d.t.bad||[]).includes(o))c="bad"; return `<button class="opt ${c}" style="text-align:center" onclick="wbAns(this.dataset.o)" data-o="${esc(o)}">${esc(o)}</button>`;}).join("")}
      ${d.t.done?`<div class="fb ${d.t.ok?"ok":"info"}" style="justify-content:center">${d.t.ok?`👍 Richtig! ${it.x.box>=4?"Dieses Wort kannst du jetzt sicher ✅":"Es wandert ein Fach weiter."}`:"Das Wort kommt bald noch einmal."}</div><div class="row mt" style="justify-content:center"><button class="btn sec small" onclick="sayText('${esc(it.w).replace(/'/g,"")}. '+st.d.items[st.d.i].x.e)">🔊</button><button class="btn green" onclick="st.d.i++;st.d.t={};render()">Weiter ➜</button></div>`:""}</div>`; return h; }
-  if(d.items&&d.items.length){ h+=`<div class="card" style="text-align:center"><div style="font-size:64px">🧺</div><h2>${d.ok} von ${d.items.length} gewusst!</h2><p class="instr">Morgen warten vielleicht neue Wörter auf dich.</p><button class="btn green" onclick="go('hub')">Zurück ➜</button></div>`; }
+  if(d.items&&d.items.length){ h+=`<div class="card" style="text-align:center"><div style="font-size:4rem">🧺</div><h2>${d.ok} von ${d.items.length} gewusst!</h2><p class="instr">Morgen warten vielleicht neue Wörter auf dich.</p><button class="btn green" onclick="go('hub')">Zurück ➜</button></div>`; }
   const E=Object.entries(W).sort((a,b)=>a[1].box-b[1].box);
-  h+=`<h2>Alle meine Wörter (${E.length})</h2><p class="muted">Jedes Wort, das du bei „Wörter klären“ antippst, kommt in deine Kiste. Wer ein Wort 3-mal weiß, hat es gelernt.</p><div class="bank">${E.map(([w,x])=>`<span class="opt" style="font-size:17px;padding:8px 12px">${x.box>=4?"✅":["","🟥","🟧","🟨"][x.box]} ${esc(x.i||"")} ${esc(w)}</span>`).join("")||`<span class="muted">Noch leer. Tippe in einem Text auf ein lila unterstrichenes Wort!</span>`}</div>`;
+  h+=`<h2>Alle meine Wörter (${E.length})</h2><p class="muted">Jedes Wort, das du bei „Wörter klären“ antippst, kommt in deine Kiste. Wer ein Wort 3-mal weiß, hat es gelernt.</p><div class="bank">${E.map(([w,x])=>`<span class="opt" style="font-size:1.0625rem;padding:0.5rem 0.75rem">${x.box>=4?"✅":["","🟥","🟧","🟨"][x.box]} ${esc(x.i||"")} ${esc(w)}</span>`).join("")||`<span class="muted">Noch leer. Tippe in einem Text auf ein lila unterstrichenes Wort!</span>`}</div>`;
   return h; }
 function wbAns(o){ const d=st.d, t=d.t, it=d.items[d.i]; if(t.done)return; const W=DB.wb[st.kid]; const x=W[it.w];
   if(o===it.w){ t.done=true; t.ok=!t.bad; if(t.ok){ d.ok++; x.box=Math.min(4,x.box+1); x.next=nowDay()+(WB_GAP[x.box]||0); } else { x.box=1; x.next=nowDay()+1; } const before=earned(st.kid); save(); if(x.box>=4) badgeToast(st.kid,before); }
@@ -2750,7 +2763,7 @@ function commitStumble(id){ if(!id||!st.d||!st.d.err||!st.d.err.length)return; c
   st.d.err.forEach(i=>{ const w=clean(T[i]||""); if(w.length<3)return; const x=S[w]||(S[w]={n:0,ok:0,t:Date.now()}); x.n++; x.done=false; }); save(); }
 function stumbleOpen(id){ return Object.entries(DB.stumble[id]||{}).filter(([w,x])=>!x.done); }
 function stumbleCard(){ if(!st.kid||st.mode==="class") return ""; const n=stumbleOpen(st.kid).length; if(!n) return "";
-  return `<button class="card scard" onclick="startStumble()" style="width:100%;text-align:left"><div class="row"><span style="font-size:40px">⚡</span><div class="sp"><b class="fred" style="font-size:21px">Meine Stolperwörter</b><div class="muted">${n} Wort${n>1?"e":""}, bei denen du gestolpert bist. Übe sie im Blitzlesen!</div></div><span class="btn small orange">▶ Üben</span></div></button>`; }
+  return `<button class="card scard" onclick="startStumble()" style="width:100%;text-align:left"><div class="row"><span style="font-size:2.5rem">⚡</span><div class="sp"><b class="fred" style="font-size:1.3125rem">Meine Stolperwörter</b><div class="muted">${n} Wort${n>1?"e":""}, bei denen du gestolpert bist. Übe sie im Blitzlesen!</div></div><span class="btn small orange">▶ Üben</span></div></button>`; }
 function startStumble(){ const L=shuffle(stumbleOpen(st.kid)).slice(0,8); st.d={items:L.map(([w])=>w),i:0,ph:"ready"}; go("stumble",{d:st.d}); }
 function vStumble(){ const d=st.d; let h=topBar("⚡ Meine Stolperwörter","go('hub')"); const S=DB.stumble[st.kid]||{};
   if(d.items&&d.i<d.items.length){ const w=d.items[d.i], x=S[w];
@@ -2760,10 +2773,10 @@ function vStumble(){ const d=st.d; let h=topBar("⚡ Meine Stolperwörter","go('
     else h+=`<div class="blitz">${d.ph==="show"?sylHTML(w):"❓"}</div><p class="instr">Konntest du das Wort lesen?</p><div class="row" style="justify-content:center"><button class="btn sec small" onclick="st.d.ph='show';sayWord(st.d.items[st.d.i]);render()">👀🔊 Zeigen & anhören</button></div><div class="row mt" style="justify-content:center"><button class="btn green" onclick="stRes(true)">✅ Ja, sicher</button><button class="btn sec" onclick="stRes(false)">🔁 Noch nicht</button></div><p class="muted">Schon ${x?x.ok:0} von 3 Mal sicher gelesen</p>`;
     h+=`</div>`; return h; }
   const O=stumbleOpen(st.kid), D=Object.entries(S).filter(([w,x])=>x.done);
-  if(d.items&&d.items.length) h+=`<div class="card" style="text-align:center"><div style="font-size:60px">⚡</div><h2>Runde geschafft!</h2><button class="btn green" onclick="go('hub')">Zurück ➜</button></div>`;
-  h+=`<h2>Noch üben (${O.length})</h2><div class="bank">${O.map(([w,x])=>`<span class="opt" style="font-size:19px;padding:8px 12px">${sylHTML(w)} <span class="muted">${"●".repeat(x.ok)}${"○".repeat(3-x.ok)}</span></span>`).join("")||`<span class="muted">Keine offenen Stolperwörter 🎉</span>`}</div>
-   <h2 class="mt">Geschafft (${D.length})</h2><div class="bank">${D.map(([w])=>`<span class="opt" style="font-size:17px;padding:8px 12px">✅ ${esc(w)}</span>`).join("")}</div>
-   <p class="muted mt">Die Wörter kommen aus dem Lesetandem: Wenn deine Trainerin oder dein Trainer ein Wort antippt, landet es hier. Auch deine Lehrkraft kann Wörter eintragen.</p>`;
+  if(d.items&&d.items.length) h+=`<div class="card" style="text-align:center"><div style="font-size:3.75rem">⚡</div><h2>Runde geschafft!</h2><button class="btn green" onclick="go('hub')">Zurück ➜</button></div>`;
+  h+=`<h2>Noch üben (${O.length})</h2><div class="bank">${O.map(([w,x])=>`<span class="opt" style="font-size:1.1875rem;padding:0.5rem 0.75rem">${sylHTML(w)} <span class="muted">${"●".repeat(x.ok)}${"○".repeat(3-x.ok)}</span></span>`).join("")||`<span class="muted">Keine offenen Stolperwörter 🎉</span>`}</div>
+   <h2 class="mt">Geschafft (${D.length})</h2><div class="bank">${D.map(([w])=>`<span class="opt" style="font-size:1.0625rem;padding:0.5rem 0.75rem">✅ ${esc(w)}</span>`).join("")}</div>
+   <p class="muted mt">Die Wörter kommen aus dem Lesetandem: Wenn deine Co-Pilotin oder dein Co-Pilot ein Wort antippt, landet es hier. Auch deine Lehrkraft kann Wörter eintragen.</p>`;
   return h; }
 function stFlash(){ const d=st.d; d.ph="flash"; render(); clearTimers(); TIMERS.push(setTimeout(()=>{ if(st.screen==="stumble"){ d.ph="ask"; render(); } },900+clean(d.items[d.i]).length*60)); }
 function stRes(ok){ const d=st.d, w=d.items[d.i], x=(DB.stumble[st.kid]||{})[w]; if(x){ if(ok){ x.ok++; if(x.ok>=3){ x.done=true; toast("✅ „"+w+"“ kannst du jetzt!"); } } else x.ok=Math.max(0,x.ok-1); save(); } d.i++; d.ph="ready"; render(); }
@@ -2781,12 +2794,12 @@ function vHomeMode(){ const H=DB.home; let h=topBar("🏠 Lesen zu Hause","go('h
   h+=`<div class="card"><h2>Hallo ${esc(hk.name)}! 👋</h2><p class="instr">Dein Text für heute: <b>${esc(u.icon||"")} ${esc(u.title)}</b>. Lies ihn deinen Eltern laut vor – etwa ${H.min} Minuten. Du kannst ihn auch zweimal lesen!</p>
     <div class="row"><span>Textstufe:</span>${lvSeg()}</div>${doneToday?`<div class="fb ok mt">✅ Heute hast du schon vorgelesen. Super! Du darfst gern noch einmal lesen.</div>`:""}</div>`;
   if(d.ph==="read"||d.ph==="run"){ h+=`<div class="card">${playerHTML()}<div class="row mt">${d.ph==="run"?`<span class="timer" id="timer">0:00</span><button class="btn red" onclick="homeStop()">⏹ Fertig vorgelesen</button>`:`<button class="btn green" onclick="homeStart()">▶ Ich lese jetzt vor</button>`}</div><div class="textbox mt"><div class="text" id="txt">${textHTML(fullText(u,st.lv),{gl:u})}</div></div></div>`; }
-  if(d.ph==="parent"){ h+=`<div class="card plan"><h2>👨‍👩‍👧 Für Eltern</h2><p class="instr">Hat Ihr Kind Ihnen den Text vorgelesen? Dann bestätigen Sie bitte mit dieser kleinen Rechenaufgabe:</p><p class="q">Wie viel ist ${d.a} + ${d.b}?</p><div class="row"><input type="tel" id="pans" style="max-width:140px" inputmode="numeric"><button class="btn green" onclick="homeConfirm()">✅ Bestätigen</button><button class="btn sec" onclick="st.d.hm.ph='read';render()">Nochmal lesen</button></div>
+  if(d.ph==="parent"){ h+=`<div class="card plan"><h2>👨‍👩‍👧 Für Eltern</h2><p class="instr">Hat Ihr Kind Ihnen den Text vorgelesen? Dann bestätigen Sie bitte mit dieser kleinen Rechenaufgabe:</p><p class="q">Wie viel ist ${d.a} + ${d.b}?</p><div class="row"><input type="tel" id="pans" style="max-width:8.75rem" inputmode="numeric"><button class="btn green" onclick="homeConfirm()">✅ Bestätigen</button><button class="btn sec" onclick="st.d.hm.ph='read';render()">Nochmal lesen</button></div>
     <p class="muted">Gelesen: etwa ${d.min} Minute${d.min===1?"":"n"}.</p></div>`; }
   if(d.ph==="done") h+=`<div class="card"><div class="fb ok">🎉 Danke! Das Vorlesen ist eingetragen. +2 ⭐</div></div>`;
   const R=DB.records.filter(r=>r.kind==="home"&&r.k===hk.id).sort((a,b)=>b.t-a.t);
   h+=`<div class="card"><h3>📅 So oft hast du zu Hause gelesen: ${R.length}×</h3><div class="muted">${R.slice(0,10).map(r=>`${fmt(r.t).split(",")[0]} · ${r.min} Min.`).join(" &nbsp;|&nbsp; ")||"noch nicht"}</div>
-   <h3 class="mt">📤 Für die Lehrkraft</h3><p class="muted">Am Ende der Woche: Code erzeugen und der Lehrkraft schicken (z. B. per Schul-Messenger oder E-Mail).</p><div class="row"><button class="btn sec" onclick="exportResults()">📤 Code erzeugen</button></div>${st.rexp?`<textarea class="mt" style="min-height:90px;font-size:13px" onclick="this.select()">${esc(st.rexp)}</textarea>`:""}</div>`;
+   <h3 class="mt">📤 Für die Lehrkraft</h3><p class="muted">Am Ende der Woche: Code erzeugen und der Lehrkraft schicken (z. B. per Schul-Messenger oder E-Mail).</p><div class="row"><button class="btn sec" onclick="exportResults()">📤 Code erzeugen</button></div>${st.rexp?`<textarea class="mt" style="min-height:5.625rem;font-size:0.8125rem" onclick="this.select()">${esc(st.rexp)}</textarea>`:""}</div>`;
   return h; }
 function setHomeKid(){ const n=($("#hkn").value||"").trim().slice(0,30); if(!n){ toast("Bitte deinen Namen eintragen"); return; } let k=DB.kids.find(x=>x.name.toLowerCase()===n.toLowerCase()); if(!k){ k={id:uid(),name:n,level:2}; DB.kids.push(k); } DB.homeKid=k.id; save(); render(); }
 function homeStart(){ stopAll(); const d=st.d.hm; d.ph="run"; d.t0=Date.now(); render(); TIMERS.push(setInterval(()=>{const el=$("#timer"); if(el){const s=Math.floor((Date.now()-d.t0)/1000); el.textContent=Math.floor(s/60)+":"+String(s%60).padStart(2,"0");}},500)); }
@@ -2798,8 +2811,8 @@ function vHomeT(){ const H=DB.home||{ids:[],min:10}; const sel=st.hsel||(st.hsel
   return `<h3>🏠 Lesen zu Hause</h3><p class="muted">Wählen Sie die Texte für zu Hause. Die Eltern öffnen die App über einen Link mit einem Zusatz-Code. Das Kind liest jeden Tag einen der Texte vor, die Eltern bestätigen. Am Ende der Woche schicken die Eltern einen Ergebnis-Code, den Sie unter „Einstellungen → Ergebnisse zusammenführen“ einfügen.</p>
    <div class="grid">${allUnits().map(u=>`<button class="opt ${sel.ids.includes(u.id)?"sel":""}" style="margin:0" onclick="hselToggle('${u.id}')">${sel.ids.includes(u.id)?"☑️":"⬜"} ${esc(u.icon||"📄")} ${esc(u.title)}</button>`).join("")}</div>
    <div class="row mt"><span>Lesezeit pro Tag:</span><div class="seg">${[10,15,20].map(m=>`<button class="${sel.min===m?"on":""}" onclick="st.hsel.min=${m};render()">${m} Min.</button>`).join("")}</div></div>
-   ${sel.ids.length?`<div class="tip mt"><b>Zusatz-Code für den Link:</b> <code style="font-size:18px">${esc(code)}</code><br><span class="muted">Hängen Sie diesen Code an die Adresse der App an. Wichtig: Eltern ohne Claude-Zugang können die App nur öffnen, wenn sie auf einer eigenen Webadresse liegt (siehe „Über FiLBY“ → eigene Webadresse).</span>${base&&/^https?:/.test(base)?`<div class="row mt"><input type="text" readonly value="${esc(base+code)}" onclick="this.select()"></div>`:""}<div class="row mt"><button class="btn small" onclick="copyTxt('${esc(code)}')">📋 Code kopieren</button><button class="btn small sec" onclick="DB.home={ids:[...st.hsel.ids],min:st.hsel.min,set:Date.now()};save();toast('Zuhause-Modus auf diesem Gerät aktiv – zum Ausprobieren')">Auf diesem Gerät ausprobieren</button></div></div>`:""}
-   <h3 class="mt">✉️ Elternbrief</h3><textarea id="plt" style="min-height:260px;font-size:16px">${esc(PARENT_LETTER)}</textarea>
+   ${sel.ids.length?`<div class="tip mt"><b>Zusatz-Code für den Link:</b> <code style="font-size:1.125rem">${esc(code)}</code><br><span class="muted">Hängen Sie diesen Code an die Adresse der App an. Wichtig: Eltern ohne Claude-Zugang können die App nur öffnen, wenn sie auf einer eigenen Webadresse liegt (siehe „Über FiLBY“ → eigene Webadresse).</span>${base&&/^https?:/.test(base)?`<div class="row mt"><input type="text" readonly value="${esc(base+code)}" onclick="this.select()"></div>`:""}<div class="row mt"><button class="btn small" onclick="copyTxt('${esc(code)}')">📋 Code kopieren</button><button class="btn small sec" onclick="DB.home={ids:[...st.hsel.ids],min:st.hsel.min,set:Date.now()};save();toast('Zuhause-Modus auf diesem Gerät aktiv – zum Ausprobieren')">Auf diesem Gerät ausprobieren</button></div></div>`:""}
+   <h3 class="mt">✉️ Elternbrief</h3><textarea id="plt" style="min-height:16.25rem;font-size:1rem">${esc(PARENT_LETTER)}</textarea>
    <div class="row mt"><button class="btn small" onclick="copyTxt($('#plt').value)">📋 Text kopieren</button>${DL?`<button class="btn small sec" onclick="saveLetter()">💾 Als Word-lesbare Datei speichern</button>`:""}</div>`; }
 function hselToggle(id){ const s=st.hsel.ids, i=s.indexOf(id); if(i>=0) s.splice(i,1); else s.push(id); render(); }
 function copyTxt(t){ try{ navigator.clipboard.writeText(t).then(()=>toast("Kopiert"),()=>toast("Bitte markieren und kopieren")); }catch(e){ toast("Bitte markieren und kopieren"); } }
@@ -2829,18 +2842,18 @@ function reportChart(f){ if(f.length<2) return `<p style="color:#5b6b7b">Noch zu
   return `<svg viewBox="0 0 ${w} ${h}" width="100%" style="max-width:${w}px"><line x1="30" y1="${h-25}" x2="${w-10}" y2="${h-25}" stroke="#ccc"/><line x1="30" y1="10" x2="30" y2="${h-25}" stroke="#ccc"/><text x="2" y="18" font-size="11" fill="#777">${Math.round(mx)}</text><text x="10" y="${h-25}" font-size="11" fill="#777">0</text>
     <polyline points="${pts.map(p=>p.join(",")).join(" ")}" fill="none" stroke="#2f7fd1" stroke-width="3"/>${pts.map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="3.5" fill="#2f7fd1"/>`).join("")}<text x="30" y="${h-6}" font-size="11" fill="#777">${fmt(f[0].t).split(",")[0]}</text><text x="${w-10}" y="${h-6}" font-size="11" fill="#777" text-anchor="end">${fmt(f[f.length-1].t).split(",")[0]}</text></svg>`; }
 function reportHTML(k){ const d=reportData(k), tx=reportText(k,d), note=DB.notes[k.id]||"";
-  const row=(a,b)=>`<tr><td style="padding:6px 10px;color:#5b6b7b;width:42%">${a}</td><td style="padding:6px 10px"><b>${b}</b></td></tr>`;
-  return `<div class="report"><h1 style="margin:0 0 4px;font-size:26px">Lernbericht Lesen: ${esc(k.name)}</h1><div style="color:#5b6b7b">Klasse 3a · Zeitraum: ${d.from?fmt(d.from).split(",")[0]:"–"} bis ${fmt(Date.now()).split(",")[0]} · aktuelle Textstufe: ${LV[k.level||2].n}</div>
-   <h2 style="font-size:19px;margin:18px 0 6px">Lesetempo (Wörter pro Minute beim Lautlesen)</h2>${reportChart(d.f)}
-   <table style="border-collapse:collapse;width:100%;font-size:15px">${row("Anfang (Ø erste 3 Messungen)",d.first??"–")}${row("Zuletzt (Ø letzte 3 Messungen)",d.last??"–")}${row("Bester Wert",d.best??"–")}
+  const row=(a,b)=>`<tr><td style="padding:0.375rem 0.625rem;color:#5b6b7b;width:42%">${a}</td><td style="padding:0.375rem 0.625rem"><b>${b}</b></td></tr>`;
+  return `<div class="report"><h1 style="margin:0 0 0.25rem;font-size:1.625rem">Lernbericht Lesen: ${esc(k.name)}</h1><div style="color:#5b6b7b">Klasse 3a · Zeitraum: ${d.from?fmt(d.from).split(",")[0]:"–"} bis ${fmt(Date.now()).split(",")[0]} · aktuelle Textstufe: ${LV[k.level||2].n}</div>
+   <h2 style="font-size:1.1875rem;margin:1.125rem 0 0.375rem">Lesetempo (Wörter pro Minute beim Lautlesen)</h2>${reportChart(d.f)}
+   <table style="border-collapse:collapse;width:100%;font-size:0.9375rem">${row("Anfang (Ø erste 3 Messungen)",d.first??"–")}${row("Zuletzt (Ø letzte 3 Messungen)",d.last??"–")}${row("Bester Wert",d.best??"–")}
    ${row("Lese-Check Form A",d.A?`${d.A.sc} richtig, ${d.A.err} falsch (${fmt(d.A.t).split(",")[0]})`:"–")}${row("Lese-Check Form B",d.B?`${d.B.sc} richtig, ${d.B.err} falsch (${fmt(d.B.t).split(",")[0]})`:"–")}
    ${row("Verstehensaufgaben richtig (1. Versuch)",d.pct!=null?d.pct+" %":"–")}${row("Strategie-Trainings",d.strat)}${row("Eigene Fragen an Sachtexte",d.own)}
    ${row("Vollständige Trainingstage",d.days)}${row("Trainingszeit in der Schule",d.min+" Min.")}${row("Vorlesen zu Hause (bestätigt)",d.home.length+"×, "+d.home.reduce((s,r)=>s+(r.min||0),0)+" Min.")}
    ${row("Bücher im Lesepass",d.books.length?d.books.map(b=>esc(b.title)).join(", "):"–")}${row("Eigene Texte geschrieben",d.writ.length)}${row("Wortschatz",`${d.wbL} Wörter sicher gelernt, ${d.wbN} in der Kiste`)}${row("Stolperwörter",`${d.stD} geschafft, ${d.stO.length} offen${d.stO.length?": "+esc(d.stO.slice(0,10).join(", ")):""}`)}</table>
-   <h2 style="font-size:19px;margin:18px 0 6px">Das gelingt schon gut</h2>${tx.plus.length?`<ul>${tx.plus.map(x=>`<li>${x}</li>`).join("")}</ul>`:"<p>–</p>"}
-   <h2 style="font-size:19px;margin:18px 0 6px">Nächste Schritte</h2>${tx.next.length?`<ul>${tx.next.map(x=>`<li>${x}</li>`).join("")}</ul>`:"<p>Weiter so wie bisher.</p>"}
-   <h2 style="font-size:19px;margin:18px 0 6px">Beobachtungen der Lehrkraft</h2><p style="white-space:pre-wrap">${esc(note)||"–"}</p>
-   <p style="color:#8b98a5;font-size:12px;margin-top:18px">Die Werte stammen aus der Lese-App und sind Richtwerte zur Beobachtung des Lernfortschritts, keine Noten und keine normierten Testergebnisse.</p></div>`; }
+   <h2 style="font-size:1.1875rem;margin:1.125rem 0 0.375rem">Das gelingt schon gut</h2>${tx.plus.length?`<ul>${tx.plus.map(x=>`<li>${x}</li>`).join("")}</ul>`:"<p>–</p>"}
+   <h2 style="font-size:1.1875rem;margin:1.125rem 0 0.375rem">Nächste Schritte</h2>${tx.next.length?`<ul>${tx.next.map(x=>`<li>${x}</li>`).join("")}</ul>`:"<p>Weiter so wie bisher.</p>"}
+   <h2 style="font-size:1.1875rem;margin:1.125rem 0 0.375rem">Beobachtungen der Lehrkraft</h2><p style="white-space:pre-wrap">${esc(note)||"–"}</p>
+   <p style="color:#8b98a5;font-size:0.75rem;margin-top:1.125rem">Die Werte stammen aus der Lese-App und sind Richtwerte zur Beobachtung des Lernfortschritts, keine Noten und keine normierten Testergebnisse.</p></div>`; }
 function vReport(){ const k=kidById(st.repKid); let h=topBar("📄 Lernbericht","go('teacher',{tab:'ov',detail:st.repKid})"); if(!k) return h;
   h+=`<div class="card noprint"><label class="lab">Beobachtungen der Lehrkraft (erscheinen im Bericht)</label><textarea id="rnote" oninput="DB.notes['${k.id}']=this.value;save()" placeholder="z. B. liest inzwischen mit mehr Betonung …">${esc(DB.notes[k.id]||"")}</textarea>
    <div class="row mt"><button class="btn" onclick="render()">↻ Bericht aktualisieren</button>${DL?`<button class="btn sec" onclick="saveReport()">💾 Als Datei speichern</button>`:""}<button class="btn sec" onclick="try{window.print()}catch(e){}">🖨️ Drucken</button></div><p class="muted">„Drucken“ funktioniert, wenn die App auf einer eigenen Webadresse läuft. In Claude: „Als Datei speichern“ und die Datei dann öffnen und drucken.</p></div>
@@ -2850,8 +2863,8 @@ function saveReport(){ const k=kidById(st.repKid); const html=`<!DOCTYPE html><h
 
 // ---------- ✨ Texte aus Stichpunkten (Claude) ----------
 let SAMPLE=null; try{ if(window.claude&&claude.use) claude.use("sample").then(x=>{ SAMPLE=x; if(st.screen==="teacher") render(); }).catch(()=>{}); }catch(e){}
-function genBox(){ if(!SAMPLE||!st.edit) return ""; return `<div class="tip"><b>✨ Text aus Stichpunkten schreiben lassen</b><p class="muted" style="margin:4px 0">Schreiben Sie in Stichpunkten, was die Klasse erlebt hat (Ort, was passiert ist, beteiligte Kinder). Claude schreibt daraus einen Lesetext in drei Stufen mit Stolperwörtern, Worterklärungen, Lügenwörtern und Fragen – alles danach hier prüfbar und änderbar.</p>
-  <textarea id="gnotes" style="min-height:110px" placeholder="z. B. Besuch bei der Feuerwehr Hirschau am Dienstag; Feuerwehrmann zeigt Drehleiter (30 m); Milan und Emma dürfen Schlauch halten; Atemschutz ausprobiert; Brandschutzregel: Notruf 112">${esc(st.gnotes||"")}</textarea>
+function genBox(){ if(!SAMPLE||!st.edit) return ""; return `<div class="tip"><b>✨ Text aus Stichpunkten schreiben lassen</b><p class="muted" style="margin:0.25rem 0">Schreiben Sie in Stichpunkten, was die Klasse erlebt hat (Ort, was passiert ist, beteiligte Kinder). Claude schreibt daraus einen Lesetext in drei Stufen mit Stolperwörtern, Worterklärungen, Lügenwörtern und Fragen – alles danach hier prüfbar und änderbar.</p>
+  <textarea id="gnotes" style="min-height:6.875rem" placeholder="z. B. Besuch bei der Feuerwehr Hirschau am Dienstag; Feuerwehrmann zeigt Drehleiter (30 m); Milan und Emma dürfen Schlauch halten; Atemschutz ausprobiert; Brandschutzregel: Notruf 112">${esc(st.gnotes||"")}</textarea>
   <div class="row mt"><button class="btn" ${st.genBusy?"disabled":""} onclick="genText()">${st.genBusy?"⏳ Claude schreibt … (bis zu 1 Minute)":"✨ Text schreiben lassen"}</button></div></div>`; }
 async function genText(){ syncEdit(); const notes=($("#gnotes").value||"").trim(); st.gnotes=notes; if(notes.length<15){ toast("Bitte ein paar Stichpunkte mehr eintragen"); return; } st.genBusy=true; render();
   const prompt=`Du schreibst einen Lesetext für eine 3. Klasse an einer bayerischen Grundschule (Lese-App mit drei Niveaustufen). Grundlage sind NUR diese Stichpunkte der Lehrkraft:\n"""\n${notes}\n"""\nRegeln: Erfinde keine Fakten über die Stichpunkte hinaus, nur kleine erzählende Übergänge. Verwende nur Vornamen, die in den Stichpunkten stehen. Kindgerechte, korrekte deutsche Sprache, Rechtschreibung nach aktueller Regel, typografische Anführungszeichen „…“.\nStufe "leicht": 60–80 Wörter, kurze Hauptsätze. Stufe "mittel": 100–130 Wörter. Stufe "schwer": 140–180 Wörter, auch Nebensätze. Alle drei Stufen enthalten dieselben Kerninformationen.\nAntworte NUR mit einem JSON-Objekt dieser Form:\n{"titel":"…","emoji":"ein passendes Emoji","leicht":"…","mittel":"…","schwer":"…","stolperwoerter":["Feu-er-wehr", "… 5 schwierige Wörter aus dem Text mit Silbentrennung durch Bindestriche"],"erklaerungen":[{"wort":"Drehleiter","erklaerung":"kindgerechte Erklärung in einem Satz","emoji":"🚒"}],"luegen":[{"wort":"exakt so im mittleren Text vorkommendes Wort","luege":"falsches Wort mit gleicher Wortart, Form und gleichem Geschlecht, inhaltlich klar falsch"}],"fragen":[{"frage":"…","richtig":"…","falsch1":"…","falsch2":"…"}]}\nGib 6–10 Erklärungen, 5 Lügen und 4 Fragen, die in allen drei Stufen beantwortbar sind.`;
@@ -2880,7 +2893,7 @@ function srAlign(T,text){ const d=st.d; const W=text.split(/\s+/).map(norm).filt
   d.srm={ok,skip,ptr:p}; document.querySelectorAll("#txt .w").forEach(el=>{ const i=+el.dataset.i; el.classList.toggle("srok",ok.includes(i)); el.classList.toggle("srskip",skip.includes(i)); }); }
 function stopSR(){ const d=st.d; d.srRun=false; try{ SR&&SR.stop(); }catch(e){} }
 function srSummary(){ const d=st.d; if(!d.srOn) return ""; if(d.srErr==="not-allowed"||d.srErr==="service-not-allowed"||d.srErr==="start") return `<div class="fb info mt">🎤 Der Mitlese-Check braucht das Mikrofon. Hier ist es gesperrt – auf einer eigenen Webadresse funktioniert er.</div>`;
-  if(!d.srm) return ""; const n=wordCount(fullText(st.unit,st.lv)); return `<div class="fb info mt">🎤 Die App hat ${d.srm.ok.length} von ${n} Wörtern erkannt.${d.srm.skip.length?` <span class="w srskip">Orange</span> sind Wörter, die vielleicht ausgelassen wurden.`:""} <span class="muted">Die Erkennung ist nicht perfekt – im Zweifel zählt, was die Trainerin oder der Trainer gehört hat.</span></div>`; }
+  if(!d.srm) return ""; const n=wordCount(fullText(st.unit,st.lv)); return `<div class="fb info mt">🎤 Die App hat ${d.srm.ok.length} von ${n} Wörtern erkannt.${d.srm.skip.length?` <span class="w srskip">Orange</span> sind Wörter, die vielleicht ausgelassen wurden.`:""} <span class="muted">Die Erkennung ist nicht perfekt – im Zweifel zählt, was die Co-Pilotin oder der Co-Pilot gehört hat.</span></div>`; }
 
 // ---------- Abzeichen, Bildschirme, Ergänzungen ----------
 BADGES.push({id:"worm",i:"📚",n:"Bücherwurm",d:"5 Bücher im Lesepass eingetragen"},{id:"wordpro",i:"🧺",n:"Wortprofi",d:"10 Wörter in der Wortschatz-Kiste gelernt"},{id:"author",i:"✍️",n:"Autorin / Autor",d:"3 eigene Texte geschrieben"},{id:"riddler",i:"🧩",n:"Rätselmeister",d:"3 Rätsel für andere erfunden"},{id:"homer",i:"🏠",n:"Vorlese-Star",d:"5-mal zu Hause vorgelesen"});
@@ -2888,12 +2901,12 @@ function earnedExtra(id,has){ if(DB.books.filter(b=>b.k===id).length>=5)has.add(
 
 function vHub(){
   let h=topBar(st.mode==="class"?"Lesetraining mit der Klasse":"Was möchtest du üben?", st.mode==="class"?"go('home')":"go('kids')");
-  h+=`<div class="row" style="margin-bottom:16px"><span class="fred" style="font-size:20px">Textstufe:</span>${lvSeg()}${dazBtn()}</div>`;
+  h+=`<div class="row" style="margin-bottom:1rem"><span class="fred" style="font-size:1.25rem">Textstufe:</span>${lvSeg()}${dazBtn()}</div>`;
   h+=testCard()+trainingCard()+wordsCard()+stumbleCard()+flightCard();
   const free=st.mode==="class"||!TP().on||TP().free;
   if(free) h+=planCard();
   const kid=st.mode!=="class";
-  if(free) h+=`<button class="big" style="width:100%;min-height:110px;margin-bottom:16px;background:linear-gradient(135deg,#fff7e6,#e8f4ff)" onclick="startPick()"><span class="ic">📚</span><b>Text und Thema frei wählen</b><small>Geschichten, Tiere, Wald, Wasser, Werbung, Lesespuren … such dir aus, was du lesen möchtest!</small></button>`;
+  if(free) h+=`<button class="big" style="width:100%;min-height:6.875rem;margin-bottom:1rem;background:linear-gradient(135deg,#fff7e6,#e8f4ff)" onclick="startPick()"><span class="ic">📚</span><b>Text und Thema frei wählen</b><small>Geschichten, Tiere, Wald, Wasser, Werbung, Lesespuren … such dir aus, was du lesen möchtest!</small></button>`;
   h+=`<div class="grid">`+(free?`
    <button class="big" onclick="st.fromPick=false;go('list',{area:'f'})"><span class="ic">🎧</span><b>Flüssig lesen</b><small>Lesetraining, Lese-Challenge, Aufnehmen, Lesetheater, Satz-Blitzlesen</small></button>
    <button class="big" onclick="st.fromPick=false;go('list',{area:'s'})"><span class="ic">🧭</span><b>Verstehen</b><small>Lesestrategien, Lügentexte, Lesespuren, Rätsel und Schreiben</small></button>`:"")+
@@ -2910,13 +2923,13 @@ function bookExtras(id){ const B=DB.books.filter(b=>b.k===id), W=DB.writings.fil
   return h; }
 function teacherKidExtras(k){ const W=DB.writings.filter(w=>w.k===k.id).sort((a,b)=>b.t-a.t), P=DB.puzzles.filter(p=>p.by===k.id), B=DB.books.filter(b=>b.k===k.id), O=stumbleOpen(k.id);
   let h=`<div class="row mt"><button class="btn" onclick="st.repKid='${k.id}';go('report')">📄 Lernbericht</button></div>`;
-  h+=`<h3 class="mt">⚡ Persönliche Stolperwörter (${O.length} offen)</h3><div class="bank" style="margin:4px 0">${O.map(([w])=>`<span class="opt" style="font-size:16px;padding:6px 10px">${esc(w)}</span>`).join("")||`<span class="muted">keine</span>`}</div>
-   <div class="row"><input type="text" id="stadd" placeholder="Wörter hinzufügen, mit Komma getrennt" style="max-width:420px"><button class="btn small" onclick="addStumbleT('${k.id}')">➕</button></div>`;
+  h+=`<h3 class="mt">⚡ Persönliche Stolperwörter (${O.length} offen)</h3><div class="bank" style="margin:0.25rem 0">${O.map(([w])=>`<span class="opt" style="font-size:1rem;padding:0.375rem 0.625rem">${esc(w)}</span>`).join("")||`<span class="muted">keine</span>`}</div>
+   <div class="row"><input type="text" id="stadd" placeholder="Wörter hinzufügen, mit Komma getrennt" style="max-width:26.25rem"><button class="btn small" onclick="addStumbleT('${k.id}')">➕</button></div>`;
   h+=`<h3 class="mt">📚 Lesepass (${B.length})</h3><div class="muted">${B.map(b=>`${esc(b.title)} ${"⭐".repeat(b.stars||0)}`).join(" · ")||"–"}</div>`;
   h+=`<h3 class="mt">✍️ Texte (${W.length})</h3>`+(W.map(w=>`<details class="wbox"><summary>${esc(unit(w.u)?unit(w.u).title:"Text")} · ${fmt(w.t)} · ${wordCount(w.text)} Wörter</summary><p style="white-space:pre-wrap">${esc(w.text)}</p></details>`).join("")||`<div class="muted">–</div>`);
-  h+=`<h3 class="mt">🧩 Erfundene Rätsel (${P.length})</h3>`+(P.map(p=>`<div class="kidrow"><span class="nm" style="font-size:16px;font-weight:400">${esc(unit(p.u)?unit(p.u).title:"Text")}: ${p.type==="lie"?p.lies.map(x=>`${esc(clean(x.orig))} → ${esc(clean(x.lie))}`).join(", "):esc(p.q.q)+" ✅ "+esc(p.q.o[0])}</span><button class="btn sec small" onclick="DB.puzzles=DB.puzzles.filter(x=>x.id!=='${p.id}');save();render()">🗑️</button></div>`).join("")||`<div class="muted">–</div>`);
+  h+=`<h3 class="mt">🧩 Erfundene Rätsel (${P.length})</h3>`+(P.map(p=>`<div class="kidrow"><span class="nm" style="font-size:1rem;font-weight:400">${esc(unit(p.u)?unit(p.u).title:"Text")}: ${p.type==="lie"?p.lies.map(x=>`${esc(clean(x.orig))} → ${esc(clean(x.lie))}`).join(", "):esc(p.q.q)+" ✅ "+esc(p.q.o[0])}</span><button class="btn sec small" onclick="DB.puzzles=DB.puzzles.filter(x=>x.id!=='${p.id}');save();render()">🗑️</button></div>`).join("")||`<div class="muted">–</div>`);
   return h; }
-function puzzleAdmin(){ const P=DB.puzzles; if(!P.length) return ""; return `<h3 class="mt">🧩 Rätsel der Kinder (${P.length})</h3><p class="muted">Bitte kurz prüfen – unpassende Rätsel können Sie löschen.</p>`+P.map(p=>`<div class="kidrow"><span class="nm" style="font-size:16px;font-weight:400"><b>${esc(p.byName||kidName(p.by))}</b> · ${esc(unit(p.u)?unit(p.u).title:"Text")}: ${p.type==="lie"?p.lies.map(x=>`${esc(clean(x.orig))} → ${esc(clean(x.lie))}`).join(", "):esc(p.q.q)}</span><button class="btn sec small" onclick="DB.puzzles=DB.puzzles.filter(x=>x.id!=='${p.id}');save();render()">🗑️</button></div>`).join(""); }
+function puzzleAdmin(){ const P=DB.puzzles; if(!P.length) return ""; return `<h3 class="mt">🧩 Rätsel der Kinder (${P.length})</h3><p class="muted">Bitte kurz prüfen – unpassende Rätsel können Sie löschen.</p>`+P.map(p=>`<div class="kidrow"><span class="nm" style="font-size:1rem;font-weight:400"><b>${esc(p.byName||kidName(p.by))}</b> · ${esc(unit(p.u)?unit(p.u).title:"Text")}: ${p.type==="lie"?p.lies.map(x=>`${esc(clean(x.orig))} → ${esc(clean(x.lie))}`).join(", "):esc(p.q.q)}</span><button class="btn sec small" onclick="DB.puzzles=DB.puzzles.filter(x=>x.id!=='${p.id}');save();render()">🗑️</button></div>`).join(""); }
 document.addEventListener("click",e=>{ const w=e.target.closest("#txt .w.mkw"); if(w&&st.screen==="flowMake"&&st.d.mk){ st.d.mk.sel=+w.dataset.i; render(); setTimeout(()=>{const i=$("#lw"); if(i) i.focus();},50); } });
 
 
@@ -2932,14 +2945,14 @@ function pickTopic(t){ st.ptopic=t; render(); }
 function vPick(){
   const t=st.ptopic||"all"; let h=topBar("📚 Text und Thema wählen","st.fromPick=false;go('hub')");
   h+=`<p class="instr">Such dir aus, was du lesen möchtest! Tippe zuerst auf ein Thema, dann auf einen Text.</p>`;
-  h+=`<div class="row" style="margin-bottom:12px"><span class="fred" style="font-size:20px">Textstufe:</span>${lvSeg()}${dazBtn()}</div>`;
+  h+=`<div class="row" style="margin-bottom:0.75rem"><span class="fred" style="font-size:1.25rem">Textstufe:</span>${lvSeg()}${dazBtn()}</div>`;
   const C=DB.custom||[];
   const counts={}; const add=k=>counts[k]=(counts[k]||0)+1;
   UNITS.forEach(u=>unitTopics(u).forEach(add)); C.forEach(()=>add("eigen")); TRAILS.forEach(T=>{add("spur"); add(TRAIL_TOPIC[T.topic]||"wald");});
-  h+=`<div class="bank" style="margin:0 0 18px">${TOPICS.filter(([k])=>k==="all"||counts[k]).map(([k,i,n])=>`<button class="opt ${t===k?"sel":""}" style="font-size:19px;padding:10px 16px" onclick="pickTopic('${k}')">${i} ${n}</button>`).join("")}</div>`;
+  h+=`<div class="bank" style="margin:0 0 1.125rem">${TOPICS.filter(([k])=>k==="all"||counts[k]).map(([k,i,n])=>`<button class="opt ${t===k?"sel":""}" style="font-size:1.1875rem;padding:0.625rem 1rem" onclick="pickTopic('${k}')">${i} ${n}</button>`).join("")}</div>`;
   const F=finsOf(st.kid);
-  const trailCard=T=>`<button class="big" style="min-height:120px" onclick="st.area='s';startTrail('${T.id}')"><span class="ic">${T.icon}</span><b>${esc(T.title)}</b><small>Lesespur · Thema ${T.topic}${F.some(r=>r.u===T.id)?" · ✅":""}</small></button>`;
-  const sec=(title,cards)=>cards.length?`<h2>${title}</h2><div class="grid" style="margin-bottom:16px">${cards.join("")}</div>`:"";
+  const trailCard=T=>`<button class="big" style="min-height:7.5rem" onclick="st.area='s';startTrail('${T.id}')"><span class="ic">${T.icon}</span><b>${esc(T.title)}</b><small>Lesespur · Thema ${T.topic}${F.some(r=>r.u===T.id)?" · ✅":""}</small></button>`;
+  const sec=(title,cards)=>cards.length?`<h2>${title}</h2><div class="grid" style="margin-bottom:1rem">${cards.join("")}</div>`:"";
   if(t==="all"||t==="story") STORIES.forEach(S=>{ h+=sec(`📖 Geschichte: ${esc(S.title)}`,UNITS.filter(u=>u.type==="story"&&(u.story||1)===S.n).map(unitCard)); });
   const facts=UNITS.filter(u=>u.type==="fact"&&(t==="all"||unitTopics(u).includes(t)));
   if(t!=="story"&&t!=="spur"&&t!=="eigen") h+=sec("🔎 Sachtexte",facts.map(unitCard));
