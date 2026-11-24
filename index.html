@@ -693,7 +693,7 @@ s7:[["kaufen","verschenken"],["fröhliche","traurige"],["fröhlicher","trauriger
 };
 
 // ===== Lesetheater: [Rolle, Text, Hinweis] — E Erzähler, L Johanna, M Milan, O Oma =====
-const ROLES={E:{n:"Erzähler:in",c:"#7a6a58",p:1.0},L:{n:"Johanna",c:"#e07b1f",p:1.15},M:{n:"Milan",c:"#2f7fd1",p:0.95},O:{n:"Oma Rosi",c:"#8a4fc7",p:0.85}};
+const ROLES={E:{n:"Erzähler",c:"#7a6a58",p:1.0},L:{n:"Johanna",c:"#e07b1f",p:1.15},M:{n:"Milan",c:"#2f7fd1",p:0.95},O:{n:"Oma Rosi",c:"#8a4fc7",p:0.85}};
 const THEATER={
 g1:[
  ["E","Johanna und ihr Cousin Milan verbringen die Herbstferien bei Oma Rosi. Oma wohnt am Rand des Dorfes in einem kleinen Haus mit einem großen Garten."],
@@ -1452,7 +1452,7 @@ function vHome(){
   return `<div class="hero">${PLANE}<div><h1>Leseflieger</h1><p>Lesetraining · Leseflüssigkeit und Lesestrategien</p></div></div>
   <div class="grid">
     <button class="big" onclick="pickMode('solo')"><span class="ic">🧒</span><b>Ich übe allein</b><small>Mit Vorlesestimme, Stoppuhr und Lesestrategien</small></button>
-    <button class="big" onclick="pickMode('tandem')"><span class="ic">👫</span><b>Wir üben im Tandem</b><small>Pilot:in liest, Co-Pilot:in liest mit und hilft</small></button>
+    <button class="big" onclick="pickMode('tandem')"><span class="ic">👫</span><b>Wir üben im Tandem</b><small>Pilot liest, Co-Pilot liest mit und hilft</small></button>
     <button class="big" onclick="pickMode('class')"><span class="ic">🧑‍🏫</span><b>Klasse / Tafel</b><small>Große Schrift zum gemeinsamen Üben und Modellieren</small></button>
     ${DB.home?`<button class="big" onclick="go('homeM',{d:{}})"><span class="ic">🏠</span><b>Lesen zu Hause</b><small>Den Text des Tages den Eltern vorlesen</small></button>`:""}
   </div>
@@ -1469,8 +1469,8 @@ function vKids(){
   const real=DB.kids.filter(k=>!/^Gast( |$)/.test(k.name));
   if(tandem&&real.length<2){
     h+=`<div class="card"><p class="instr">${real.length?"Für ein Tandem braucht ihr zwei Namen.":"Es sind noch keine Namen angelegt."} Tragt eure Vornamen hier ein – sie werden gespeichert und stehen dann auch im Lehrkraft-Bereich.</p>
-    <label class="lab">👩‍✈️ Pilot:in (liest zuerst)</label><input type="text" id="qn1" maxlength="30" placeholder="Vorname" value="${real[0]?esc(real[0].name):""}">
-    <label class="lab">🧭 Co-Pilot:in</label><input type="text" id="qn2" maxlength="30" placeholder="Vorname">
+    <label class="lab">🧑‍✈️ Pilot (liest zuerst)</label><input type="text" id="qn1" maxlength="30" placeholder="Vorname" value="${real[0]?esc(real[0].name):""}">
+    <label class="lab">🧭 Co-Pilot</label><input type="text" id="qn2" maxlength="30" placeholder="Vorname">
     <div class="row mt"><button class="btn green" onclick="quickTandem()">Los geht's ➜</button><button class="btn sec" onclick="guestTandem()">Als Gast-Tandem üben</button></div></div>`; return h;
   }
   if(!DB.kids.length){
@@ -1478,9 +1478,9 @@ function vKids(){
     <label class="lab">Dein Vorname</label><input type="text" id="qn1" maxlength="30" placeholder="Vorname">
     <div class="row mt"><button class="btn green" onclick="quickSolo()">Los geht's ➜</button><button class="btn sec" onclick="guest()">Als Gast üben</button></div></div>`; return h;
   }
-  if(tandem) h+=`<p class="instr">Tippt zuerst die <b>Pilotin / den Piloten</b> an, dann die <b>Co-Pilotin / den Co-Piloten</b>. Die Rollen wechselt ihr später.</p>`;
+  if(tandem) h+=`<p class="instr">Tippt zuerst an, wer <b>Pilot</b> ist, dann, wer <b>Co-Pilot</b> ist. Die Rollen wechselt ihr später.</p>`;
   h+=`<div class="grid">`+DB.kids.slice().sort((a,b)=>a.name.localeCompare(b.name,"de")).map(k=>{const pos=st.sel.indexOf(k.id);
-    return `<button class="big ${pos>=0?"sel":""}" style="min-height:6rem" onclick="pickKid('${k.id}')"><b>${esc(k.name)}</b><small>${LV[k.level||2].i} ${LV[k.level||2].n} · ⭐ ${DB.stars[k.id]||0}${pos===0?" · 👩‍✈️ Pilot:in":pos===1?" · 🧭 Co-Pilot:in":""}</small></button>`;}).join("")+`</div>`;
+    return `<button class="big ${pos>=0?"sel":""}" style="min-height:6rem" onclick="pickKid('${k.id}')"><b>${esc(k.name)}</b><small>${LV[k.level||2].i} ${LV[k.level||2].n} · ⭐ ${DB.stars[k.id]||0}${pos===0?" · 🧑‍✈️ Pilot":pos===1?" · 🧭 Co-Pilot":""}</small></button>`;}).join("")+`</div>`;
   if(tandem) h+=`<div class="row mt"><button class="btn green" ${st.sel.length===2?"":"disabled"} onclick="startTandem()">Los geht's ➜</button></div>`;
   return h;
 }
@@ -1573,7 +1573,7 @@ function selfRead(str){
   const reader=tandem?(st.d.round===1?st.kid2:st.kid):st.kid, trainer=tandem?(st.d.round===1?st.kid:st.kid2):null;
   let h="";
   if(cls) h+=`<p class="instr">🎤 <b>3. Durchgang – Chorlesen:</b> Lest gemeinsam laut. Der Lesepfeil gibt das Tempo vor.</p>`;
-  else if(tandem) h+=`<p class="instr">👩‍✈️ <b>Pilot:in: ${esc(kidName(reader))}</b> liest laut vor.<br>🧭 <b>Co-Pilot:in: ${esc(kidName(trainer))}</b> zeigt mit dem Finger mit und tippt auf Wörter, bei denen ${esc(kidName(reader))} stolpert.</p>`;
+  else if(tandem) h+=`<p class="instr">🧑‍✈️ <b>Pilot: ${esc(kidName(reader))}</b> liest laut vor.<br>🧭 <b>Co-Pilot: ${esc(kidName(trainer))}</b> zeigt mit dem Finger mit und tippt auf Wörter, bei denen ${esc(kidName(reader))} stolpert.</p>`;
   else h+=`<p class="instr">🎤 <b>3. Durchgang:</b> Lies den Text jetzt allein laut vor. Tippe auf Start, wenn du anfängst, und auf Fertig, wenn du am Ende bist.</p>`;
   const tap=tandem&&(r==="run"||r==="done");
   h+=`<div class="row">`;
@@ -1901,7 +1901,7 @@ function vTeacher(){
   if(st.tab==="info"){
     h+=`<h3>So hängt die App mit FiLBY zusammen</h3>
     <p><b>FiLBY</b> (Fachintegrierte Leseförderung Bayern) ist ein dreijähriges Lesetraining der Universität Regensburg mit ISB und Kultusministerium: Jgst. 2 Leseflüssigkeit, Jgst. 3 Lesestrategien, Jgst. 4 selbstreguliertes Lesen – jeweils erst an einer Klassenlektüre, dann an Sachtexten.</p>
-    <p><b>🎧 Flüssig lesen</b> folgt den drei Durchgängen des Leseflüssigkeitstrainings: (1) zuhören und mit dem Stift mitzeigen, (2) halblaut mitlesen, (3) selbst laut lesen – allein mit Stoppuhr oder im Lautlesetandem (Pilot:in liest, Co-Pilot:in liest mit und gibt Rückmeldung). Die Vorlesestimme hat drei Tempostufen (ca. 80/100/120 Wörter pro Minute). Vorab: Stolperwörter in Silben und Blitzlesen.</p>
+    <p><b>🎧 Flüssig lesen</b> folgt den drei Durchgängen des Leseflüssigkeitstrainings: (1) zuhören und mit dem Stift mitzeigen, (2) halblaut mitlesen, (3) selbst laut lesen – allein mit Stoppuhr oder im Lautlesetandem (Pilot liest, Co-Pilot liest mit und gibt Rückmeldung). Die Vorlesestimme hat drei Tempostufen (ca. 80/100/120 Wörter pro Minute). Vorab: Stolperwörter in Silben und Blitzlesen.</p>
     <p><b>🧭 Lesestrategien</b>: Für die Geschichte die Schritte <i>Vor dem Lesen → Situation → Figuren → wichtigstes Ereignis</i>. Für Sachtexte die Flug-Strategie: <i>Startkontrolle</i> (Überschrift, Leitfragen, Vorwissen) → <i>Überflug</i> (Überfliegen, Signalwörter, Textbild Kette oder Netz wählen) → <i>Tiefflug</i> (Schlüsselstellen markieren, Stichpunkte ins Textbild) → <i>Landung</i> (berichten, Verständnisfragen).</p>
     <p><b>Texte:</b> Alle Texte sind eigens für diese App geschrieben (Geschichte „${STORY_TITLE}“ in 4 Kapiteln, 4 Sachtexte zu HSU-Themen), jeweils in drei Stufen. Sie ersetzen nicht das offizielle FiLBY-Material, das manualgetreu eingesetzt werden soll.</p>
     <p><b>🔍 Wörter klären:</b> Schwierige Wörter sind im Text lila unterstrichen. Beim Antippen erscheint eine kindgerechte Erklärung mit Bild, die man sich auch vorlesen lassen kann. Beim selbstständigen Lautlesen und beim Markieren ist die Funktion ausgeschaltet, damit sie nicht stört.</p>
@@ -2145,7 +2145,7 @@ function initTheater(){ const d=st.d; d.cast={}; const k1=st.kid, k2=st.kid2;
   else if(st.mode==="tandem") d.cast={E:"k1",L:"k1",M:"k2",O:"k2"};
   else d.cast={E:"kids",L:"kids",M:"kids",O:"kids"};
   d.ph="cast"; d.li=0; }
-function castOpts(){ if(st.mode==="solo") return [["k1","🙋 Ich"],["tts","🔊 Stimme"]]; if(st.mode==="tandem") return [["k1","👩‍✈️ "+esc(kidName(st.kid))],["k2","🧭 "+esc(kidName(st.kid2))],["tts","🔊 Stimme"]]; return [["kids","🧒 Kinder"],["tts","🔊 Stimme"]]; }
+function castOpts(){ if(st.mode==="solo") return [["k1","🙋 Ich"],["tts","🔊 Stimme"]]; if(st.mode==="tandem") return [["k1","🧑‍✈️ "+esc(kidName(st.kid))],["k2","🧭 "+esc(kidName(st.kid2))],["tts","🔊 Stimme"]]; return [["kids","🧒 Kinder"],["tts","🔊 Stimme"]]; }
 function vFlowT(){
   const u=st.unit, d=st.d, L=THEATER[u.id]; let h=topBar(`🎭 Lesetheater: ${esc(u.title)}`,"go('acts')");
   h+=`<div class="card">`;
@@ -2268,7 +2268,7 @@ function cardStory(){ const S=[["🔮","Vor dem Lesen",["Was ist bisher passiert
   return svgWrap(794,1123,`<rect width="794" height="1123" fill="#fff8ec"/><text x="397" y="110" font-size="56" text-anchor="middle" font-weight="700" fill="#c0601a">🕵️ Lese-Detektiv</text><text x="397" y="160" font-size="28" text-anchor="middle" fill="#5b6b7b">Meine Strategien für Geschichten</text>`+S.map((s,i)=>stepBox(60,210+i*215,674,190,["#8a4fc7","#2e9e5b","#2f7fd1","#e07b1f"][i],s[0],s[1],s[2])).join("")+`<text x="397" y="1090" font-size="20" text-anchor="middle" fill="#8b98a5">Leseflieger</text>`); }
 function cardFact(){ const S=[["🛫","Startkontrolle",["Überschrift lesen: Was will ich wissen?","Was weiß ich schon?"]],["🛩️","Überflug",["Text in Schlangenlinien überfliegen.","Signalwörter: Kette oder Netz?"]],["🔍","Tiefflug",["Genau lesen, Schlüsselstellen markieren.","Stichpunkte ins Textbild schreiben."]],["🛬","Landung",["Mit dem Textbild berichten.","Konnte ich meine Fragen beantworten?"]]];
   return svgWrap(794,1123,`<rect width="794" height="1123" fill="#eef6fd"/><text x="397" y="110" font-size="56" text-anchor="middle" font-weight="700" fill="#1f5fa3">✈️ Leseflieger</text><text x="397" y="160" font-size="28" text-anchor="middle" fill="#5b6b7b">Meine Flug-Strategie für Sachtexte</text>`+S.map((s,i)=>stepBox(60,210+i*215,674,190,["#2f7fd1","#2e9e5b","#e07b1f","#8a4fc7"][i],s[0],s[1],s[2])).join("")+`<text x="397" y="1090" font-size="20" text-anchor="middle" fill="#8b98a5">Leseflieger</text>`); }
-function bookmarks(){ const B=[["#e07b1f","🕵️","Geschichten",["🔮 Vorher: Was","   weiß ich schon?","🏡 Wo? Wann?","🧑‍🤝‍🧑 Wer? Wie?","⭐ Was ist das","   Wichtigste?"]],["#2f7fd1","✈️","Sachtexte",["🛫 Start: Was will","   ich wissen?","🛩️ Überfliegen","🔍 Genau lesen,","   markieren","🛬 Berichten"]],["#2e9e5b","👫","Lesetandem",["👩‍✈️ Pilot:in","   liest laut.","🧭 Co-Pilot:in","   zeigt mit.","👍 Freundlich","   helfen!","🔄 Tauschen"]]];
+function bookmarks(){ const B=[["#e07b1f","🕵️","Geschichten",["🔮 Vorher: Was","   weiß ich schon?","🏡 Wo? Wann?","🧑‍🤝‍🧑 Wer? Wie?","⭐ Was ist das","   Wichtigste?"]],["#2f7fd1","✈️","Sachtexte",["🛫 Start: Was will","   ich wissen?","🛩️ Überfliegen","🔍 Genau lesen,","   markieren","🛬 Berichten"]],["#2e9e5b","👫","Lesetandem",["🧑‍✈️ Pilot","   liest laut.","🧭 Co-Pilot","   zeigt mit.","👍 Freundlich","   helfen!","🔄 Tauschen"]]];
   return svgWrap(794,1123,`<rect width="794" height="1123" fill="#fff"/>`+B.map((b,i)=>{const x=40+i*250; return `<rect x="${x}" y="40" width="220" height="1040" rx="26" fill="#fff" stroke="${b[0]}" stroke-width="6" stroke-dasharray="2 0"/><rect x="${x}" y="40" width="220" height="170" rx="26" fill="${b[0]}"/><text x="${x+110}" y="125" font-size="70" text-anchor="middle">${b[1]}</text><text x="${x+110}" y="185" font-size="30" font-weight="700" text-anchor="middle" fill="#fff">${b[2]}</text>`+b[3].map((l,j)=>`<text xml:space="preserve" x="${x+18}" y="${290+j*92}" font-size="25" fill="#1f2d3d">${xe(l)}</text>`).join("")+`<text x="${x+110}" y="1050" font-size="18" text-anchor="middle" fill="#8b98a5">Leseflieger</text>`;}).join("")); }
 function certificate(name,b){ const date=new Date().toLocaleDateString("de-DE");
   return svgWrap(1123,794,`<rect width="1123" height="794" fill="#fffaf0"/><rect x="30" y="30" width="1063" height="734" rx="34" fill="none" stroke="#e8b84a" stroke-width="10"/><rect x="52" y="52" width="1019" height="690" rx="26" fill="none" stroke="#2f7fd1" stroke-width="3" stroke-dasharray="10 8"/>
@@ -2776,7 +2776,7 @@ function vStumble(){ const d=st.d; let h=topBar("⚡ Meine Stolperwörter","go('
   if(d.items&&d.items.length) h+=`<div class="card" style="text-align:center"><div style="font-size:3.75rem">⚡</div><h2>Runde geschafft!</h2><button class="btn green" onclick="go('hub')">Zurück ➜</button></div>`;
   h+=`<h2>Noch üben (${O.length})</h2><div class="bank">${O.map(([w,x])=>`<span class="opt" style="font-size:1.1875rem;padding:0.5rem 0.75rem">${sylHTML(w)} <span class="muted">${"●".repeat(x.ok)}${"○".repeat(3-x.ok)}</span></span>`).join("")||`<span class="muted">Keine offenen Stolperwörter 🎉</span>`}</div>
    <h2 class="mt">Geschafft (${D.length})</h2><div class="bank">${D.map(([w])=>`<span class="opt" style="font-size:1.0625rem;padding:0.5rem 0.75rem">✅ ${esc(w)}</span>`).join("")}</div>
-   <p class="muted mt">Die Wörter kommen aus dem Lesetandem: Wenn deine Co-Pilotin oder dein Co-Pilot ein Wort antippt, landet es hier. Auch deine Lehrkraft kann Wörter eintragen.</p>`;
+   <p class="muted mt">Die Wörter kommen aus dem Lesetandem: Wenn dein Co-Pilot im Tandem ein Wort antippt, landet es hier. Auch deine Lehrkraft kann Wörter eintragen.</p>`;
   return h; }
 function stFlash(){ const d=st.d; d.ph="flash"; render(); clearTimers(); TIMERS.push(setTimeout(()=>{ if(st.screen==="stumble"){ d.ph="ask"; render(); } },900+clean(d.items[d.i]).length*60)); }
 function stRes(ok){ const d=st.d, w=d.items[d.i], x=(DB.stumble[st.kid]||{})[w]; if(x){ if(ok){ x.ok++; if(x.ok>=3){ x.done=true; toast("✅ „"+w+"“ kannst du jetzt!"); } } else x.ok=Math.max(0,x.ok-1); save(); } d.i++; d.ph="ready"; render(); }
@@ -2893,7 +2893,7 @@ function srAlign(T,text){ const d=st.d; const W=text.split(/\s+/).map(norm).filt
   d.srm={ok,skip,ptr:p}; document.querySelectorAll("#txt .w").forEach(el=>{ const i=+el.dataset.i; el.classList.toggle("srok",ok.includes(i)); el.classList.toggle("srskip",skip.includes(i)); }); }
 function stopSR(){ const d=st.d; d.srRun=false; try{ SR&&SR.stop(); }catch(e){} }
 function srSummary(){ const d=st.d; if(!d.srOn) return ""; if(d.srErr==="not-allowed"||d.srErr==="service-not-allowed"||d.srErr==="start") return `<div class="fb info mt">🎤 Der Mitlese-Check braucht das Mikrofon. Hier ist es gesperrt – auf einer eigenen Webadresse funktioniert er.</div>`;
-  if(!d.srm) return ""; const n=wordCount(fullText(st.unit,st.lv)); return `<div class="fb info mt">🎤 Die App hat ${d.srm.ok.length} von ${n} Wörtern erkannt.${d.srm.skip.length?` <span class="w srskip">Orange</span> sind Wörter, die vielleicht ausgelassen wurden.`:""} <span class="muted">Die Erkennung ist nicht perfekt – im Zweifel zählt, was die Co-Pilotin oder der Co-Pilot gehört hat.</span></div>`; }
+  if(!d.srm) return ""; const n=wordCount(fullText(st.unit,st.lv)); return `<div class="fb info mt">🎤 Die App hat ${d.srm.ok.length} von ${n} Wörtern erkannt.${d.srm.skip.length?` <span class="w srskip">Orange</span> sind Wörter, die vielleicht ausgelassen wurden.`:""} <span class="muted">Die Erkennung ist nicht perfekt – im Zweifel zählt, was der Co-Pilot gehört hat.</span></div>`; }
 
 // ---------- Abzeichen, Bildschirme, Ergänzungen ----------
 BADGES.push({id:"worm",i:"📚",n:"Bücherwurm",d:"5 Bücher im Lesepass eingetragen"},{id:"wordpro",i:"🧺",n:"Wortprofi",d:"10 Wörter in der Wortschatz-Kiste gelernt"},{id:"author",i:"✍️",n:"Autorin / Autor",d:"3 eigene Texte geschrieben"},{id:"riddler",i:"🧩",n:"Rätselmeister",d:"3 Rätsel für andere erfunden"},{id:"homer",i:"🏠",n:"Vorlese-Star",d:"5-mal zu Hause vorgelesen"});
