@@ -301,7 +301,14 @@ textarea,input{-webkit-user-select:text;user-select:text}
 .trailsplit .illu{margin-bottom:.875rem}.trailprog .word{margin-bottom:0}
 @media (orientation:portrait),(max-width:999px){.trailsplit .illu:not(:only-child){} }
 @media (min-width:1000px) and (orientation:landscape){
- .trailsplit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:1.125rem;align-items:start}
+ .trailsplit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);grid-template-areas:"main side";gap:1.125rem;align-items:start}
+ .trailsplit .trailside{grid-area:side}.trailsplit .trailmain{grid-area:main}
+ .trailsplit .trailmain .card{padding:1.125rem}
+ .trailsplit .trailmain .text{font-size:calc(1.3rem * var(--rs,1));line-height:calc(1.8 * var(--lh,1))}
+ .lv1 .trailsplit .trailmain .text{font-size:calc(1.45rem * var(--rs,1))}
+ .trailsplit .trailmain .opt{font-size:1.125rem;padding:.75rem .875rem}
+ .trailsplit .trailmain .seg{flex-wrap:nowrap}.trailsplit .trailmain .seg button{padding:.4rem .45rem;font-size:.9rem;white-space:nowrap}
+ .trailsplit .trailmain h2{font-size:1.375rem}
  .trailsplit .trailside{position:sticky;top:.75rem}
  .trailsplit .illu{margin:0 0 1rem;max-width:none}
  .trailsplit .illu img{aspect-ratio:auto!important;max-height:none!important;object-fit:contain}
