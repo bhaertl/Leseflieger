@@ -283,6 +283,19 @@ html{font-size:16px;touch-action:manipulation;-webkit-text-size-adjust:100%}
 button,.big,.opt,.w,.chip{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 #app{padding-left:max(1.125rem,env(safe-area-inset-left));padding-right:max(1.125rem,env(safe-area-inset-right));padding-top:max(.875rem,env(safe-area-inset-top));padding-bottom:max(3.75rem,env(safe-area-inset-bottom))}
 textarea,input{-webkit-user-select:text;user-select:text}
+
+/* ===== Korrekturen Nov 2026 ===== */
+.stickybar{position:sticky;bottom:0;z-index:25;background:rgba(255,255,255,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);margin:1rem -1.375rem -1.375rem!important;padding:.75rem 1.375rem calc(.75rem + env(safe-area-inset-bottom));border-top:2px solid var(--line);border-radius:0 0 1.375rem 1.375rem;box-shadow:0 -.375rem 1rem rgba(30,80,130,.08)}
+.word.say{background:var(--yellow-l);border-color:#e8c95a}
+.word .spk{font-size:.6em;opacity:.55;vertical-align:middle}
+.bdots{display:flex;gap:.5rem;justify-content:center;margin:.25rem 0 .5rem}
+.bdots span{width:1rem;height:1rem;border-radius:50%;background:#e3e9f0}
+.bdots span.done{background:var(--green)}.bdots span.cur{background:var(--orange);transform:scale(1.25)}
+.gloss-grid{display:grid;gap:.875rem;grid-template-columns:repeat(auto-fill,minmax(13rem,1fr));margin-top:.5rem}
+.gtile{position:relative;display:flex;flex-direction:column;align-items:center;gap:.375rem;text-align:center;background:#fff;border:3px solid var(--line);border-radius:1.125rem;padding:1rem .75rem;font-size:1.375rem;min-height:8rem}
+.gtile .gi{font-size:2.5rem;line-height:1}.gtile .gx{font-size:1.0625rem;color:var(--ink);line-height:1.35;font-weight:400}
+.gtile.open{border-color:#7a5cc7;background:#f5f0ff;grid-column:span 2}.gtile.seen .gok{position:absolute;top:.4rem;right:.6rem;color:var(--green);font-weight:700}
+@media (max-width:640px){.gtile.open{grid-column:span 1}}
 </style>
 <script>
 (function(){ function fit(){ var w=window.innerWidth||1024, h=window.innerHeight||1366;
@@ -1930,7 +1943,7 @@ function resetData(){ (DB.recs||[]).forEach(r=>blobDel(r.id)); DB.recs=[]; DB.re
 // ===== Render & Ereignisse =====
 function render(){
   document.body.className=(st.mode==="class"&&st.screen!=="teacher"?"cls ":"")+"lv"+st.lv;
-  const V={home:vHome,kids:vKids,hub:vHub,list:vList,acts:vActs,flowF:vFlowF,flowS:vFlowS,flowR:vFlowR,flowRec:vFlowRec,flowT:vFlowT,flowB:vFlowB,flowL:vFlowL,flowTrail:vFlowTrail,cal:vCal,test:vTest,flight:vFlight,books:vBooks,words:vWords,stumble:vStumble,homeM:vHomeMode,report:vReport,flowMake:vFlowMake,flowSolve:vFlowSolve,flowW:vFlowW,pick:()=>vPick(),done:vDone,book:vBook,pin:vPin,teacher:vTeacher}[st.screen]||vHome;
+  const V={home:vHome,kids:vKids,hub:vHub,list:vList,acts:vActs,flowF:vFlowF,flowS:vFlowS,flowR:vFlowR,flowRec:vFlowRec,flowT:vFlowT,flowB:vFlowB,flowL:vFlowL,flowTrail:vFlowTrail,cal:vCal,test:vTest,flight:vFlight,books:vBooks,words:vWords,stumble:vStumble,homeM:vHomeMode,report:vReport,flowMake:vFlowMake,flowSolve:vFlowSolve,flowW:vFlowW,pick:()=>vPick(),flowG:()=>vFlowG(),done:vDone,book:vBook,pin:vPin,teacher:vTeacher}[st.screen]||vHome;
   let html=V();
   html+=pngOverlay()+prefsModal(); if(prefs().ruler==="on"&&READ_SCREENS.includes(st.screen)) html+=`<div id="rulerctl" class="rulerctl" style="display:none"><button onclick="rulerMove(-1)">▲</button><span>Lesezeile</span><button onclick="rulerMove(1)">▼</button></div>`;
   if(st.gloss!=null&&st.unit&&["flowF","flowS","flowTrail"].includes(st.screen)){ const g=glossOf(st.unit)[st.gloss]; if(g){
@@ -2967,6 +2980,120 @@ const _vDoneFree=vDone;
 vDone=function(){ let h=_vDoneFree(); if(st.fromPick) h=h.split(`onclick="go('list')"`).join(`onclick="st.area=null;go('pick')"`); return h; };
 const _vTrailFree=vFlowTrail;
 vFlowTrail=function(){ let h=_vTrailFree(); if(st.fromPick) h=h.replace(`onclick="go('list')"`,`onclick="st.area=null;go('pick')"`); return h; };
+
+
+
+// =====================================================================
+// ===== Korrekturen Nov 2026: Namen, Zurück, Challenge, Blitz, Wörter =====
+// =====================================================================
+
+// ---------- Vorlesen einzelner Wörter (iPad-sicher) ----------
+function sayWord(w){ if(!HAS_TTS) return; try{ const S=speechSynthesis; const t=String(w).replace(/-/g,"");
+  const go=()=>{ try{ if(S.paused&&S.resume) S.resume(); S.speak(utter(t,0.75)); }catch(e){} };
+  if(S.speaking||S.pending){ S.cancel(); setTimeout(go,150); } else go(); }catch(e){} }
+function sayWordBtn(btn,w){ document.querySelectorAll(".word.say").forEach(b=>b.classList.remove("say")); if(btn){ btn.classList.add("say"); setTimeout(()=>btn.classList.remove("say"),1200); } sayWord(w); }
+
+// ---------- Namen: immer auch eigenen Namen / Spitznamen eintragen ----------
+const _vKidsN=vKids;
+vKids=function(){ let h=_vKidsN(); if(h.includes('id="qn1"')) return h;
+  return h+`<div class="card mt"><label class="lab" style="margin-top:0">✏️ Dein Name ist nicht dabei? Trag deinen Vornamen oder Spitznamen ein:</label>
+  <div class="row"><input type="text" id="qnNew" maxlength="30" placeholder="z. B. Lenni" style="flex:1;min-width:12rem" onkeydown="if(event.key==='Enter')addOwnName()"><button class="btn green" onclick="addOwnName()">➕ ${st.mode==="tandem"?"Hinzufügen":"Los geht's"}</button></div></div>`; };
+function addOwnName(){ const el=$("#qnNew"); const a=(el&&el.value||"").trim(); if(!a){ toast("Bitte einen Namen eintragen."); return; }
+  if(/^gast( \d)?$/i.test(a)){ toast("Bitte einen eigenen Namen eintragen."); return; }
+  const k=kidByNameOrNew(a); save();
+  if(st.mode==="tandem"){ if(!st.sel.includes(k.id)&&st.sel.length<2) st.sel.push(k.id); render(); }
+  else pickKid(k.id); }
+
+// ---------- Zurück: nach freier Textwahl wieder alle Übungen zeigen ----------
+const _vActsArea=vActs;
+vActs=function(){ if(st.fromPick) st.area=null; return _vActsArea(); };
+
+// ---------- 🔍 Wörter klären als eigene Übung ----------
+ACTS.splice(ACTS.findIndex(a=>a.id==="strat"),0,{id:"gloss",g:"s",i:"🔍",n:"Wörter klären",d:"Schwierige Wörter aus dem Text verstehen – mit Bild, Erklärung und Quiz",ok:u=>glossOf(u).length>=2});
+SCREEN_OF.gloss="flowG";
+try{ ACT_INFO.gloss=["🔍","Wörter klären"]; ACT_MIN.gloss=6; }catch(e){}
+function initGloss(){ const G=glossOf(st.unit); const d=st.d; d.ph="learn"; d.seen={}; d.open=null;
+  const pool=shuffle(G.map((g,i)=>i)).slice(0,Math.min(5,G.length));
+  d.quiz=pool.map(i=>{ const others=shuffle(G.map((g,j)=>j).filter(j=>j!==i)).slice(0,2); return {i,opts:shuffle([i,...others]),pick:null,first:null}; }); d.qi=0; }
+function glossTap(i){ const d=st.d; d.open=d.open===i?null:i; d.seen[i]=1; logWord(i); render(); }
+function glossSay(i){ const g=glossOf(st.unit)[i]; if(!g||!HAS_TTS) return; try{ speechSynthesis.cancel(); setTimeout(()=>speechSynthesis.speak(utter(g[0]+". "+g[2],0.85)),120);}catch(e){} }
+function glossAns(o){ const d=st.d, q=d.quiz[d.qi]; if(q.pick===q.i) return; q.pick=o; if(q.first==null) q.first=(o===q.i); render(); }
+function glossNextQ(){ const d=st.d; d.qi++; if(d.qi>=d.quiz.length){ const sc=d.quiz.filter(q=>q.first).length, mx=d.quiz.length;
+    finishFlow("s",sc===mx?4:sc>=mx-1?3:2,[`Quiz: ${sc} von ${mx} Wörtern beim ersten Versuch richtig`],id=>({k:id,t:Date.now(),kind:"s",u:st.unit.id,lv:st.lv,sc,mx,mode:st.mode})); return; } render(); window.scrollTo(0,0); }
+function vFlowG(){ const u=st.unit, d=st.d, G=glossOf(u); if(!d.ph) initGloss();
+  let h=topBar(`🔍 Wörter klären: ${esc(u.title)}`,"go('acts')");
+  h+=`<div class="steps"><span class="st ${d.ph==="learn"?"cur":"done"}">1. Wörter anschauen</span><span class="st ${d.ph==="quiz"?"cur":""}">2. Wörter-Quiz</span></div><div class="card">`;
+  if(d.ph==="learn"){ const n=Object.keys(d.seen).length;
+    h+=`<p class="instr">Diese Wörter kommen im Text vor. Tippe ein Wort an – dann siehst du, was es bedeutet. 🔊 liest dir die Erklärung vor.</p>
+    <div class="gloss-grid">${G.map((g,i)=>`<button class="gtile ${d.open===i?"open":""} ${d.seen[i]?"seen":""}" onclick="glossTap(${i})"><span class="gi">${esc(g[3]||"💬")}</span><b>${esc(g[0])}</b>${d.open===i?`<span class="gx">${esc(g[2])}</span>`:""}${d.seen[i]?`<span class="gok">✓</span>`:""}</button>`).join("")}</div>
+    ${d.open!=null?`<div class="row mt" style="justify-content:center"><button class="btn sec" onclick="glossSay(${d.open})">🔊 Erklärung anhören</button></div>`:""}
+    <div class="row mt"><span class="muted">${n} von ${G.length} Wörtern angeschaut</span><span class="sp"></span><button class="btn green" ${n?"":"disabled"} onclick="st.d.ph='quiz';st.d.qi=0;render();window.scrollTo(0,0)">Weiter: Quiz ➜</button></div>`;
+  } else { const q=d.quiz[d.qi], g=G[q.i];
+    h+=`<p class="muted">Frage ${d.qi+1} von ${d.quiz.length}</p><p class="q">Welches Wort passt zu dieser Erklärung?</p>
+    <div class="tip" style="font-size:1.375rem">${esc(g[2])}</div>
+    ${q.opts.map(o=>{ const G2=G[o]; const cls=q.pick==null?"":(o===q.i&&q.pick===q.i?"ok":(o===q.pick?"bad":"")); return `<button class="opt ${cls}" onclick="glossAns(${o})">${esc(G2[0])}</button>`; }).join("")}
+    ${q.pick!=null?(q.pick===q.i?`<div class="fb ok">${esc(g[3]||"")} Richtig! <b>${esc(g[0])}</b></div>`:`<div class="fb bad">Noch nicht. Versuch es nochmal!</div>`):""}
+    <div class="row mt"><button class="btn sec" onclick="st.d.ph='learn';render()">◀ Wörter</button><span class="sp"></span><button class="btn green" ${q.pick===q.i?"":"disabled"} onclick="glossNextQ()">${d.qi+1<d.quiz.length?"Nächste Frage ➜":"Fertig ➜"}</button></div>`; }
+  return h+`</div>`; }
+
+// ---------- Lesetraining Schritt 1: Stolperwörter + Blitzlesen (begrenzt) ----------
+const _vFlowF5=vFlowF;
+vFlowF=function(){ if(st.step!==0) return _vFlowF5();
+  const u=st.unit, d=st.d; let h=topBar(`${esc(u.icon||"📄")} ${esc(u.title)}`,"go('acts')");
+  h+=`<div class="steps">${F_STEPS.map((n,i)=>`<span class="st ${i===0?"cur":""}">${i+1}. ${n}</span>`).join("")}<span class="st">${LV[st.lv].i} ${LV[st.lv].n}</span></div>`;
+  if(st.mode==="class") h+=`<div class="tip"><b>Tipp für die Lehrkraft:</b> ${TIPS_F[0]}</div>`;
+  h+=`<div class="card">`;
+  const W=u.words||[];
+  if(d.bq==null){
+    h+=`<p class="instr">Diese Wörter kommen im Text vor. Tippe ein Wort an und hör es dir an 🔊. Lies es dann selbst laut – Silbe für Silbe.</p>
+    <div class="words">${W.map((w,i)=>`<button class="word" onclick="sayWordBtn(this,st.unit.words[${i}])">${st.daz?stolperDaz(w):""}${syl(w)} <span class="spk">🔊</span></button>`).join("")}</div>
+    <div class="row mt"><button class="btn orange" onclick="blitzStart()">⚡ Blitzlesen: ${W.length} Wörter</button><span class="sp"></span><button class="btn green" onclick="fNext()">Weiter: Hören ➜</button></div>`;
+  } else if(d.bq.length&&d.bk<d.bq.length){ const i=d.bq[d.bk], w=W[i];
+    h+=`<p class="muted" style="text-align:center">⚡ Blitzlesen · Wort ${d.bk+1} von ${d.bq.length}</p>
+    <div class="bdots">${d.bq.map((x,k)=>`<span class="${k<d.bk?"done":k===d.bk?"cur":""}"></span>`).join("")}</div>
+    <div class="blitz" id="blitzw">${d.bs?syl(w):"❓"}</div><p class="instr" style="text-align:center" id="blitzi">${d.bs?"Lies das Wort schnell!":"Welches Wort war das? Sag es laut!"}</p>
+    <div class="row" style="justify-content:center"><button class="btn sec" onclick="blitzShow()">👀 Nochmal zeigen</button><button class="btn sec" onclick="sayWordBtn(null,st.unit.words[${i}])">🔊 Anhören</button><button class="btn" onclick="blitzNext()">${d.bk+1<d.bq.length?"Nächstes Wort ➜":"Fertig ✓"}</button></div>`;
+  } else {
+    h+=`<div class="fb ok" style="text-align:center">⚡ Super! Du hast alle ${W.length} Wörter geblitzt.</div>
+    <div class="row mt"><button class="btn sec" onclick="blitzStart()">🔁 Nochmal blitzen</button><button class="btn sec" onclick="st.d.bq=null;render()">◀ Wörter</button><span class="sp"></span><button class="btn green" onclick="fNext()">Weiter: Hören ➜</button></div>`;
+  }
+  return h+`</div>`; };
+function blitzStart(){ stopAll(); const d=st.d; d.bq=shuffle((st.unit.words||[]).map((w,i)=>i)); d.bk=0; blitzShow(); }
+function blitzShow(){ const d=st.d; d.bs=true; render(); clearTimers(); const my=d.bk;
+  TIMERS.push(setTimeout(()=>{ if(st.screen==="flowF"&&st.step===0&&st.d.bk===my&&st.d.bq){ st.d.bs=false; const b=$("#blitzw"), t=$("#blitzi"); if(b) b.textContent="❓"; if(t) t.textContent="Welches Wort war das? Sag es laut!"; } }, st.mode==="class"?1500:1000)); }
+function blitzNext(){ const d=st.d; d.bk++; if(d.bk<d.bq.length) blitzShow(); else { clearTimers(); render(); } }
+// alte Blitz-Funktion: keine Endlosschleife mehr
+function blitz(){ blitzNext(); }
+
+// ---------- 🏁 Lese-Challenge: Text zuerst, Auto fährt mit, Fertig-Knopf kurz gesperrt ----------
+function minReadSec(){ const w=wordCount(fullText(st.unit,st.lv)); return Math.max(5,Math.min(15,Math.round(w/300*60))); }
+const _vFlowR5=vFlowR;
+vFlowR=function(){ let h=_vFlowR5();
+  // Text vor die Steuerung holen: Steuerung soll unten (sichtbar) bleiben
+  const tb=h.lastIndexOf('<div class="textbox mt">'); if(tb>0){ const end=h.lastIndexOf('</div></div></div>'); const text=h.slice(tb,end+12); h=h.slice(0,tb)+h.slice(end+12);
+    const tr=h.indexOf('<div class="track">'); if(tr>0) h=h.slice(0,tr)+text.replace('textbox mt','textbox')+`<div class="mt"></div>`+h.slice(tr); }
+  return h; };
+const _raceStart5=raceStart;
+raceStart=function(){ _raceStart5(); const d=st.d, my=d.round; const g=d.round>0?d.times[d.round-1]:bestTime(st.unit.id,st.lv); const est=g||Math.round(wordCount(fullText(st.unit,st.lv))/90*60);
+  TIMERS.push(setInterval(()=>{ const me=$("#me"); if(!me||st.d.round!==my||st.d.r!=="run") return; const f=Math.min(0.92,(Date.now()-d.t0)/1000/est); me.style.left=`calc((100% - 2.875rem) * ${f.toFixed(3)})`; },250)); };
+const _raceStop5=raceStop;
+raceStop=function(){ const d=st.d; if(d.t0&&Date.now()-d.t0<minReadSec()*1000){ toast("Lies zuerst den ganzen Text! 📖"); return; } _raceStop5(); };
+const _srStop5=srStop;
+srStop=function(){ const d=st.d; if(d.t0&&Date.now()-d.t0<minReadSec()*1000){ toast("Lies zuerst den ganzen Text! 📖"); return; } _srStop5(); };
+function lockStopButtons(){ const d=st.d; if(!d||d.r!=="run"||!d.t0) return; const btns=[...document.querySelectorAll('button[onclick^="raceStop"],button[onclick^="srStop"]')]; if(!btns.length) return;
+  const lab=btns.map(b=>b.innerHTML);
+  const tick=()=>{ const left=Math.ceil((minReadSec()*1000-(Date.now()-d.t0))/1000); btns.forEach((b,k)=>{ if(!document.body.contains(b)) return; if(left>0){ b.disabled=true; b.style.opacity=".55"; b.innerHTML=`⏳ Lies weiter … (${left} s)`; } else { b.disabled=false; b.style.opacity=""; b.innerHTML=lab[k]; } }); return left>0; };
+  if(tick()){ const iv=setInterval(()=>{ if(!tick()) clearInterval(iv); },500); TIMERS.push(iv); } }
+
+// ---------- iPad first: Weiter-Knöpfe ohne Scrollen ----------
+function stickyActions(){ if(!/^flow/.test(st.screen)) return; const card=document.querySelector("#app .card:last-of-type")||document.querySelector("#app .card"); if(!card) return;
+  const rows=[...card.querySelectorAll(":scope > .row")].filter(r=>r.querySelector(".btn.green,.btn.red,.btn.orange,.btn:not(.sec)"));
+  const last=rows[rows.length-1]; if(!last) return;
+  const tbs=[...card.querySelectorAll(":scope > .textbox")]; const tb=tbs[tbs.length-1];
+  if(tb&&(last.compareDocumentPosition(tb)&Node.DOCUMENT_POSITION_FOLLOWING)){ tb.after(last); }
+  last.classList.add("stickybar"); }
+const _render5=render;
+render=function(){ _render5(); try{ stickyActions(); lockStopButtons(); }catch(e){} };
 
 render();
 
